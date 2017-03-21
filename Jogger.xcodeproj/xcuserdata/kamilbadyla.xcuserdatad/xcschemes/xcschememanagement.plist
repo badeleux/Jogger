@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>JoggerKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>ED208A7B1E8113D400B6074B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED208A8F1E811A6C00B6074B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED208A971E811A6C00B6074B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

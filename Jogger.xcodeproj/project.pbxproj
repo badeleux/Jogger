@@ -14,6 +14,11 @@
 		ED208A731E8113D400B6074B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED208A721E8113D400B6074B /* Assets.xcassets */; };
 		ED208A761E8113D400B6074B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED208A741E8113D400B6074B /* LaunchScreen.storyboard */; };
 		ED208A811E8113D400B6074B /* JoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A801E8113D400B6074B /* JoggerTests.swift */; };
+		ED208A991E811A6C00B6074B /* JoggerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED208A901E811A6C00B6074B /* JoggerKit.framework */; };
+		ED208AA01E811A6C00B6074B /* JoggerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A9F1E811A6C00B6074B /* JoggerKitTests.swift */; };
+		ED208AA21E811A6C00B6074B /* JoggerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = ED208A921E811A6C00B6074B /* JoggerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED208AA51E811A6C00B6074B /* JoggerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED208A901E811A6C00B6074B /* JoggerKit.framework */; };
+		ED208AA61E811A6C00B6074B /* JoggerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED208A901E811A6C00B6074B /* JoggerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +29,42 @@
 			remoteGlobalIDString = ED208A651E8113D400B6074B;
 			remoteInfo = Jogger;
 		};
+		ED208A9A1E811A6C00B6074B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED208A5E1E8113D400B6074B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED208A8F1E811A6C00B6074B;
+			remoteInfo = JoggerKit;
+		};
+		ED208A9C1E811A6C00B6074B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED208A5E1E8113D400B6074B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED208A651E8113D400B6074B;
+			remoteInfo = Jogger;
+		};
+		ED208AA31E811A6C00B6074B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED208A5E1E8113D400B6074B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED208A8F1E811A6C00B6074B;
+			remoteInfo = JoggerKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED208AAA1E811A6C00B6074B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ED208AA61E811A6C00B6074B /* JoggerKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		ED208A661E8113D400B6074B /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +78,12 @@
 		ED208A7C1E8113D400B6074B /* JoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED208A801E8113D400B6074B /* JoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoggerTests.swift; sourceTree = "<group>"; };
 		ED208A821E8113D400B6074B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED208A901E811A6C00B6074B /* JoggerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JoggerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED208A921E811A6C00B6074B /* JoggerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoggerKit.h; sourceTree = "<group>"; };
+		ED208A931E811A6C00B6074B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED208A981E811A6C00B6074B /* JoggerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoggerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED208A9F1E811A6C00B6074B /* JoggerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoggerKitTests.swift; sourceTree = "<group>"; };
+		ED208AA11E811A6C00B6074B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED208AA51E811A6C00B6074B /* JoggerKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +99,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED208A8C1E811A6C00B6074B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED208A951E811A6C00B6074B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED208A991E811A6C00B6074B /* JoggerKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +125,8 @@
 			children = (
 				ED208A681E8113D400B6074B /* Jogger */,
 				ED208A7F1E8113D400B6074B /* JoggerTests */,
+				ED208A911E811A6C00B6074B /* JoggerKit */,
+				ED208A9E1E811A6C00B6074B /* JoggerKitTests */,
 				ED208A671E8113D400B6074B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +136,8 @@
 			children = (
 				ED208A661E8113D400B6074B /* Jogger.app */,
 				ED208A7C1E8113D400B6074B /* JoggerTests.xctest */,
+				ED208A901E811A6C00B6074B /* JoggerKit.framework */,
+				ED208A981E811A6C00B6074B /* JoggerKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,7 +165,36 @@
 			path = JoggerTests;
 			sourceTree = "<group>";
 		};
+		ED208A911E811A6C00B6074B /* JoggerKit */ = {
+			isa = PBXGroup;
+			children = (
+				ED208A921E811A6C00B6074B /* JoggerKit.h */,
+				ED208A931E811A6C00B6074B /* Info.plist */,
+			);
+			path = JoggerKit;
+			sourceTree = "<group>";
+		};
+		ED208A9E1E811A6C00B6074B /* JoggerKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED208A9F1E811A6C00B6074B /* JoggerKitTests.swift */,
+				ED208AA11E811A6C00B6074B /* Info.plist */,
+			);
+			path = JoggerKitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		ED208A8D1E811A6C00B6074B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED208AA21E811A6C00B6074B /* JoggerKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		ED208A651E8113D400B6074B /* Jogger */ = {
@@ -109,10 +204,12 @@
 				ED208A621E8113D400B6074B /* Sources */,
 				ED208A631E8113D400B6074B /* Frameworks */,
 				ED208A641E8113D400B6074B /* Resources */,
+				ED208AAA1E811A6C00B6074B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ED208AA41E811A6C00B6074B /* PBXTargetDependency */,
 			);
 			name = Jogger;
 			productName = Jogger;
@@ -137,6 +234,43 @@
 			productReference = ED208A7C1E8113D400B6074B /* JoggerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		ED208A8F1E811A6C00B6074B /* JoggerKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED208AA71E811A6C00B6074B /* Build configuration list for PBXNativeTarget "JoggerKit" */;
+			buildPhases = (
+				ED208A8B1E811A6C00B6074B /* Sources */,
+				ED208A8C1E811A6C00B6074B /* Frameworks */,
+				ED208A8D1E811A6C00B6074B /* Headers */,
+				ED208A8E1E811A6C00B6074B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JoggerKit;
+			productName = JoggerKit;
+			productReference = ED208A901E811A6C00B6074B /* JoggerKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED208A971E811A6C00B6074B /* JoggerKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED208AAB1E811A6C00B6074B /* Build configuration list for PBXNativeTarget "JoggerKitTests" */;
+			buildPhases = (
+				ED208A941E811A6C00B6074B /* Sources */,
+				ED208A951E811A6C00B6074B /* Frameworks */,
+				ED208A961E811A6C00B6074B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED208A9B1E811A6C00B6074B /* PBXTargetDependency */,
+				ED208A9D1E811A6C00B6074B /* PBXTargetDependency */,
+			);
+			name = JoggerKitTests;
+			productName = JoggerKitTests;
+			productReference = ED208A981E811A6C00B6074B /* JoggerKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -153,6 +287,17 @@
 						ProvisioningStyle = Automatic;
 					};
 					ED208A7B1E8113D400B6074B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = EWQZR3J8HN;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED208A651E8113D400B6074B;
+					};
+					ED208A8F1E811A6C00B6074B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = EWQZR3J8HN;
+						ProvisioningStyle = Automatic;
+					};
+					ED208A971E811A6C00B6074B = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EWQZR3J8HN;
 						ProvisioningStyle = Automatic;
@@ -175,6 +320,8 @@
 			targets = (
 				ED208A651E8113D400B6074B /* Jogger */,
 				ED208A7B1E8113D400B6074B /* JoggerTests */,
+				ED208A8F1E811A6C00B6074B /* JoggerKit */,
+				ED208A971E811A6C00B6074B /* JoggerKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +338,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ED208A7A1E8113D400B6074B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED208A8E1E811A6C00B6074B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED208A961E811A6C00B6074B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -218,6 +379,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED208A8B1E811A6C00B6074B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED208A941E811A6C00B6074B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED208AA01E811A6C00B6074B /* JoggerKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -225,6 +401,21 @@
 			isa = PBXTargetDependency;
 			target = ED208A651E8113D400B6074B /* Jogger */;
 			targetProxy = ED208A7D1E8113D400B6074B /* PBXContainerItemProxy */;
+		};
+		ED208A9B1E811A6C00B6074B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED208A8F1E811A6C00B6074B /* JoggerKit */;
+			targetProxy = ED208A9A1E811A6C00B6074B /* PBXContainerItemProxy */;
+		};
+		ED208A9D1E811A6C00B6074B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED208A651E8113D400B6074B /* Jogger */;
+			targetProxy = ED208A9C1E811A6C00B6074B /* PBXContainerItemProxy */;
+		};
+		ED208AA41E811A6C00B6074B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED208A8F1E811A6C00B6074B /* JoggerKit */;
+			targetProxy = ED208AA31E811A6C00B6074B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -397,6 +588,78 @@
 			};
 			name = Release;
 		};
+		ED208AA81E811A6C00B6074B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JoggerKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.JoggerKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED208AA91E811A6C00B6074B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JoggerKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.JoggerKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ED208AAC1E811A6C00B6074B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				INFOPLIST_FILE = JoggerKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.JoggerKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jogger.app/Jogger";
+			};
+			name = Debug;
+		};
+		ED208AAD1E811A6C00B6074B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				INFOPLIST_FILE = JoggerKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.JoggerKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jogger.app/Jogger";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -422,6 +685,22 @@
 			buildConfigurations = (
 				ED208A891E8113D400B6074B /* Debug */,
 				ED208A8A1E8113D400B6074B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED208AA71E811A6C00B6074B /* Build configuration list for PBXNativeTarget "JoggerKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED208AA81E811A6C00B6074B /* Debug */,
+				ED208AA91E811A6C00B6074B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED208AAB1E811A6C00B6074B /* Build configuration list for PBXNativeTarget "JoggerKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED208AAC1E811A6C00B6074B /* Debug */,
+				ED208AAD1E811A6C00B6074B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
