@@ -32,16 +32,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED208A7B1E8113D400B6074B"
-               BuildableName = "JoggerTests.xctest"
-               BlueprintName = "JoggerTests"
-               ReferencedContainer = "container:Jogger.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "ED208A971E811A6C00B6074B"
                BuildableName = "JoggerKitTests.xctest"
                BlueprintName = "JoggerKitTests"

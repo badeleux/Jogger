@@ -7,15 +7,37 @@
 //
 
 import UIKit
+import Swinject
+import SwinjectStoryboard
+import JoggerKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let container = Container() { container in
+        container.register(AuthService.self) { _ in FirebaseAuthService() }
+        container.register(SignInViewModel.self) { r in SignInViewModel(authService: r.resolve(AuthService.self)! )}
+        
+        container.storyboardInitCompleted(UINavigationController.self, initCompleted: { r, c in })
+        container.storyboardInitCompleted(SignUpViewController.self, initCompleted: { r, c in })
+        container.storyboardInitCompleted(LoginViewController.self, initCompleted: { r, c in })
+        container.storyboardInitCompleted(SignInViewController.self, initCompleted: { r, c in
+            c.signInViewModel = r.resolve(SignInViewModel.self)
+        })
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.makeKeyAndVisible()
+        self.window = window
+        
+        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
+        window.rootViewController = storyboard.instantiateInitialViewController()
+        
         return true
     }
 
