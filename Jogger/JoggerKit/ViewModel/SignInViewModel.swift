@@ -35,6 +35,7 @@ public class SignInViewModel {
                                         .on(statusChanged: {[weak self] (status: ActionStatus<NSError>) in
                                             self?.signInActionStatus.value = status
                                         })
+                                        .showError()
                                         .flatMapError { _ in SignalProducer<User, NoError>.empty }
                         })
         

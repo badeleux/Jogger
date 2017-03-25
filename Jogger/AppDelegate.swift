@@ -9,7 +9,7 @@
 import UIKit
 import Swinject
 import SwinjectStoryboard
-import JoggerKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     let container = Container() { container in
-        container.register(AuthService.self) { _ in FirebaseAuthService() }
+        container.register(FIRAuth.self) { _ in FirebaseKit.shared.auth! }
+        container.register(AuthService.self) { r in FirebaseAuthService(auth: r.resolve(FIRAuth.self)) }
         container.register(SignInViewModel.self) { r in SignInViewModel(authService: r.resolve(AuthService.self)! )}
         
         container.storyboardInitCompleted(UINavigationController.self, initCompleted: { r, c in })

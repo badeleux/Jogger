@@ -39,28 +39,32 @@ extension Observer where Error: APIError {
 
 public class FirebaseAuthService: AuthService {
     
-    public init() {}
+    let auth: FIRAuth?
+    
+    public init(auth: FIRAuth?) {
+        self.auth = auth
+    }
     
     public func signIn(email: String, password: String) -> SignalProducer<User, NSError> {
-        return SignalProducer { o, d in
-            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
+        return SignalProducer { [weak self] o, d in
+            self?.auth?.signIn(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
                 o.send(user: user, error: error)
             })
         }
     }
     
     public func signUp(email: String, password: String) -> SignalProducer<User, NSError> {
-        return SignalProducer { o, d in
-            return FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
+        return SignalProducer { [weak self] o, d in
+            return self?.auth?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
                 o.send(user: user, error: error)
             })
         }
     }
     
     public func signOut() -> SignalProducer<Bool, NSError> {
-        return SignalProducer { o, d in
+        return SignalProducer { [weak self] o, d in
             do {
-                try FIRAuth.auth()?.signOut()
+                try self?.auth?.signOut()
                 o.send(value: true)
                 o.sendCompleted()
             }

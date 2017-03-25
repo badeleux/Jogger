@@ -43,6 +43,7 @@ PODS:
   - Result (3.2.1)
   - StatefulViewController (3.0)
   - SwiftDate (4.0.13)
+  - SwiftMessages (3.3.1)
   - SwiftyFORM (1.3.1)
   - Swinject (2.0.0)
   - SwinjectStoryboard (1.0.0):
@@ -59,6 +60,7 @@ DEPENDENCIES:
   - ReactiveSwift
   - StatefulViewController (~> 3.0)
   - SwiftDate
+  - SwiftMessages
   - SwiftyFORM
   - Swinject (~> 2.0.0)
   - SwinjectStoryboard (~> 1.0.0)
@@ -81,10 +83,11 @@ SPEC CHECKSUMS:
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   StatefulViewController: 4803bf900d44de26074344998e10e041113b5931
   SwiftDate: 8ec416bb1b5129d1f35e8efaed720421f41d42df
+  SwiftMessages: 31e27e35c2f11b116ad7ec3232b56ca9bd242475
   SwiftyFORM: 88c115531cc62e425b7d6d9f6cd580cc3d13fc2f
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
 
-PODFILE CHECKSUM: 0d299aee8a534535b2dfdafd21274dc5e3b6a231
+PODFILE CHECKSUM: 6b664be9bce1d84d793657eada2f896829de6570
 
 COCOAPODS: 1.2.0
