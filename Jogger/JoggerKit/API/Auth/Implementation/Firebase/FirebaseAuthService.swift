@@ -9,6 +9,7 @@
 import Foundation
 import ReactiveSwift
 import FirebaseAuth
+import Result
 
 extension FIRUser: User {
     public var userId: UserId {
@@ -38,11 +39,18 @@ extension Observer where Error: APIError {
 }
 
 public class FirebaseAuthService: AuthService {
+    public let currentUser: SignalProducer<User?, NoError>
+
+    private let currentUserProperty = MutableProperty<User?>(nil)
     
     let auth: FIRAuth?
     
     public init(auth: FIRAuth?) {
         self.auth = auth
+        self.currentUser = self.currentUserProperty.producer
+        self.auth?.addStateDidChangeListener({ [weak self] (_, user: FIRUser?) in
+            self?.currentUserProperty.value = user
+        })
     }
     
     public func signIn(email: String, password: String) -> SignalProducer<User, NSError> {

@@ -10,6 +10,7 @@ import UIKit
 import Swinject
 import SwinjectStoryboard
 import Firebase
+import ReactiveCocoa
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,16 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     let container = Container() { container in
+        
+        container.register(RootViewController.self) { r in RootViewController(loggedOut: r.resolve(LoginNavigationController.self)!, loggedIn: r.resolve(LoginNavigationController.self)!, authService: r.resolve(AuthService.self)!)}
+        
         container.register(FIRAuth.self) { _ in FirebaseKit.shared.auth! }
         container.register(AuthService.self) { r in FirebaseAuthService(auth: r.resolve(FIRAuth.self)) }
         container.register(SignInViewModel.self) { r in SignInViewModel(authService: r.resolve(AuthService.self)! )}
+        container.register(SignUpViewModel.self) { r in SignUpViewModel(authService: r.resolve(AuthService.self)! )}
         
-        container.storyboardInitCompleted(UINavigationController.self, initCompleted: { r, c in })
-        container.storyboardInitCompleted(SignUpViewController.self, initCompleted: { r, c in })
+        container.storyboardInitCompleted(LoginNavigationController.self, initCompleted: { r, c in })
+        container.storyboardInitCompleted(SignUpViewController.self, initCompleted: { r, c in
+            c.signUpViewModel = r.resolve(SignUpViewModel.self)
+        })
         container.storyboardInitCompleted(LoginViewController.self, initCompleted: { r, c in })
         container.storyboardInitCompleted(SignInViewController.self, initCompleted: { r, c in
             c.signInViewModel = r.resolve(SignInViewModel.self)
         })
+        
+        
     }
 
 

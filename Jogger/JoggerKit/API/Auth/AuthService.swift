@@ -8,9 +8,12 @@
 
 import Foundation
 import ReactiveSwift
+import Result
 
 public protocol AuthService: APIService {
     func signIn(email: String, password: String) -> SignalProducer<User, NSError>
     func signUp(email: String, password: String) -> SignalProducer<User, NSError>
     func signOut() -> SignalProducer<Bool, NSError>
+    
+    var currentUser: SignalProducer<User?, NoError> { get }
 }
