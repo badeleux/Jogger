@@ -47,8 +47,19 @@ class RootViewController: UIViewController {
         switch state {
         case .logIn:
             return self.mainStoryboard!.instantiateViewController(withIdentifier: "LoginNav")
+        case .regular:
+            let settingsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "SettingsVC")
+            let recordsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "RecordsVC")
+            let tabBar = UITabBarController()
+            tabBar.viewControllers = [recordsVC, settingsVC]
+            return tabBar
         default:
-            return UIViewController()
+            let settingsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "SettingsVC")
+            let recordsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "RecordsVC")
+            let usersVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "UsersVC")
+            let tabBar = UITabBarController()
+            tabBar.viewControllers = [recordsVC, usersVC, settingsVC]
+            return tabBar
         }
     }
  

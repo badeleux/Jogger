@@ -52,6 +52,9 @@ class ViewControllerAssembly: Assembly {
         container.storyboardInitCompleted(SignInViewController.self, initCompleted: { r, c in
             c.signInViewModel = r.resolve(SignInViewModel.self)
         })
+        container.storyboardInitCompleted(SettingsViewController.self) { (r, c) in
+            c.authService = r.resolve(AuthService.self)
+        }
         
     }
 }

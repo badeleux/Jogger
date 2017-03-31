@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -115,20 +116,88 @@
             </objects>
             <point key="canvasLocation" x="929" y="-1164"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
+        <!--Item-->
+        <scene sceneID="qJx-E2-SDg">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="RecordsVC" id="Yh9-Z2-Q1n" customClass="RecordsViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CbF-nW-U8S"/>
+                        <viewControllerLayoutGuide type="bottom" id="YQ2-yI-o17"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FOA-Uz-Jcl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wU-DL-9Lh">
+                                <rect key="frame" x="166" y="299" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ywz-Qt-o4K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIz-yJ-pSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="1605.5999999999999" y="-352.17391304347831"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="tvt-ZU-GwF">
+            <objects>
+                <viewController storyboardIdentifier="UsersVC" id="Qlq-jM-WH3" customClass="UsersViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cOe-pL-gXw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pb0-1H-4sZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jjt-7h-6MA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="aq7-5Q-j1N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nBa-Bp-25d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1566" y="386"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="HzO-mA-hvc">
+            <objects>
+                <viewController storyboardIdentifier="SettingsVC" id="uPM-Mq-iel" customClass="SettingsViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UsW-Fi-tIc"/>
+                        <viewControllerLayoutGuide type="bottom" id="X3N-pJ-Omz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VVb-N0-U05">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSh-wT-5MZ">
+                                <rect key="frame" x="16" y="20" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kq0-YI-jwk"/>
+                                </constraints>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOut:" destination="uPM-Mq-iel" eventType="touchUpInside" id="kPJ-g5-DQB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CSh-wT-5MZ" firstAttribute="leading" secondItem="VVb-N0-U05" secondAttribute="leadingMargin" id="3N1-mR-TgV"/>
+                            <constraint firstItem="CSh-wT-5MZ" firstAttribute="top" secondItem="UsW-Fi-tIc" secondAttribute="bottom" id="8Eu-KM-pjp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CSh-wT-5MZ" secondAttribute="trailing" id="oga-lV-4y1"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="3Ix-9U-IEp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7T-M2-gvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1606" y="1211"/>
         </scene>
     </scenes>
 </document>

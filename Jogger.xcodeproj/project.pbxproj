@@ -11,6 +11,7 @@
 		C87C79F24F3DBCD22D64572B /* Pods_Jogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994D38F57C048939539B027D /* Pods_Jogger.framework */; };
 		ED1A94621E8D9A6300957A9B /* UserAuthViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94611E8D9A6300957A9B /* UserAuthViewModelSpec.swift */; };
 		ED1A94641E8E278400957A9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94631E8E278400957A9B /* LoginViewController.swift */; };
+		ED1A94671E8E328500957A9B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94661E8E328500957A9B /* SettingsViewController.swift */; };
 		ED208A6A1E8113D400B6074B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A691E8113D400B6074B /* AppDelegate.swift */; };
 		ED208A6C1E8113D400B6074B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A6B1E8113D400B6074B /* FirstViewController.swift */; };
 		ED208A6E1E8113D400B6074B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A6D1E8113D400B6074B /* SecondViewController.swift */; };
@@ -76,6 +77,7 @@
 		D891618552FD2F829166427E /* Pods_JoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1A94611E8D9A6300957A9B /* UserAuthViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthViewModelSpec.swift; sourceTree = "<group>"; };
 		ED1A94631E8E278400957A9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ED1A94661E8E328500957A9B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ED208A661E8113D400B6074B /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED208A691E8113D400B6074B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED208A6B1E8113D400B6074B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		ED1A94651E8E327E00957A9B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				ED1A94661E8E328500957A9B /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		ED208A5D1E8113D400B6074B = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +227,7 @@
 		ED208AB71E81A05100B6074B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				ED1A94651E8E327E00957A9B /* Settings */,
 				EDC48CF51E865EAD0000A83D /* Root */,
 				EDC48CF21E8652240000A83D /* ErrorPresenter */,
 				ED208AB81E81A05100B6074B /* Login */,
@@ -632,6 +643,7 @@
 				EDC48D0C1E88EFA20000A83D /* Assemblies.swift in Sources */,
 				ED69CFFD1E8D7EA100A5669B /* FirebaseUserRoleService.swift in Sources */,
 				EDC76EC91E850EE400F95E70 /* AuthService.swift in Sources */,
+				ED1A94671E8E328500957A9B /* SettingsViewController.swift in Sources */,
 				EDC48D061E88EA950000A83D /* APIService.swift in Sources */,
 				EDC48CFF1E8709FB0000A83D /* UsersViewController.swift in Sources */,
 			);

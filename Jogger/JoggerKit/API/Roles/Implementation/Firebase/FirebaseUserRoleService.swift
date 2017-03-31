@@ -25,8 +25,10 @@ class FirebaseUserRoleService: UserRoleService {
                 .child("roles")
                 .child(userId)
                 .observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
-                    if snapshot.exists(), let rawRole = snapshot.value as? String, let ur = UserRole(rawValue: rawRole)  {
-                        o.send(value: ur)
+                    let rawRoles = snapshot.value as? [String:Bool]
+                    let highestRole = rawRoles?.keys.flatMap { UserRole(rawValue: $0) }.sorted(by: { $0.0.hashValue > $0.1.hashValue }).first
+                    if snapshot.exists(), let role = highestRole  {
+                        o.send(value: role)
                         o.sendCompleted()
                     }
                     else {
