@@ -13,8 +13,6 @@
 		ED1A94641E8E278400957A9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94631E8E278400957A9B /* LoginViewController.swift */; };
 		ED1A94671E8E328500957A9B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94661E8E328500957A9B /* SettingsViewController.swift */; };
 		ED208A6A1E8113D400B6074B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A691E8113D400B6074B /* AppDelegate.swift */; };
-		ED208A6C1E8113D400B6074B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A6B1E8113D400B6074B /* FirstViewController.swift */; };
-		ED208A6E1E8113D400B6074B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A6D1E8113D400B6074B /* SecondViewController.swift */; };
 		ED208A711E8113D400B6074B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED208A6F1E8113D400B6074B /* Main.storyboard */; };
 		ED208A731E8113D400B6074B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED208A721E8113D400B6074B /* Assets.xcassets */; };
 		ED208A761E8113D400B6074B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED208A741E8113D400B6074B /* LaunchScreen.storyboard */; };
@@ -80,8 +78,6 @@
 		ED1A94661E8E328500957A9B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ED208A661E8113D400B6074B /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED208A691E8113D400B6074B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED208A6B1E8113D400B6074B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		ED208A6D1E8113D400B6074B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		ED208A701E8113D400B6074B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED208A721E8113D400B6074B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED208A751E8113D400B6074B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -202,8 +198,6 @@
 				EDC76EBA1E850EE400F95E70 /* JoggerKit */,
 				ED208AB71E81A05100B6074B /* Screens */,
 				ED208A691E8113D400B6074B /* AppDelegate.swift */,
-				ED208A6B1E8113D400B6074B /* FirstViewController.swift */,
-				ED208A6D1E8113D400B6074B /* SecondViewController.swift */,
 				ED208A6F1E8113D400B6074B /* Main.storyboard */,
 				ED208A721E8113D400B6074B /* Assets.xcassets */,
 				ED208A741E8113D400B6074B /* LaunchScreen.storyboard */,
@@ -620,7 +614,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED208A6E1E8113D400B6074B /* SecondViewController.swift in Sources */,
 				EDC48D101E8A3D070000A83D /* UserAuthViewModel.swift in Sources */,
 				EDC48D0E1E88F33E0000A83D /* UserViewModel.swift in Sources */,
 				EDC76ECE1E850EE400F95E70 /* SignUpViewModel.swift in Sources */,
@@ -632,7 +625,6 @@
 				ED208AC11E81AAA200B6074B /* SignInViewController.swift in Sources */,
 				EDC76ECC1E850EE400F95E70 /* ActionStatus.swift in Sources */,
 				EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */,
-				ED208A6C1E8113D400B6074B /* FirstViewController.swift in Sources */,
 				ED1A94641E8E278400957A9B /* LoginViewController.swift in Sources */,
 				EDC76ECD1E850EE400F95E70 /* SignInViewModel.swift in Sources */,
 				ED69CFFF1E8D82D300A5669B /* SignalProducerExtensions.swift in Sources */,
