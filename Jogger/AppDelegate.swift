@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import Swinject
+import SwinjectStoryboard
+import Firebase
+import ReactiveCocoa
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let assembler = try! Assembler(assemblies: [ServiceAssembly(), ViewModelAssembly(), ViewControllerAssembly()])
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.makeKeyAndVisible()
+        self.window = window
+        
+        Container.loggingFunction = nil
+        
+        let storyboard = assembler.resolver.resolve(SwinjectStoryboard.self)
+        let rootVC = storyboard?.instantiateInitialViewController()
+        window.rootViewController = rootVC
+        
         return true
     }
 

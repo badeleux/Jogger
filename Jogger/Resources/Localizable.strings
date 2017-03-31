@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Jogger
+
+  Created by Kamil Badyla on 24.03.2017.
+  Copyright © 2017 Science Spir.IT. All rights reserved.
+*/
+
+//SignIn
+"sign_in_header" = "Sign In";
+"sign_in_email" = "E-Mail";
+"sign_in_password" = "Password";
+"sign_in_email_placeholder" = "Please specify";
+"sign_in_password_placeholder" = "Please specify";
