@@ -12,6 +12,13 @@
 		ED1A94621E8D9A6300957A9B /* UserAuthViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94611E8D9A6300957A9B /* UserAuthViewModelSpec.swift */; };
 		ED1A94641E8E278400957A9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94631E8E278400957A9B /* LoginViewController.swift */; };
 		ED1A94671E8E328500957A9B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94661E8E328500957A9B /* SettingsViewController.swift */; };
+		ED1A946A1E8E6E0C00957A9B /* ResourceBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94691E8E6E0C00957A9B /* ResourceBasedViewController.swift */; };
+		ED1A94701E8E6F8900957A9B /* EmptyStateContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A946C1E8E6F8900957A9B /* EmptyStateContent.swift */; };
+		ED1A94711E8E6F8900957A9B /* EmptyStateErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A946D1E8E6F8900957A9B /* EmptyStateErrorView.swift */; };
+		ED1A94721E8E6F8900957A9B /* EmptyStateLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A946E1E8E6F8900957A9B /* EmptyStateLoadingView.swift */; };
+		ED1A94731E8E6F8900957A9B /* EmptyStateNoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A946F1E8E6F8900957A9B /* EmptyStateNoContentView.swift */; };
+		ED1A94761E8E7EA500957A9B /* ResourceListViewModelOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94751E8E7EA500957A9B /* ResourceListViewModelOutput.swift */; };
+		ED1A94781E8E7EEC00957A9B /* ResourceListViewModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94771E8E7EEC00957A9B /* ResourceListViewModelInput.swift */; };
 		ED208A6A1E8113D400B6074B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A691E8113D400B6074B /* AppDelegate.swift */; };
 		ED208A711E8113D400B6074B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED208A6F1E8113D400B6074B /* Main.storyboard */; };
 		ED208A731E8113D400B6074B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED208A721E8113D400B6074B /* Assets.xcassets */; };
@@ -76,6 +83,13 @@
 		ED1A94611E8D9A6300957A9B /* UserAuthViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthViewModelSpec.swift; sourceTree = "<group>"; };
 		ED1A94631E8E278400957A9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED1A94661E8E328500957A9B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ED1A94691E8E6E0C00957A9B /* ResourceBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceBasedViewController.swift; sourceTree = "<group>"; };
+		ED1A946C1E8E6F8900957A9B /* EmptyStateContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateContent.swift; sourceTree = "<group>"; };
+		ED1A946D1E8E6F8900957A9B /* EmptyStateErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateErrorView.swift; sourceTree = "<group>"; };
+		ED1A946E1E8E6F8900957A9B /* EmptyStateLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateLoadingView.swift; sourceTree = "<group>"; };
+		ED1A946F1E8E6F8900957A9B /* EmptyStateNoContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateNoContentView.swift; sourceTree = "<group>"; };
+		ED1A94751E8E7EA500957A9B /* ResourceListViewModelOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceListViewModelOutput.swift; sourceTree = "<group>"; };
+		ED1A94771E8E7EEC00957A9B /* ResourceListViewModelInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceListViewModelInput.swift; sourceTree = "<group>"; };
 		ED208A661E8113D400B6074B /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED208A691E8113D400B6074B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED208A701E8113D400B6074B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +183,35 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		ED1A94681E8E6DE100957A9B /* ResourceBase */ = {
+			isa = PBXGroup;
+			children = (
+				ED1A946B1E8E6F8900957A9B /* EmptyState */,
+				ED1A94691E8E6E0C00957A9B /* ResourceBasedViewController.swift */,
+			);
+			path = ResourceBase;
+			sourceTree = "<group>";
+		};
+		ED1A946B1E8E6F8900957A9B /* EmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				ED1A946C1E8E6F8900957A9B /* EmptyStateContent.swift */,
+				ED1A946D1E8E6F8900957A9B /* EmptyStateErrorView.swift */,
+				ED1A946E1E8E6F8900957A9B /* EmptyStateLoadingView.swift */,
+				ED1A946F1E8E6F8900957A9B /* EmptyStateNoContentView.swift */,
+			);
+			path = EmptyState;
+			sourceTree = "<group>";
+		};
+		ED1A94741E8E7E7500957A9B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				ED1A94751E8E7EA500957A9B /* ResourceListViewModelOutput.swift */,
+				ED1A94771E8E7EEC00957A9B /* ResourceListViewModelInput.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		ED208A5D1E8113D400B6074B = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +264,7 @@
 		ED208AB71E81A05100B6074B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				ED1A94681E8E6DE100957A9B /* ResourceBase */,
 				ED1A94651E8E327E00957A9B /* Settings */,
 				EDC48CF51E865EAD0000A83D /* Root */,
 				EDC48CF21E8652240000A83D /* ErrorPresenter */,
@@ -381,6 +425,7 @@
 		EDC76EC31E850EE400F95E70 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				ED1A94741E8E7E7500957A9B /* Resource */,
 				EDC76EC41E850EE400F95E70 /* Action */,
 				EDC76EC61E850EE400F95E70 /* SignInViewModel.swift */,
 				EDC76EC71E850EE400F95E70 /* SignUpViewModel.swift */,
@@ -615,10 +660,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC48D101E8A3D070000A83D /* UserAuthViewModel.swift in Sources */,
+				ED1A94711E8E6F8900957A9B /* EmptyStateErrorView.swift in Sources */,
 				EDC48D0E1E88F33E0000A83D /* UserViewModel.swift in Sources */,
 				EDC76ECE1E850EE400F95E70 /* SignUpViewModel.swift in Sources */,
 				ED208AC31E81AAAA00B6074B /* SignUpViewController.swift in Sources */,
 				ED208A6A1E8113D400B6074B /* AppDelegate.swift in Sources */,
+				ED1A946A1E8E6E0C00957A9B /* ResourceBasedViewController.swift in Sources */,
 				EDC48D071E88EA950000A83D /* FirebaseKit.swift in Sources */,
 				EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */,
 				EDC76ECA1E850EE400F95E70 /* FirebaseAuthService.swift in Sources */,
@@ -632,12 +679,17 @@
 				EDC48D121E8A40430000A83D /* UserRole.swift in Sources */,
 				ED69CFF91E8D7E7300A5669B /* UserRoleService.swift in Sources */,
 				EDC76ECB1E850EE400F95E70 /* User.swift in Sources */,
+				ED1A94781E8E7EEC00957A9B /* ResourceListViewModelInput.swift in Sources */,
+				ED1A94701E8E6F8900957A9B /* EmptyStateContent.swift in Sources */,
 				EDC48D0C1E88EFA20000A83D /* Assemblies.swift in Sources */,
 				ED69CFFD1E8D7EA100A5669B /* FirebaseUserRoleService.swift in Sources */,
+				ED1A94721E8E6F8900957A9B /* EmptyStateLoadingView.swift in Sources */,
 				EDC76EC91E850EE400F95E70 /* AuthService.swift in Sources */,
 				ED1A94671E8E328500957A9B /* SettingsViewController.swift in Sources */,
 				EDC48D061E88EA950000A83D /* APIService.swift in Sources */,
 				EDC48CFF1E8709FB0000A83D /* UsersViewController.swift in Sources */,
+				ED1A94731E8E6F8900957A9B /* EmptyStateNoContentView.swift in Sources */,
+				ED1A94761E8E7EA500957A9B /* ResourceListViewModelOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
