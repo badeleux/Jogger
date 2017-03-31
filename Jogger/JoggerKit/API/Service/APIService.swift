@@ -7,15 +7,8 @@
 //
 
 import Foundation
+import ReactiveSwift
 
-protocol APIError: Error {
-    
-}
-
-extension APIError {
-    
-}
-
-public protocol APIService {
+public protocol APIError: Error {
     
 }

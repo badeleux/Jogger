@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		52CBBFE70B69EC47579FF9EB /* Pods_JoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D891618552FD2F829166427E /* Pods_JoggerTests.framework */; };
 		C87C79F24F3DBCD22D64572B /* Pods_Jogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994D38F57C048939539B027D /* Pods_Jogger.framework */; };
+		ED1A94621E8D9A6300957A9B /* UserAuthViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94611E8D9A6300957A9B /* UserAuthViewModelSpec.swift */; };
+		ED1A94641E8E278400957A9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94631E8E278400957A9B /* LoginViewController.swift */; };
 		ED208A6A1E8113D400B6074B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A691E8113D400B6074B /* AppDelegate.swift */; };
 		ED208A6C1E8113D400B6074B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A6B1E8113D400B6074B /* FirstViewController.swift */; };
 		ED208A6E1E8113D400B6074B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A6D1E8113D400B6074B /* SecondViewController.swift */; };
@@ -18,13 +20,21 @@
 		ED208A811E8113D400B6074B /* JoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208A801E8113D400B6074B /* JoggerTests.swift */; };
 		ED208AB41E817E7300B6074B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ED208AB31E817E7300B6074B /* Podfile */; };
 		ED208AB61E818D6300B6074B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED208AB51E818D6300B6074B /* GoogleService-Info.plist */; };
-		ED208ABF1E81AA9B00B6074B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208ABE1E81AA9B00B6074B /* LoginViewController.swift */; };
 		ED208AC11E81AAA200B6074B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208AC01E81AAA200B6074B /* SignInViewController.swift */; };
 		ED208AC31E81AAAA00B6074B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED208AC21E81AAAA00B6074B /* SignUpViewController.swift */; };
+		ED69CFF91E8D7E7300A5669B /* UserRoleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69CFF81E8D7E7300A5669B /* UserRoleService.swift */; };
+		ED69CFFD1E8D7EA100A5669B /* FirebaseUserRoleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69CFFC1E8D7EA100A5669B /* FirebaseUserRoleService.swift */; };
+		ED69CFFF1E8D82D300A5669B /* SignalProducerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69CFFE1E8D82D300A5669B /* SignalProducerExtensions.swift */; };
 		EDC48CF41E8652300000A83D /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF31E8652300000A83D /* ErrorPresenter.swift */; };
 		EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF61E865EB80000A83D /* RootViewController.swift */; };
-		EDC48CF91E8660C40000A83D /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF81E8660C40000A83D /* LoginNavigationController.swift */; };
-		EDC76EC81E850EE400F95E70 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76EBC1E850EE400F95E70 /* APIService.swift */; };
+		EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */; };
+		EDC48CFF1E8709FB0000A83D /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CFE1E8709FB0000A83D /* UsersViewController.swift */; };
+		EDC48D061E88EA950000A83D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48D031E88EA950000A83D /* APIService.swift */; };
+		EDC48D071E88EA950000A83D /* FirebaseKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48D051E88EA950000A83D /* FirebaseKit.swift */; };
+		EDC48D0C1E88EFA20000A83D /* Assemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48D0B1E88EFA20000A83D /* Assemblies.swift */; };
+		EDC48D0E1E88F33E0000A83D /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48D0D1E88F33E0000A83D /* UserViewModel.swift */; };
+		EDC48D101E8A3D070000A83D /* UserAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48D0F1E8A3D070000A83D /* UserAuthViewModel.swift */; };
+		EDC48D121E8A40430000A83D /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48D111E8A40430000A83D /* UserRole.swift */; };
 		EDC76EC91E850EE400F95E70 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76EBE1E850EE400F95E70 /* AuthService.swift */; };
 		EDC76ECA1E850EE400F95E70 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76EC11E850EE400F95E70 /* FirebaseAuthService.swift */; };
 		EDC76ECB1E850EE400F95E70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76EC21E850EE400F95E70 /* User.swift */; };
@@ -33,7 +43,6 @@
 		EDC76ECE1E850EE400F95E70 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76EC71E850EE400F95E70 /* SignUpViewModel.swift */; };
 		EDC76ED01E850F3900F95E70 /* ActionStatusSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76ECF1E850F3900F95E70 /* ActionStatusSpec.swift */; };
 		EDC76ED31E85107900F95E70 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDC76ED21E85107900F95E70 /* Localizable.strings */; };
-		EDC76ED51E85175E00F95E70 /* FirebaseKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76ED41E85175E00F95E70 /* FirebaseKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +74,8 @@
 		AC318CE8D1EA2B4D018D10E8 /* Pods-Jogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jogger/Pods-Jogger.debug.xcconfig"; sourceTree = "<group>"; };
 		BC6F3A9C96C7F90377C4C033 /* Pods-Jogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jogger/Pods-Jogger.release.xcconfig"; sourceTree = "<group>"; };
 		D891618552FD2F829166427E /* Pods_JoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED1A94611E8D9A6300957A9B /* UserAuthViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthViewModelSpec.swift; sourceTree = "<group>"; };
+		ED1A94631E8E278400957A9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED208A661E8113D400B6074B /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED208A691E8113D400B6074B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED208A6B1E8113D400B6074B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -78,13 +89,21 @@
 		ED208A821E8113D400B6074B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED208AB31E817E7300B6074B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ED208AB51E818D6300B6074B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		ED208ABE1E81AA9B00B6074B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED208AC01E81AAA200B6074B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		ED208AC21E81AAAA00B6074B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		ED69CFF81E8D7E7300A5669B /* UserRoleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRoleService.swift; sourceTree = "<group>"; };
+		ED69CFFC1E8D7EA100A5669B /* FirebaseUserRoleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUserRoleService.swift; sourceTree = "<group>"; };
+		ED69CFFE1E8D82D300A5669B /* SignalProducerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerExtensions.swift; sourceTree = "<group>"; };
 		EDC48CF31E8652300000A83D /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		EDC48CF61E865EB80000A83D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		EDC48CF81E8660C40000A83D /* LoginNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
-		EDC76EBC1E850EE400F95E70 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		EDC48CFE1E8709FB0000A83D /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		EDC48D031E88EA950000A83D /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		EDC48D051E88EA950000A83D /* FirebaseKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseKit.swift; sourceTree = "<group>"; };
+		EDC48D0B1E88EFA20000A83D /* Assemblies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assemblies.swift; sourceTree = "<group>"; };
+		EDC48D0D1E88F33E0000A83D /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		EDC48D0F1E8A3D070000A83D /* UserAuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthViewModel.swift; sourceTree = "<group>"; };
+		EDC48D111E8A40430000A83D /* UserRole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
 		EDC76EBE1E850EE400F95E70 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		EDC76EC11E850EE400F95E70 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		EDC76EC21E850EE400F95E70 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -93,7 +112,6 @@
 		EDC76EC71E850EE400F95E70 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		EDC76ECF1E850F3900F95E70 /* ActionStatusSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionStatusSpec.swift; sourceTree = "<group>"; };
 		EDC76ED21E85107900F95E70 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		EDC76ED41E85175E00F95E70 /* FirebaseKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseKit.swift; sourceTree = "<group>"; };
 		FE52409CE8962596848E9E6E /* Pods-JoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoggerTests/Pods-JoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +155,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		ED1A94601E8D9A5700957A9B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED1A94611E8D9A6300957A9B /* UserAuthViewModelSpec.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		ED208A5D1E8113D400B6074B = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +187,7 @@
 		ED208A681E8113D400B6074B /* Jogger */ = {
 			isa = PBXGroup;
 			children = (
+				EDC48D0A1E88EF920000A83D /* DependencyInjection */,
 				EDC76ED11E85106C00F95E70 /* Resources */,
 				EDC76EBA1E850EE400F95E70 /* JoggerKit */,
 				ED208AB71E81A05100B6074B /* Screens */,
@@ -179,6 +206,7 @@
 		ED208A7F1E8113D400B6074B /* JoggerTests */ = {
 			isa = PBXGroup;
 			children = (
+				ED1A94601E8D9A5700957A9B /* ViewModel */,
 				EDC76ECF1E850F3900F95E70 /* ActionStatusSpec.swift */,
 				ED208A801E8113D400B6074B /* JoggerTests.swift */,
 				ED208A821E8113D400B6074B /* Info.plist */,
@@ -201,10 +229,9 @@
 		ED208AB81E81A05100B6074B /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				ED208ABE1E81AA9B00B6074B /* LoginViewController.swift */,
 				ED208AC01E81AAA200B6074B /* SignInViewController.swift */,
 				ED208AC21E81AAAA00B6074B /* SignUpViewController.swift */,
-				EDC48CF81E8660C40000A83D /* LoginNavigationController.swift */,
+				ED1A94631E8E278400957A9B /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -212,6 +239,7 @@
 		ED208AB91E81A05100B6074B /* Records */ = {
 			isa = PBXGroup;
 			children = (
+				EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */,
 			);
 			path = Records;
 			sourceTree = "<group>";
@@ -219,8 +247,25 @@
 		ED208ABA1E81A05100B6074B /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				EDC48CFE1E8709FB0000A83D /* UsersViewController.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		ED69CFFA1E8D7E9700A5669B /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				ED69CFFB1E8D7E9700A5669B /* Firebase */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		ED69CFFB1E8D7E9700A5669B /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				ED69CFFC1E8D7EA100A5669B /* FirebaseUserRoleService.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		EDC48CF21E8652240000A83D /* ErrorPresenter */ = {
@@ -239,11 +284,53 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		EDC48D001E870AA20000A83D /* Users */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		EDC48D011E870AA20000A83D /* Roles */ = {
+			isa = PBXGroup;
+			children = (
+				ED69CFFA1E8D7E9700A5669B /* Implementation */,
+				ED69CFF81E8D7E7300A5669B /* UserRoleService.swift */,
+			);
+			path = Roles;
+			sourceTree = "<group>";
+		};
+		EDC48D021E88EA950000A83D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EDC48D031E88EA950000A83D /* APIService.swift */,
+				EDC48D041E88EA950000A83D /* Firebase */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		EDC48D041E88EA950000A83D /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				EDC48D051E88EA950000A83D /* FirebaseKit.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		EDC48D0A1E88EF920000A83D /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				EDC48D0B1E88EFA20000A83D /* Assemblies.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
 		EDC76EBA1E850EE400F95E70 /* JoggerKit */ = {
 			isa = PBXGroup;
 			children = (
 				EDC76EBB1E850EE400F95E70 /* API */,
 				EDC76EC31E850EE400F95E70 /* ViewModel */,
+				ED69CFFE1E8D82D300A5669B /* SignalProducerExtensions.swift */,
 			);
 			path = JoggerKit;
 			sourceTree = "<group>";
@@ -251,9 +338,10 @@
 		EDC76EBB1E850EE400F95E70 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				EDC76EBC1E850EE400F95E70 /* APIService.swift */,
+				EDC48D021E88EA950000A83D /* Service */,
+				EDC48D001E870AA20000A83D /* Users */,
+				EDC48D011E870AA20000A83D /* Roles */,
 				EDC76EBD1E850EE400F95E70 /* Auth */,
-				EDC76ED41E85175E00F95E70 /* FirebaseKit.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -264,6 +352,7 @@
 				EDC76EBE1E850EE400F95E70 /* AuthService.swift */,
 				EDC76EBF1E850EE400F95E70 /* Implementation */,
 				EDC76EC21E850EE400F95E70 /* User.swift */,
+				EDC48D111E8A40430000A83D /* UserRole.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -290,6 +379,8 @@
 				EDC76EC41E850EE400F95E70 /* Action */,
 				EDC76EC61E850EE400F95E70 /* SignInViewModel.swift */,
 				EDC76EC71E850EE400F95E70 /* SignUpViewModel.swift */,
+				EDC48D0D1E88F33E0000A83D /* UserViewModel.swift */,
+				EDC48D0F1E8A3D070000A83D /* UserAuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -519,22 +610,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED208A6E1E8113D400B6074B /* SecondViewController.swift in Sources */,
-				EDC76ED51E85175E00F95E70 /* FirebaseKit.swift in Sources */,
+				EDC48D101E8A3D070000A83D /* UserAuthViewModel.swift in Sources */,
+				EDC48D0E1E88F33E0000A83D /* UserViewModel.swift in Sources */,
 				EDC76ECE1E850EE400F95E70 /* SignUpViewModel.swift in Sources */,
-				EDC48CF91E8660C40000A83D /* LoginNavigationController.swift in Sources */,
-				EDC76EC81E850EE400F95E70 /* APIService.swift in Sources */,
 				ED208AC31E81AAAA00B6074B /* SignUpViewController.swift in Sources */,
 				ED208A6A1E8113D400B6074B /* AppDelegate.swift in Sources */,
+				EDC48D071E88EA950000A83D /* FirebaseKit.swift in Sources */,
 				EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */,
 				EDC76ECA1E850EE400F95E70 /* FirebaseAuthService.swift in Sources */,
 				ED208AC11E81AAA200B6074B /* SignInViewController.swift in Sources */,
 				EDC76ECC1E850EE400F95E70 /* ActionStatus.swift in Sources */,
+				EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */,
 				ED208A6C1E8113D400B6074B /* FirstViewController.swift in Sources */,
+				ED1A94641E8E278400957A9B /* LoginViewController.swift in Sources */,
 				EDC76ECD1E850EE400F95E70 /* SignInViewModel.swift in Sources */,
+				ED69CFFF1E8D82D300A5669B /* SignalProducerExtensions.swift in Sources */,
 				EDC48CF41E8652300000A83D /* ErrorPresenter.swift in Sources */,
-				ED208ABF1E81AA9B00B6074B /* LoginViewController.swift in Sources */,
+				EDC48D121E8A40430000A83D /* UserRole.swift in Sources */,
+				ED69CFF91E8D7E7300A5669B /* UserRoleService.swift in Sources */,
 				EDC76ECB1E850EE400F95E70 /* User.swift in Sources */,
+				EDC48D0C1E88EFA20000A83D /* Assemblies.swift in Sources */,
+				ED69CFFD1E8D7EA100A5669B /* FirebaseUserRoleService.swift in Sources */,
 				EDC76EC91E850EE400F95E70 /* AuthService.swift in Sources */,
+				EDC48D061E88EA950000A83D /* APIService.swift in Sources */,
+				EDC48CFF1E8709FB0000A83D /* UsersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC76ED01E850F3900F95E70 /* ActionStatusSpec.swift in Sources */,
+				ED1A94621E8D9A6300957A9B /* UserAuthViewModelSpec.swift in Sources */,
 				ED208A811E8113D400B6074B /* JoggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

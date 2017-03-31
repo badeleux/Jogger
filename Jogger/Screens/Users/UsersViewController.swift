@@ -1,14 +1,14 @@
 //
-//  LoginViewController.swift
+//  UsersViewController.swift
 //  Jogger
 //
-//  Created by Kamil Badyla on 31.03.2017.
+//  Created by Kamil Badyla on 25.03.2017.
 //  Copyright © 2017 Science Spir.IT. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class UsersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,26 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let container = Container() { container in
-        
-        container.register(RootViewController.self) { r in RootViewController(loggedOut: r.resolve(LoginNavigationController.self)!, loggedIn: r.resolve(LoginNavigationController.self)!, authService: r.resolve(AuthService.self)!)}
-        
-        container.register(FIRAuth.self) { _ in FirebaseKit.shared.auth! }
-        container.register(AuthService.self) { r in FirebaseAuthService(auth: r.resolve(FIRAuth.self)) }
-        container.register(SignInViewModel.self) { r in SignInViewModel(authService: r.resolve(AuthService.self)! )}
-        container.register(SignUpViewModel.self) { r in SignUpViewModel(authService: r.resolve(AuthService.self)! )}
-        
-        container.storyboardInitCompleted(LoginNavigationController.self, initCompleted: { r, c in })
-        container.storyboardInitCompleted(SignUpViewController.self, initCompleted: { r, c in
-            c.signUpViewModel = r.resolve(SignUpViewModel.self)
-        })
-        container.storyboardInitCompleted(LoginViewController.self, initCompleted: { r, c in })
-        container.storyboardInitCompleted(SignInViewController.self, initCompleted: { r, c in
-            c.signInViewModel = r.resolve(SignInViewModel.self)
-        })
-        
-        
-    }
+    let assembler = try! Assembler(assemblies: [ServiceAssembly(), ViewModelAssembly(), ViewControllerAssembly()])
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -45,8 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
-        window.rootViewController = storyboard.instantiateInitialViewController()
+        Container.loggingFunction = nil
+        
+        let storyboard = assembler.resolver.resolve(SwinjectStoryboard.self)
+        let rootVC = storyboard?.instantiateInitialViewController()
+        window.rootViewController = rootVC
         
         return true
     }

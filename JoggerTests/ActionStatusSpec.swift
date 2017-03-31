@@ -2,7 +2,7 @@ import Quick
 import Nimble
 import ReactiveSwift
 import Result
-@testable import JoggerKit
+@testable import Jogger
 
 class ActionStatusSpec: QuickSpec {
     override func spec() {

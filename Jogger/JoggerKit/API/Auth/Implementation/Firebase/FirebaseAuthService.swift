@@ -39,17 +39,14 @@ extension Observer where Error: APIError {
 }
 
 public class FirebaseAuthService: AuthService {
-    public let currentUser: SignalProducer<User?, NoError>
-
-    private let currentUserProperty = MutableProperty<User?>(nil)
+    public let currentUser = MutableProperty<User?>(nil)
     
     let auth: FIRAuth?
     
     public init(auth: FIRAuth?) {
         self.auth = auth
-        self.currentUser = self.currentUserProperty.producer
         self.auth?.addStateDidChangeListener({ [weak self] (_, user: FIRUser?) in
-            self?.currentUserProperty.value = user
+            self?.currentUser.value = user
         })
     }
     

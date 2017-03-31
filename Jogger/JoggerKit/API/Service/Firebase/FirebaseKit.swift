@@ -8,11 +8,10 @@
 
 import Foundation
 import Firebase
+import ReactiveSwift
 
 class FirebaseKit {
-    static let shared = FirebaseKit()
-    
-    private init() {
+    init() {
         FIRApp.configure()
         self.auth?.addStateDidChangeListener({ (auth: FIRAuth, user: FIRUser?) in
             user?.getTokenWithCompletion({ (token, error) in
@@ -23,5 +22,9 @@ class FirebaseKit {
     
     var auth: FIRAuth? {
         return FIRAuth.auth()
+    }
+    
+    var db: FIRDatabase? {
+        return FIRDatabase.database()
     }
 }

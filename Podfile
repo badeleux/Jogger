@@ -20,14 +20,10 @@ target 'Jogger' do
 
     target 'JoggerTests' do
         inherit! :search_paths
-
+        pod 'Firebase'
         pod 'Quick'
         pod 'Nimble'
     end
-end
-
-abstract_target 'Firebase' do
-    
 end
 
 post_install do |installer|

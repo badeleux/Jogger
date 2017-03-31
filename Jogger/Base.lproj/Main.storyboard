@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-2260" y="-1240"/>
         </scene>
-        <!--Login Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="vg3-8x-7ba">
             <objects>
-                <navigationController id="VwE-gQ-WUW" customClass="LoginNavigationController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNav" id="VwE-gQ-WUW" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ncn-S4-G1o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

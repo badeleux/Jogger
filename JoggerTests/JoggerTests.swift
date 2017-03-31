@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import Jogger
 
 class JoggerTests: XCTestCase {
     

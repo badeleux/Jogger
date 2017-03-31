@@ -1,5 +1,7 @@
 PODS:
   - EasyPeasy (1.4.2)
+  - Firebase (3.14.0):
+    - Firebase/Core (= 3.14.0)
   - Firebase/Auth (3.14.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
@@ -51,6 +53,7 @@ PODS:
 
 DEPENDENCIES:
   - EasyPeasy
+  - Firebase
   - Firebase/Auth
   - Firebase/Database
   - Himotoki (~> 3.0)
@@ -88,6 +91,6 @@ SPEC CHECKSUMS:
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
 
-PODFILE CHECKSUM: 6b664be9bce1d84d793657eada2f896829de6570
+PODFILE CHECKSUM: 8f3ed468dbbb6eaee3558ce8996ad03de6b1f1b8
 
 COCOAPODS: 1.2.0

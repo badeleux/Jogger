@@ -9,37 +9,29 @@
 import Foundation
 import UIKit
 import EasyPeasy
+import Swinject
 
 class RootViewController: UIViewController {
-    let loggedOut: UIViewController
-    let loggedIn: UIViewController
-    let authService: AuthService
-    
-    var currentVC: UIViewController?
-    
-    init(loggedOut: UIViewController, loggedIn: UIViewController, authService: AuthService) {
-        self.loggedOut = loggedOut
-        self.loggedIn = loggedIn
-        self.authService = authService
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var mainStoryboard: UIStoryboard? = nil
+    var userAuthViewModel: UserAuthViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.authService
-            .currentUser
-            .on { [weak self] (user: User?) in
-                self?.setUp(forUser: user)
+        
+        self.userAuthViewModel!
+            .rootViewState
+            .skipRepeats()
+            .observeValues { [weak self] (state: RootViewState) in
+                self?.setUp(forState: state)
             }
-            .start()
+ 
+        
     }
+
+    var currentVC: UIViewController? = nil
     
-    func setUp(forUser user: User?) {
-        let newController = user != nil ? loggedIn : loggedOut
+    func setUp(forState state: RootViewState) {
+        let newController = self.viewController(forState: state)
         if let vc = currentVC, vc != newController {
             self.transition(from: vc, to: newController, duration: 0.0, options: .allowUserInteraction, animations: nil, completion: nil)
         }
@@ -50,4 +42,14 @@ class RootViewController: UIViewController {
             newController.didMove(toParentViewController: self)
         }
     }
+    
+    func viewController(forState state: RootViewState) -> UIViewController {
+        switch state {
+        case .logIn:
+            return self.mainStoryboard!.instantiateViewController(withIdentifier: "LoginNav")
+        default:
+            return UIViewController()
+        }
+    }
+ 
 }
