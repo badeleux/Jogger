@@ -12,3 +12,8 @@
 "sign_in_password" = "Password";
 "sign_in_email_placeholder" = "Please specify";
 "sign_in_password_placeholder" = "Please specify";
+
+//EmptyStates
+"no_users" = "No users";
+"no_records" = "No records";
+"no_results" = "No results";

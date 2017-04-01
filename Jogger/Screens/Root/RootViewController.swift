@@ -20,6 +20,7 @@ class RootViewController: UIViewController {
         
         self.userAuthViewModel!
             .rootViewState
+            .signal
             .skipRepeats()
             .observeValues { [weak self] (state: RootViewState) in
                 self?.setUp(forState: state)
@@ -49,13 +50,13 @@ class RootViewController: UIViewController {
             return self.mainStoryboard!.instantiateViewController(withIdentifier: "LoginNav")
         case .regular:
             let settingsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "SettingsVC")
-            let recordsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "RecordsVC")
+            let recordsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "RecordsNav")
             let tabBar = UITabBarController()
             tabBar.viewControllers = [recordsVC, settingsVC]
             return tabBar
         default:
             let settingsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "SettingsVC")
-            let recordsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "RecordsVC")
+            let recordsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "RecordsNav")
             let usersVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "UsersVC")
             let tabBar = UITabBarController()
             tabBar.viewControllers = [recordsVC, usersVC, settingsVC]

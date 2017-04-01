@@ -10,9 +10,9 @@
 #endif
 #endif
 
-#import "GTMDefines.h"
-#import "GTMNSData+zlib.h"
+#import "MGSwipeButton.h"
+#import "MGSwipeTableCell.h"
 
-FOUNDATION_EXPORT double GoogleToolboxForMacVersionNumber;
-FOUNDATION_EXPORT const unsigned char GoogleToolboxForMacVersionString[];
+FOUNDATION_EXPORT double MGSwipeTableCellVersionNumber;
+FOUNDATION_EXPORT const unsigned char MGSwipeTableCellVersionString[];
 

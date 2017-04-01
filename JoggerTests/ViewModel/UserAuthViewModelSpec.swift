@@ -33,8 +33,12 @@ class RootViewStateSpec: QuickSpec {
     }
 }
 
-struct DummyAuthService: AuthService {
+struct AuthServiceStub: AuthService {
     let currentUser = MutableProperty<User?>(nil)
+    
+    init(user: User?) {
+        self.currentUser.value = user
+    }
     
     func signOut() -> SignalProducer<Bool, NSError> {
         return .empty
@@ -49,16 +53,68 @@ struct DummyAuthService: AuthService {
     }
 }
 
+struct UserRoleServiceStub: UserRoleService {
+    
+    var role: UserRole?
+    init(role: UserRole?) {
+        self.role = role
+    }
+    
+    func role(forUserId userId: UserId) -> SignalProducer<UserRole, NSError> {
+        return .init(value: self.role!)
+    }
+}
+
+struct UserStub: User {
+    var userId: UserId = "0"
+    var email: String? = nil
+}
+
 class UserAuthViewModelSpec: QuickSpec {
     
     override func spec() {
+        var container: Container!
+        beforeEach {
+            container = Container()
+
+            container.register(UserAuthViewModel.self, factory: { (resolver: Resolver, user: User?, role: UserRole) -> UserAuthViewModel in
+                return UserAuthViewModel(authService: AuthServiceStub(user: user), resolver: resolver, rolesService: UserRoleServiceStub(role: role))
+            })
+        }
+        
         describe("root view state") { 
             context("when user is logged out", { 
                 it("is equal to logIn", closure: {
-                    //TOOD create user auth view model here
-                    let userAuthVM: UserAuthViewModel? = nil
-                    expect(userAuthVM!.rootViewState.first()).to(equal(RootViewState.logIn))
+                    let user: User? = nil
+                    let userAuthVM: UserAuthViewModel? = container.resolve(UserAuthViewModel.self, arguments: user, UserRole.regular)
+                    expect(userAuthVM!.rootViewState.value).to(equal(RootViewState.logIn))
                 })
+            })
+            context("when user is logged in state depends on role", {
+                context("role is regular", { 
+                    it("state is regular", closure: {
+                        let user: User? = UserStub()
+                        let userAuthVM: UserAuthViewModel? = container.resolve(UserAuthViewModel.self, arguments: user, UserRole.regular)
+                        expect(userAuthVM!.rootViewState.value).toEventually(equal(RootViewState.regular))
+                    })
+                })
+                
+                context("role is user_manager", {
+                    it("state is manager", closure: {
+                        let user: User? = UserStub()
+                        let userAuthVM: UserAuthViewModel? = container.resolve(UserAuthViewModel.self, arguments: user, UserRole.userManager)
+                        expect(userAuthVM!.rootViewState.value).toEventually(equal(RootViewState.manager))
+                    })
+                })
+                
+                context("role is admin", {
+                    it("state is admin", closure: {
+                        let user: User? = UserStub()
+                        let userAuthVM: UserAuthViewModel? = container.resolve(UserAuthViewModel.self, arguments: user, UserRole.admin)
+                        expect(userAuthVM!.rootViewState.value).toEventually(equal(RootViewState.admin))
+                    })
+                })
+
             })
         }
     }

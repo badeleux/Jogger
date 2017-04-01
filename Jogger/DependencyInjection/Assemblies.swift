@@ -19,6 +19,7 @@ class ServiceAssembly: Assembly {
         container.register(AuthService.self) { r in FirebaseAuthService(auth: r.resolve(FIRAuth.self)) }
         container.register(UserRoleService.self) { r in FirebaseUserRoleService(database: r.resolve(FIRDatabase.self)!) }.inObjectScope(.container)
         container.register(ProfileService.self) { r in FirebaseProfileService() }.inObjectScope(.container)
+        container.register(RecordsService.self) { r in FirebaseRecordService(database: r.resolve(FIRDatabase.self)!) }.inObjectScope(.container)
     }
 }
 
@@ -32,6 +33,15 @@ class ViewModelAssembly: Assembly {
         container.register(UserAuthViewModel.self) { r in
             UserAuthViewModel(authService: r.resolve(AuthService.self)!, resolver: r, rolesService: r.resolve(UserRoleService.self)!)
         }.inObjectScope(.container)
+        container.register(RecordsViewModel.self) { (r: Resolver) -> RecordsViewModel in
+            return RecordsViewModel(recordsService: r.resolve(RecordsService.self)!)
+        }
+        container.register(RecordAddViewModel.self) { r in
+            return RecordAddViewModel(recordsService: r.resolve(RecordsService.self)!, userAuthViewModel: r.resolve(UserAuthViewModel.self)!)
+        }
+        container.register(RecordEditViewModel.self) { r in
+            return RecordEditViewModel(recordsService: r.resolve(RecordsService.self)!, userAuthViewModel: r.resolve(UserAuthViewModel.self)!)
+        }
     }
 }
 
@@ -55,6 +65,16 @@ class ViewControllerAssembly: Assembly {
         })
         container.storyboardInitCompleted(SettingsViewController.self) { (r, c) in
             c.authService = r.resolve(AuthService.self)
+        }
+        container.storyboardInitCompleted(RecordsViewController.self) { (r, c) in
+            c.viewModel = r.resolve(RecordsViewModel.self)
+            c.userAuthViewModel = r.resolve(UserAuthViewModel.self)
+        }
+        container.storyboardInitCompleted(RecordAddFormViewController.self) { (r, c) in
+            c.recordEditableViewModel = r.resolve(RecordAddViewModel.self)
+        }
+        container.storyboardInitCompleted(RecordEditFormViewController.self) { (r, c) in
+            c.recordEditableViewModel = r.resolve(RecordEditViewModel.self)
         }
         
     }

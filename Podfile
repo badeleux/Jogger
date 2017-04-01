@@ -13,6 +13,7 @@ target 'Jogger' do
     pod 'ReactiveCocoa'
     pod 'SwiftDate'
     pod 'SwiftMessages'
+    pod 'MGSwipeTableCell'
 
     pod 'Firebase/Database'
     pod 'Firebase/Auth'
@@ -20,7 +21,8 @@ target 'Jogger' do
 
     target 'JoggerTests' do
         inherit! :search_paths
-        pod 'Firebase'
+        pod 'Firebase/Database'
+        pod 'Firebase/Auth'
         pod 'Quick'
         pod 'Nimble'
     end
