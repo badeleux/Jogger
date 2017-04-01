@@ -30,18 +30,7 @@ class UserAuthViewModel {
     init(authService: AuthService, resolver: Resolver, rolesService: UserRoleService) {
         self.authService = authService
         
-        userAuthenticatedProperty <~ authService.currentUser.signal.map { $0 != nil }
-        userViewModelProperty <~ authService.currentUser.signal.map { resolver.resolve(UserViewModel.self, argument: $0) }
-        userRoleProperty <~ authService.currentUser.signal.flatMap(.latest, transform: { (user: User?) -> SignalProducer<UserRole, NoError> in
-            if let u = user {
-                return rolesService.role(forUserId: u.userId).ignoreError()
-            }
-            else {
-                return .init(value:.regular)
-            }
-        })
-        
-        self.rootViewState = Signal.combineLatest(self.userAuthenticatedProperty.signal, self.userRoleProperty.signal).map { (t: (Bool, UserRole)) -> RootViewState in
+        rootViewState = Property(initial: .logIn, then: Signal.combineLatest(self.userAuthenticatedProperty.signal, self.userRoleProperty.signal).map { (t: (Bool, UserRole)) -> RootViewState in
             if !t.0 {
                 return .logIn
             }
@@ -55,11 +44,24 @@ class UserAuthViewModel {
                     return .admin
                 }
             }
-        }
+        })
+        
+        userAuthenticatedProperty <~ authService.currentUser.producer.map { $0 != nil }
+        userViewModelProperty <~ authService.currentUser.producer.map { resolver.resolve(UserViewModel.self, argument: $0) }
+        userRoleProperty <~ authService.currentUser.producer.flatMap(.latest, transform: { (user: User?) -> SignalProducer<UserRole, NoError> in
+            if let u = user {
+                return rolesService.role(forUserId: u.userId).ignoreError()
+            }
+            else {
+                return .init(value:.regular)
+            }
+        })
+        
+
         
     }
     
     // MARK: - Outputs
-    let rootViewState: Signal<RootViewState, NoError>
+    let rootViewState: Property<RootViewState>
     
 }

@@ -49,6 +49,12 @@
 		EDC76ECE1E850EE400F95E70 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76EC71E850EE400F95E70 /* SignUpViewModel.swift */; };
 		EDC76ED01E850F3900F95E70 /* ActionStatusSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC76ECF1E850F3900F95E70 /* ActionStatusSpec.swift */; };
 		EDC76ED31E85107900F95E70 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDC76ED21E85107900F95E70 /* Localizable.strings */; };
+		EDDE542E1E8E832E00F3F630 /* RecordsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE542D1E8E832E00F3F630 /* RecordsViewModel.swift */; };
+		EDDE54311E8E83BB00F3F630 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE54301E8E83BB00F3F630 /* Record.swift */; };
+		EDDE54331E8E8FED00F3F630 /* RecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE54321E8E8FED00F3F630 /* RecordService.swift */; };
+		EDDE54371E8E90B800F3F630 /* FirebaseRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE54361E8E90B800F3F630 /* FirebaseRecordService.swift */; };
+		EDDE54391E8E92CA00F3F630 /* FirebaseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE54381E8E92CA00F3F630 /* FirebaseMapper.swift */; };
+		EDDE543B1E8E942600F3F630 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE543A1E8E942600F3F630 /* Mapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +130,12 @@
 		EDC76EC71E850EE400F95E70 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		EDC76ECF1E850F3900F95E70 /* ActionStatusSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionStatusSpec.swift; sourceTree = "<group>"; };
 		EDC76ED21E85107900F95E70 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		EDDE542D1E8E832E00F3F630 /* RecordsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewModel.swift; sourceTree = "<group>"; };
+		EDDE54301E8E83BB00F3F630 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		EDDE54321E8E8FED00F3F630 /* RecordService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordService.swift; sourceTree = "<group>"; };
+		EDDE54361E8E90B800F3F630 /* FirebaseRecordService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseRecordService.swift; sourceTree = "<group>"; };
+		EDDE54381E8E92CA00F3F630 /* FirebaseMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMapper.swift; sourceTree = "<group>"; };
+		EDDE543A1E8E942600F3F630 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		FE52409CE8962596848E9E6E /* Pods-JoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoggerTests/Pods-JoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -354,6 +366,7 @@
 			children = (
 				EDC48D031E88EA950000A83D /* APIService.swift */,
 				EDC48D041E88EA950000A83D /* Firebase */,
+				EDDE543A1E8E942600F3F630 /* Mapper.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -362,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				EDC48D051E88EA950000A83D /* FirebaseKit.swift */,
+				EDDE54381E8E92CA00F3F630 /* FirebaseMapper.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -387,6 +401,7 @@
 		EDC76EBB1E850EE400F95E70 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				EDDE542F1E8E83B300F3F630 /* Records */,
 				EDC48D021E88EA950000A83D /* Service */,
 				EDC48D001E870AA20000A83D /* Users */,
 				EDC48D011E870AA20000A83D /* Roles */,
@@ -425,6 +440,7 @@
 		EDC76EC31E850EE400F95E70 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EDDE542C1E8E832700F3F630 /* Records */,
 				ED1A94741E8E7E7500957A9B /* Resource */,
 				EDC76EC41E850EE400F95E70 /* Action */,
 				EDC76EC61E850EE400F95E70 /* SignInViewModel.swift */,
@@ -449,6 +465,40 @@
 				EDC76ED21E85107900F95E70 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EDDE542C1E8E832700F3F630 /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				EDDE542D1E8E832E00F3F630 /* RecordsViewModel.swift */,
+			);
+			path = Records;
+			sourceTree = "<group>";
+		};
+		EDDE542F1E8E83B300F3F630 /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				EDDE54341E8E900200F3F630 /* Implementation */,
+				EDDE54301E8E83BB00F3F630 /* Record.swift */,
+				EDDE54321E8E8FED00F3F630 /* RecordService.swift */,
+			);
+			path = Records;
+			sourceTree = "<group>";
+		};
+		EDDE54341E8E900200F3F630 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				EDDE54351E8E900200F3F630 /* Firebase */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		EDDE54351E8E900200F3F630 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				EDDE54361E8E90B800F3F630 /* FirebaseRecordService.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -661,6 +711,7 @@
 			files = (
 				EDC48D101E8A3D070000A83D /* UserAuthViewModel.swift in Sources */,
 				ED1A94711E8E6F8900957A9B /* EmptyStateErrorView.swift in Sources */,
+				EDDE54331E8E8FED00F3F630 /* RecordService.swift in Sources */,
 				EDC48D0E1E88F33E0000A83D /* UserViewModel.swift in Sources */,
 				EDC76ECE1E850EE400F95E70 /* SignUpViewModel.swift in Sources */,
 				ED208AC31E81AAAA00B6074B /* SignUpViewController.swift in Sources */,
@@ -670,13 +721,18 @@
 				EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */,
 				EDC76ECA1E850EE400F95E70 /* FirebaseAuthService.swift in Sources */,
 				ED208AC11E81AAA200B6074B /* SignInViewController.swift in Sources */,
+				EDDE543B1E8E942600F3F630 /* Mapper.swift in Sources */,
+				EDDE54371E8E90B800F3F630 /* FirebaseRecordService.swift in Sources */,
 				EDC76ECC1E850EE400F95E70 /* ActionStatus.swift in Sources */,
 				EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */,
 				ED1A94641E8E278400957A9B /* LoginViewController.swift in Sources */,
 				EDC76ECD1E850EE400F95E70 /* SignInViewModel.swift in Sources */,
+				EDDE542E1E8E832E00F3F630 /* RecordsViewModel.swift in Sources */,
 				ED69CFFF1E8D82D300A5669B /* SignalProducerExtensions.swift in Sources */,
+				EDDE54311E8E83BB00F3F630 /* Record.swift in Sources */,
 				EDC48CF41E8652300000A83D /* ErrorPresenter.swift in Sources */,
 				EDC48D121E8A40430000A83D /* UserRole.swift in Sources */,
+				EDDE54391E8E92CA00F3F630 /* FirebaseMapper.swift in Sources */,
 				ED69CFF91E8D7E7300A5669B /* UserRoleService.swift in Sources */,
 				EDC76ECB1E850EE400F95E70 /* User.swift in Sources */,
 				ED1A94781E8E7EEC00957A9B /* ResourceListViewModelInput.swift in Sources */,

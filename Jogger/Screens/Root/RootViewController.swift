@@ -20,6 +20,7 @@ class RootViewController: UIViewController {
         
         self.userAuthViewModel!
             .rootViewState
+            .signal
             .skipRepeats()
             .observeValues { [weak self] (state: RootViewState) in
                 self?.setUp(forState: state)

@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import ReactiveSwift
 
-class RecordsViewController: UIViewController {
+class RecordsViewController: UIViewController, TableViewControllerProtocol, ListResourceBasedViewController {
 
+    var viewModel: RecordsViewModel!
+    var dataSource = MutableProperty<[Record]?>(nil)
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

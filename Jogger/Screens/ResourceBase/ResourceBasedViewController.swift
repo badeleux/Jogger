@@ -38,9 +38,8 @@ extension TableViewControllerProtocol where Self: ViewControllerProtocol & UITab
 extension UIViewController: ViewControllerProtocol {}
 
 protocol ResourceBasedViewController: StatefulViewController, ViewControllerProtocol {
-    associatedtype E: Swift.Error
     associatedtype VM: ResourceViewModelOutput
-    var viewModel: VM { get }
+    var viewModel: VM! { get }
     var dataSource: MutableProperty<VM.D?> { get }
 }
 

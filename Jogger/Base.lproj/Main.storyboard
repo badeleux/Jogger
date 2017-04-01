@@ -128,17 +128,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wU-DL-9Lh">
-                                <rect key="frame" x="166" y="299" width="63" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wza-xb-NiM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Kbr-rS-Uq5">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kbr-rS-Uq5" id="Ry2-Eg-yBh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wza-xb-NiM" firstAttribute="top" secondItem="CbF-nW-U8S" secondAttribute="bottom" id="8WN-Wq-hGJ"/>
+                            <constraint firstItem="YQ2-yI-o17" firstAttribute="top" secondItem="wza-xb-NiM" secondAttribute="bottom" id="Hqq-Oa-gIp"/>
+                            <constraint firstItem="wza-xb-NiM" firstAttribute="leading" secondItem="FOA-Uz-Jcl" secondAttribute="leading" id="N1H-QY-RrU"/>
+                            <constraint firstAttribute="trailing" secondItem="wza-xb-NiM" secondAttribute="trailing" id="f2D-t3-peG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="ywz-Qt-o4K"/>
+                    <connections>
+                        <outlet property="tableView" destination="wza-xb-NiM" id="GLF-QA-fO9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIz-yJ-pSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
