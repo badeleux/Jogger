@@ -10,12 +10,26 @@ import Foundation
 import Himotoki
 import SwiftDate
 
+typealias RecordID = String
+
 struct Record: Decodable, Encodable {
+    let recordID: String?
     let date: Date
     let distance: Float
     let time: TimeInterval
+    
+    init(recordID: String? = nil, date: Date, distance: Float, time: TimeInterval) {
+        self.recordID = recordID
+        self.date = date
+        self.distance = distance
+        self.time = time
+    }
+    
     static func decode(_ e: Extractor) throws -> Record {
-        return try Record(date: Transformers.isoInternetDateTime.apply(e <| "date"), distance: e <| "distance", time: e <| "time")
+        return try Record(recordID: e <|? "id",
+                          date: Transformers.isoInternetDateTime.apply(e <| "date"),
+                          distance: e <| "distance",
+                          time: e <| "time")
     }
     
     func encode() -> Any? {

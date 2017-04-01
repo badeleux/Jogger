@@ -34,6 +34,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
   - Himotoki (3.0.1)
+  - MGSwipeTableCell (1.5.6)
   - Nimble (6.0.1)
   - Quick (1.1.0)
   - ReactiveCocoa (5.0.1):
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Himotoki (~> 3.0)
+  - MGSwipeTableCell
   - Nimble
   - Quick
   - ReactiveCocoa
@@ -76,6 +78,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   Himotoki: 85fda41d4d0e14f7228317a3b474175cdfb8f515
+  MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   ReactiveCocoa: f577006aa6c7b0b08020109ebaae3b77ada00adc
@@ -88,6 +91,6 @@ SPEC CHECKSUMS:
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
 
-PODFILE CHECKSUM: 7b8da8e0bb60baa3f9b266d9e1b6ebeafb264046
+PODFILE CHECKSUM: 2ffd48be5d67c5d786f6ccbfdadd9fab10297061
 
 COCOAPODS: 1.2.0

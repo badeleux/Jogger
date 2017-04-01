@@ -70,4 +70,28 @@ class FirebaseRecordService: RecordsService {
                 })
         }
     }
+    
+    func delete(recordID: RecordID, forUserId userId: UserId) -> SignalProducer<(), NSError> {
+        return SignalProducer { o, d in
+            self.database.reference()
+                .child("records")
+                .child(userId)
+                .child(recordID)
+                .removeValue(completionBlock: { (error, _) in
+                    if error != nil {
+                        if let e = error as NSError? {
+                            o.send(error: e)
+                        }
+                        else {
+                            o.send(error: NSError.unknownError())
+                        }
+                    }
+                    else {
+                        o.send(value: ())
+                        o.sendCompleted()
+                    }
+
+                })
+        }
+    }
 }

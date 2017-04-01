@@ -148,7 +148,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" textLabel="IMn-4J-5kT" rowHeight="80" style="IBUITableViewCellStyleDefault" id="Kbr-rS-Uq5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" textLabel="IMn-4J-5kT" rowHeight="80" style="IBUITableViewCellStyleDefault" id="Kbr-rS-Uq5" customClass="MGSwipeTableCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kbr-rS-Uq5" id="Ry2-Eg-yBh">

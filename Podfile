@@ -13,6 +13,7 @@ target 'Jogger' do
     pod 'ReactiveCocoa'
     pod 'SwiftDate'
     pod 'SwiftMessages'
+    pod 'MGSwipeTableCell'
 
     pod 'Firebase/Database'
     pod 'Firebase/Auth'

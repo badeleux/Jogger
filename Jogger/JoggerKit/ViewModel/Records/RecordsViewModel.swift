@@ -23,11 +23,20 @@ class RecordsViewModel: ResourceViewModelInput, ResourceViewModelOutput {
         self.refreshProperty.value = ()
     }
     
+    func delete(recordID: RecordID) -> SignalProducer<Bool, NSError> {
+        return self.userIdProperty.producer.skipNil().take(first: 1).flatMap(.latest) { (uid: UserId) -> SignalProducer<Bool, NSError> in
+            return self.recordsService.delete(recordID: recordID, forUserId: uid).map { _ in true }
+        }.on(completed: { [weak self] in
+            self?.refresh()
+        })
+    }
+    
     private let lifetime: (Lifetime, Lifetime.Token)
     
     //OUTPUTS
     let resourceData: Signal<[Record], NoError>
     let resourceStatus: Property<ActionStatus<NSError>>
+    
     
     
     private let recordsService: RecordsService

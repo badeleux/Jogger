@@ -26,7 +26,16 @@ class FirebaseMapper: Mapper {
     
     func mapToArray<T : Decodable>(data: D, toArrayWith type: T.Type) -> Result<[T], NSError> {
         return Result(attempt: { () -> [T] in
-            return try [T].decode(data.children.allObjects.map { ($0 as! FIRDataSnapshot).value })
+            return try [T].decode(data.children.allObjects.map({ (a: Any) -> [String : Any] in
+                if let snapshot = a as? FIRDataSnapshot, let dict = snapshot.value as? [String : Any] {
+                    var d = dict
+                    d["id"] = snapshot.key
+                    return d
+                }
+                else {
+                    return [:]
+                }
+            }))
         })
     }
 }

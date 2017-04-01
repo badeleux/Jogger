@@ -12,4 +12,5 @@ import ReactiveSwift
 protocol RecordsService {
     func records(forUserId userId: UserId) -> SignalProducer<[Record], NSError>
     func add(record: Record, forUserId userId: UserId) -> SignalProducer<Record, NSError>
+    func delete(recordID: RecordID, forUserId userId: UserId) -> SignalProducer<(), NSError>
 }
