@@ -7,13 +7,25 @@
 //
 
 import UIKit
+import ReactiveSwift
 
-class UsersViewController: UIViewController {
+class UsersViewController: UIViewController, TableViewControllerProtocol, ListResourceBasedViewController {
+    
+    static let UserCellID = "UserCell"
 
+    var viewModel: ProfilesViewModel!
+    var dataSource = MutableProperty<Array<Profile>?>(nil)
+    
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.dataSource <~ self.viewModel.resourceData
+        self.setUp(content: .users)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewModel.refresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +44,18 @@ class UsersViewController: UIViewController {
     }
     */
 
+}
+
+extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: UsersViewController.UserCellID, for: indexPath)
+        if let user = self.dataSource.value?[indexPath.row] {
+            cell.textLabel?.text = user.email
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataSource.value?.count ?? 0
+    }
 }

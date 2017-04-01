@@ -42,9 +42,11 @@ public class FirebaseAuthService: AuthService {
     public let currentUser = MutableProperty<User?>(nil)
     
     let auth: FIRAuth?
+    let profileService: ProfileService
     
-    public init(auth: FIRAuth?) {
+    init(auth: FIRAuth?, profileService: ProfileService) {
         self.auth = auth
+        self.profileService = profileService
         self.auth?.addStateDidChangeListener({ [weak self] (_, user: FIRUser?) in
             self?.currentUser.value = user
         })
@@ -63,7 +65,10 @@ public class FirebaseAuthService: AuthService {
             return self?.auth?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
                 o.send(user: user, error: error)
             })
-        }
+        }.flatMap(.latest, transform: { [weak self] (user: User) -> SignalProducer<User, NSError> in
+            return self?.profileService.add(profile: Profile(user: user))
+                .map { _ in user } ?? .empty
+        })
     }
     
     public func signOut() -> SignalProducer<Bool, NSError> {

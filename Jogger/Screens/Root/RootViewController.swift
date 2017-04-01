@@ -57,7 +57,7 @@ class RootViewController: UIViewController {
         default:
             let settingsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "SettingsVC")
             let recordsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "RecordsNav")
-            let usersVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "UsersVC")
+            let usersVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "UsersNav")
             let tabBar = UITabBarController()
             tabBar.viewControllers = [recordsVC, usersVC, settingsVC]
             return tabBar

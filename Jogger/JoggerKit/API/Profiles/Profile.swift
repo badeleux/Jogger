@@ -7,8 +7,29 @@
 //
 
 import Foundation
+import Himotoki
 
-struct Profile {
+struct Profile: Decodable, Encodable {
     let userID: UserId
-    let email: String
+    let email: String?
+    
+    init(user: User) {
+        self.userID = user.userId
+        self.email = user.email ?? ""
+    }
+    
+    init(userID: UserId, email: String?) {
+        self.userID = userID
+        self.email = email
+    }
+    
+    static func decode(_ e: Extractor) throws -> Profile {
+        return try Profile(userID: e <| "id", email: e <|? "email")
+    }
+    
+    func encode() -> Any? {
+        return ["email" : email]
+    }
+    
+    
 }
