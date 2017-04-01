@@ -10,5 +10,6 @@ import Foundation
 import ReactiveSwift
 
 protocol RecordsService {
-    func records(forUserId userId: UserId) -> SignalProducer<[Record], NSError> 
+    func records(forUserId userId: UserId) -> SignalProducer<[Record], NSError>
+    func add(record: Record, forUserId userId: UserId) -> SignalProducer<Record, NSError>
 }

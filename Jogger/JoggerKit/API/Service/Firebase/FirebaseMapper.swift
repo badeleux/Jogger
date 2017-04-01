@@ -13,6 +13,7 @@ import Result
 
 protocol AnyValueContainable {
     var value: Any? { get }
+    var children: NSEnumerator { get }
 }
 
 extension FIRDataSnapshot: AnyValueContainable {}
@@ -24,11 +25,8 @@ class FirebaseMapper: Mapper {
     }
     
     func mapToArray<T : Decodable>(data: D, toArrayWith type: T.Type) -> Result<[T], NSError> {
-        if let value = data.value {
-            return Result(attempt: { () -> [T] in
-                return try [T].decode(value)
-            })
-        }
-        return Result.failure(MapError.unknownJSON.nsError)
+        return Result(attempt: { () -> [T] in
+            return try [T].decode(data.children.allObjects.map { ($0 as! FIRDataSnapshot).value })
+        })
     }
 }

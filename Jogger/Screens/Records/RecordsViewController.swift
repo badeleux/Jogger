@@ -9,6 +9,10 @@
 import UIKit
 import ReactiveSwift
 
+enum RecordsSegue: String {
+    case add = "Add", edit = "Edit"
+}
+
 class RecordsViewController: UIViewController, TableViewControllerProtocol, ListResourceBasedViewController {
     
     static let RecordCellReuseID = "RecordCell"

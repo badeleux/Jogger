@@ -181,7 +181,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" id="ywz-Qt-o4K"/>
-                    <navigationItem key="navigationItem" id="AdN-0L-oZG"/>
+                    <navigationItem key="navigationItem" id="AdN-0L-oZG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hDh-h6-LuY">
+                            <connections>
+                                <segue destination="DMg-bD-SWW" kind="presentation" id="Ej0-hQ-L6R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="wza-xb-NiM" id="GLF-QA-fO9"/>
                     </connections>
@@ -189,6 +195,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIz-yJ-pSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1605.5999999999999" y="-352.17391304347831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w3i-Gt-1Yq">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SuN-TD-8aT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="DMg-bD-SWW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RV0-fq-GDn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bRA-Ii-FlH" kind="relationship" relationship="rootViewController" id="82B-gK-lGO"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2407" y="-377"/>
+        </scene>
+        <!--Add Record-->
+        <scene sceneID="Ivd-Dl-1AW">
+            <objects>
+                <viewController title="Add Record" automaticallyAdjustsScrollViewInsets="NO" id="bRA-Ii-FlH" customClass="RecordEditViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="42C-zE-vsu"/>
+                        <viewControllerLayoutGuide type="bottom" id="B0E-uL-oz8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yh0-0i-tl3">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0q-9a-kDv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="kDt-ZW-aOx" kind="embed" id="pEo-l7-ZlE"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K0q-9a-kDv" firstAttribute="leading" secondItem="Yh0-0i-tl3" secondAttribute="leading" id="LLa-Bc-8vP"/>
+                            <constraint firstItem="K0q-9a-kDv" firstAttribute="top" secondItem="42C-zE-vsu" secondAttribute="bottom" id="Rhc-Fl-JhT"/>
+                            <constraint firstAttribute="trailing" secondItem="K0q-9a-kDv" secondAttribute="trailing" id="j3N-FV-f0G"/>
+                            <constraint firstItem="B0E-uL-oz8" firstAttribute="top" secondItem="K0q-9a-kDv" secondAttribute="bottom" id="vzO-Df-O86"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" id="JvG-7q-Pbt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="53j-bf-Gmk">
+                            <connections>
+                                <action selector="cancel:" destination="bRA-Ii-FlH" id="KrT-2u-i60"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="qsW-iT-pOI">
+                            <connections>
+                                <action selector="save:" destination="bRA-Ii-FlH" id="B1y-AM-Nxc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dap-dU-Ard" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3137" y="-377"/>
         </scene>
         <!--Users-->
         <scene sceneID="tvt-ZU-GwF">
@@ -244,6 +312,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7T-M2-gvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1606" y="1211"/>
+        </scene>
+        <!--Record Add Form View Controller-->
+        <scene sceneID="gAi-ix-III">
+            <objects>
+                <viewController id="kDt-ZW-aOx" customClass="RecordAddFormViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UaN-ga-eWT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJW-HS-mhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4138" y="-532"/>
         </scene>
     </scenes>
 </document>
