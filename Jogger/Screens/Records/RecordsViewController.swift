@@ -29,16 +29,16 @@ class RecordsViewController: UIViewController, TableViewControllerProtocol, List
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.userAuthViewModel.currentUser.producer
-            .skipNil()
-            .map { $0.userId }
-            .skipRepeats()
-            .on { [weak self] (uid: UserId) in
-                self?.viewModel.userId(uid: uid)
-            }
-            .start()
         self.dataSource <~ self.viewModel.resourceData
         self.setUp(content: .records)
+        
+        if self.isModal() {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(RecordsViewController.back))
+        }
+    }
+    
+    func back() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

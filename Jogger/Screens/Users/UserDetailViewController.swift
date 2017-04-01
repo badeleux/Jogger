@@ -18,9 +18,14 @@ class UserDetailViewController: FormViewController {
         if let profile = self.profileViewModel.profileProperty.value {
             builder += StaticTextFormItem().title("UserID").value(profile.userID)
             builder += StaticTextFormItem().title("E-Mail").value(profile.email!)
-        }
-        if userAuthViewModel.role.value == .admin {
-            builder += ButtonFormItem().title("Records")
+            if userAuthViewModel.role.value == .admin {
+                let records = ButtonFormItem().title("Records")
+                records.action = {
+                    let recordsVC = self.storyboard!.records(forUserId: profile.userID)
+                    self.present(recordsVC, animated: true, completion: nil)
+                }
+                builder += records
+            }
         }
     }
     
