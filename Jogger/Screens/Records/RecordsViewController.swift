@@ -11,7 +11,7 @@ import ReactiveSwift
 import MGSwipeTableCell
 
 enum RecordsSegue: String {
-    case add = "Add", edit = "Edit"
+    case add = "Add", edit = "Edit", detail = "Detail"
 }
 
 class RecordsViewController: UIViewController, TableViewControllerProtocol, ListResourceBasedViewController {
@@ -57,6 +57,11 @@ class RecordsViewController: UIViewController, TableViewControllerProtocol, List
             let record = sender as? Record {
             recordEdit.record = record
         }
+        else if let detailVC = segue.destination as? RecordDetailViewController,
+            let selectedIP = self.tableView.indexPathForSelectedRow,
+            let record = self.dataSource.value?[selectedIP.row] {
+            detailVC.record = record
+        }
     }
 }
 
@@ -68,7 +73,7 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecordsViewController.RecordCellReuseID, for: indexPath) as! MGSwipeTableCell
         if let record = self.dataSource.value?[indexPath.row] {
-            cell.textLabel?.text = record.date.string(format: .extended)
+            cell.textLabel?.text = record.date.string()
             cell.detailTextLabel?.text = record.distance.description
             let delete = MGSwipeButton(title: "Delete", backgroundColor: UIColor.red, callback: { (cell: MGSwipeTableCell) -> Bool in
                 if let recordId = record.recordID {

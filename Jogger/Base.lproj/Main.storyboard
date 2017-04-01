@@ -148,15 +148,22 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" textLabel="IMn-4J-5kT" rowHeight="80" style="IBUITableViewCellStyleDefault" id="Kbr-rS-Uq5" customClass="MGSwipeTableCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecordCell" textLabel="IMn-4J-5kT" detailTextLabel="aSX-ZB-nCr" rowHeight="80" style="IBUITableViewCellStyleValue1" id="Kbr-rS-Uq5" customClass="MGSwipeTableCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kbr-rS-Uq5" id="Ry2-Eg-yBh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IMn-4J-5kT">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="79.5"/>
+                                                    <rect key="frame" x="15" y="29" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aSX-ZB-nCr">
+                                                    <rect key="frame" x="296" y="29" width="44" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -164,6 +171,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="IEP-Ju-5Nz" kind="push" identifier="Detail" id="P4y-O2-9xO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -211,7 +221,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="2407" y="-377"/>
+            <point key="canvasLocation" x="2162" y="-1090"/>
         </scene>
         <!--Add Record-->
         <scene sceneID="Ivd-Dl-1AW">
@@ -257,7 +267,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dap-dU-Ard" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3278" y="-433"/>
+            <point key="canvasLocation" x="3086" y="-1090"/>
+        </scene>
+        <!--Record Detail View Controller-->
+        <scene sceneID="Dvj-RG-RDJ">
+            <objects>
+                <viewController id="IEP-Ju-5Nz" customClass="RecordDetailViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nag-W9-5uc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qd9-sf-cvm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GwO-Gv-oyA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wSF-y2-ff3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJG-3G-uKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2970" y="-412"/>
         </scene>
         <!--Edit Record-->
         <scene sceneID="9au-8Z-LAv">
@@ -388,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJW-HS-mhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4138" y="-532"/>
+            <point key="canvasLocation" x="3906" y="-1062"/>
         </scene>
         <!--Record Edit Form View Controller-->
         <scene sceneID="inb-5q-2ik">

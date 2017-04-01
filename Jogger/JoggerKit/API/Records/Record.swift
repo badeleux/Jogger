@@ -37,5 +37,9 @@ struct Record: Decodable, Encodable {
                 "distance" : distance,
                 "time" : time]
     }
+    
+    func avgSpeed() -> Double {
+        return Double(self.distance) / self.time
+    }
 
 }
