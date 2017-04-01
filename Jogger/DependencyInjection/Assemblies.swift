@@ -61,6 +61,7 @@ class ViewControllerAssembly: Assembly {
         }
         container.storyboardInitCompleted(RecordsViewController.self) { (r, c) in
             c.viewModel = r.resolve(RecordsViewModel.self)
+            c.userAuthViewModel = r.resolve(UserAuthViewModel.self)
         }
         
     }

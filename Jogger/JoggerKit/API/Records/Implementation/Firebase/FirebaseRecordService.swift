@@ -13,9 +13,11 @@ import FirebaseDatabase
 class FirebaseRecordService: RecordsService {
     
     let database: FIRDatabase
+    let firebaseMapper: FirebaseMapper
     
     init(database: FIRDatabase) {
         self.database = database
+        self.firebaseMapper = FirebaseMapper()
     }
     
     func records(forUserId userId: UserId) -> SignalProducer<[Record], NSError> {
@@ -24,8 +26,15 @@ class FirebaseRecordService: RecordsService {
                 .reference()
                 .child("records")
                 .child(userId)
-                .observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
-                    let rawRecords = snapshot.value as? [String:Any]
+                .observeSingleEvent(of: .value, with: { [weak self] (snapshot: FIRDataSnapshot) in
+                    let result = self?.firebaseMapper.mapToArray(data: snapshot, toArrayWith: Record.self)
+                    if let e = result?.error {  
+                        o.send(error: e)
+                    }
+                    else {
+                        o.send(value: result?.value ?? [])
+                        o.sendCompleted()
+                    }
                     
                 }) { (error: Error) in
                     if let e = error as NSError? {

@@ -56,6 +56,7 @@ class UserAuthViewModel {
                 return .init(value:.regular)
             }
         })
+        currentUser = Property(capturing: authService.currentUser)
         
 
         
@@ -63,5 +64,6 @@ class UserAuthViewModel {
     
     // MARK: - Outputs
     let rootViewState: Property<RootViewState>
+    let currentUser: Property<User?>
     
 }

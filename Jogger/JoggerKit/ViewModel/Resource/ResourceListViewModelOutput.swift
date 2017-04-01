@@ -13,6 +13,6 @@ import Result
 protocol ResourceViewModelOutput {
     associatedtype E: Swift.Error
     associatedtype D
-    var resourceStatus: Signal<ActionStatus<E>, NoError> { get }
+    var resourceStatus: Property<ActionStatus<E>> { get }
     var resourceData: Signal<D, NoError> { get }
 }

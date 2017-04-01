@@ -55,6 +55,7 @@ extension ResourceBasedViewController {
         
         self.viewModel
             .resourceStatus
+            .signal
             .observe(on: QueueScheduler.main)
             .observeValues { (status: ActionStatus<Self.VM.E>) in
                 if status.isLoading {

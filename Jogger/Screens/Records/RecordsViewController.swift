@@ -10,33 +10,48 @@ import UIKit
 import ReactiveSwift
 
 class RecordsViewController: UIViewController, TableViewControllerProtocol, ListResourceBasedViewController {
+    
+    static let RecordCellReuseID = "RecordCell"
 
     var viewModel: RecordsViewModel!
     var dataSource = MutableProperty<[Record]?>(nil)
+    var userAuthViewModel: UserAuthViewModel!
+    
     @IBOutlet weak var tableView: UITableView!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.userAuthViewModel.currentUser.producer
+            .skipNil()
+            .map { $0.userId }
+            .skipRepeats()
+            .on { [weak self] (uid: UserId) in
+                self?.viewModel.userId(uid: uid)
+            }
+            .start()
+        self.dataSource <~ self.viewModel.resourceData
+        self.setUp(content: .records)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataSource.value?.count ?? 0
     }
-    */
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: RecordsViewController.RecordCellReuseID, for: indexPath)
+        if let record = self.dataSource.value?[indexPath.row] {
+            cell.textLabel?.text = record.date.string(format: .extended)
+            cell.detailTextLabel?.text = record.distance.description
+        }
+        return cell
+    }
 }
