@@ -190,11 +190,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="wza-xb-NiM" id="GLF-QA-fO9"/>
+                        <segue destination="rlo-bA-Hrf" kind="presentation" identifier="Edit" id="5P9-Tv-q5d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIz-yJ-pSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1605.5999999999999" y="-352.17391304347831"/>
+            <point key="canvasLocation" x="1606" y="-377"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w3i-Gt-1Yq">
@@ -256,7 +257,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dap-dU-Ard" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3137" y="-377"/>
+            <point key="canvasLocation" x="3278" y="-433"/>
+        </scene>
+        <!--Edit Record-->
+        <scene sceneID="9au-8Z-LAv">
+            <objects>
+                <viewController title="Edit Record" automaticallyAdjustsScrollViewInsets="NO" id="VlX-a6-cJT" customClass="RecordEditViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7kV-cq-KFa"/>
+                        <viewControllerLayoutGuide type="bottom" id="oOe-t7-vYe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xUe-az-IY5">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRb-O3-UEd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="fSo-Gf-qYR" kind="embed" id="R9L-vO-dOK"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oOe-t7-vYe" firstAttribute="top" secondItem="RRb-O3-UEd" secondAttribute="bottom" id="b0I-dw-Zxq"/>
+                            <constraint firstItem="RRb-O3-UEd" firstAttribute="top" secondItem="7kV-cq-KFa" secondAttribute="bottom" id="bLQ-ap-DiH"/>
+                            <constraint firstAttribute="trailing" secondItem="RRb-O3-UEd" secondAttribute="trailing" id="dB7-yI-WLk"/>
+                            <constraint firstItem="RRb-O3-UEd" firstAttribute="leading" secondItem="xUe-az-IY5" secondAttribute="leading" id="j4C-43-sNH"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" id="ayh-oa-gAb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9R8-JS-eeP">
+                            <connections>
+                                <action selector="cancel:" destination="VlX-a6-cJT" id="18E-oI-LU7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="O52-d6-BWF">
+                            <connections>
+                                <action selector="save:" destination="VlX-a6-cJT" id="iec-Rn-CGo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lu2-tN-TyD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3311" y="385"/>
         </scene>
         <!--Users-->
         <scene sceneID="tvt-ZU-GwF">
@@ -276,6 +323,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBa-Bp-25d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1566" y="386"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Me5-Og-cTK">
+            <objects>
+                <navigationController id="rlo-bA-Hrf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ixc-cH-e0q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VlX-a6-cJT" kind="relationship" relationship="rootViewController" id="Zoc-Ed-IEG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HBR-T8-sAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2406" y="385"/>
         </scene>
         <!--Settings-->
         <scene sceneID="HzO-mA-hvc">
@@ -326,6 +389,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJW-HS-mhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4138" y="-532"/>
+        </scene>
+        <!--Record Edit Form View Controller-->
+        <scene sceneID="inb-5q-2ik">
+            <objects>
+                <viewController id="fSo-Gf-qYR" customClass="RecordEditFormViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="njs-ys-aEy"/>
+                        <viewControllerLayoutGuide type="bottom" id="rW9-EU-IVR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="To6-5z-dx2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WPo-W0-V6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4137" y="430"/>
         </scene>
     </scenes>
 </document>

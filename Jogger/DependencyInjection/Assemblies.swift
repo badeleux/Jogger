@@ -38,6 +38,9 @@ class ViewModelAssembly: Assembly {
         container.register(RecordAddViewModel.self) { r in
             return RecordAddViewModel(recordsService: r.resolve(RecordsService.self)!, userAuthViewModel: r.resolve(UserAuthViewModel.self)!)
         }
+        container.register(RecordEditViewModel.self) { r in
+            return RecordEditViewModel(recordsService: r.resolve(RecordsService.self)!, userAuthViewModel: r.resolve(UserAuthViewModel.self)!)
+        }
     }
 }
 
@@ -68,6 +71,9 @@ class ViewControllerAssembly: Assembly {
         }
         container.storyboardInitCompleted(RecordAddFormViewController.self) { (r, c) in
             c.recordEditableViewModel = r.resolve(RecordAddViewModel.self)
+        }
+        container.storyboardInitCompleted(RecordEditFormViewController.self) { (r, c) in
+            c.recordEditableViewModel = r.resolve(RecordEditViewModel.self)
         }
         
     }

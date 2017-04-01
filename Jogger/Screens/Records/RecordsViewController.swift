@@ -40,10 +40,23 @@ class RecordsViewController: UIViewController, TableViewControllerProtocol, List
         self.dataSource <~ self.viewModel.resourceData
         self.setUp(content: .records)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewModel.refresh()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let navController = segue.destination as? UINavigationController,
+            let recordEdit = navController.viewControllers.first as? RecordEditViewController,
+            let record = sender as? Record {
+            recordEdit.record = record
+        }
     }
 }
 
@@ -65,6 +78,7 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
             })
             
             let edit = MGSwipeButton(title: "Edit", backgroundColor: UIColor.green, callback: { (cell: MGSwipeTableCell) -> Bool in
+                self.performSegue(withIdentifier: RecordsSegue.edit.rawValue, sender: record)
                 return true
             })
             

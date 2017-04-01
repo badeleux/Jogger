@@ -94,4 +94,28 @@ class FirebaseRecordService: RecordsService {
                 })
         }
     }
+    
+    func update(record: Record, forUserId userId: UserId) -> SignalProducer<Record, NSError> {
+        return SignalProducer { o, d in
+            self.database.reference()
+                .child("records")
+                .child(userId)
+                .child(record.recordID!)
+                .runTransactionBlock({ (data: FIRMutableData) -> FIRTransactionResult in
+                    data.value = record.encode()
+                    return FIRTransactionResult.success(withValue: data)
+                }, andCompletionBlock: { (error, success, _) in
+                    if success {
+                        o.send(value: record)
+                        o.sendCompleted()
+                    }
+                    else if let e = error as NSError? {
+                        o.send(error: e)
+                    }
+                    else {
+                        o.send(error: NSError.unknownError())
+                    }
+                })
+        }
+    }
 }

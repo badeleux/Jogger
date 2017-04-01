@@ -11,6 +11,7 @@ import UIKit
 
 class RecordEditViewController: UIViewController {
     var recordForm: RecordFormViewController?
+    var record: Record?
     
     @IBAction func save(_ sender: Any) {
         self.recordForm?.save(sender)
@@ -23,6 +24,16 @@ class RecordEditViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let recordForm = segue.destination as? RecordFormViewController {
             self.recordForm = recordForm
+            if let r = self.record {
+                self.update(record: r)
+            }
         }
+    }
+    
+    func update(record: Record) {
+        self.recordForm?.recordEditableViewModel.recordID.value = record.recordID
+        self.recordForm?.distance.textDidChange(record.distance.description)
+        self.recordForm?.time.textDidChange(record.time.description)
+        self.recordForm?.date.valueDidChange(record.date)
     }
 }

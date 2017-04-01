@@ -10,6 +10,7 @@ import Foundation
 import ReactiveSwift
 
 class RecordAddViewModel: RecordViewModelEditable {
+    let recordID = MutableProperty<RecordID?>(nil)
     let distance = MutableProperty<String?>(nil)
     let time = MutableProperty<String?>(nil)
     let date = MutableProperty<Date?>(nil)
