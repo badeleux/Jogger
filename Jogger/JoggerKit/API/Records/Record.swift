@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import Himotoki
+import SwiftDate
 
-struct Record {
-    
+struct Record: Decodable {
+    let date: Date
+    let distance: Float
+    let time: TimeInterval
+    static func decode(_ e: Extractor) throws -> Record {
+        return try Record(date: Transformers.isoInternetDateTime.apply(e <| "date"), distance: e <| "distance", time: e <| "time")
+    }
+
 }

@@ -31,6 +31,7 @@
 		ED69CFF91E8D7E7300A5669B /* UserRoleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69CFF81E8D7E7300A5669B /* UserRoleService.swift */; };
 		ED69CFFD1E8D7EA100A5669B /* FirebaseUserRoleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69CFFC1E8D7EA100A5669B /* FirebaseUserRoleService.swift */; };
 		ED69CFFF1E8D82D300A5669B /* SignalProducerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69CFFE1E8D82D300A5669B /* SignalProducerExtensions.swift */; };
+		ED91C53C1E8FAEC0008609C4 /* NSErrorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C53B1E8FAEC0008609C4 /* NSErrorExtensions.swift */; };
 		EDC48CF41E8652300000A83D /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF31E8652300000A83D /* ErrorPresenter.swift */; };
 		EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF61E865EB80000A83D /* RootViewController.swift */; };
 		EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */; };
@@ -55,6 +56,8 @@
 		EDDE54371E8E90B800F3F630 /* FirebaseRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE54361E8E90B800F3F630 /* FirebaseRecordService.swift */; };
 		EDDE54391E8E92CA00F3F630 /* FirebaseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE54381E8E92CA00F3F630 /* FirebaseMapper.swift */; };
 		EDDE543B1E8E942600F3F630 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE543A1E8E942600F3F630 /* Mapper.swift */; };
+		EDDE543D1E8F957800F3F630 /* FirebaseMapperSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE543C1E8F957800F3F630 /* FirebaseMapperSpec.swift */; };
+		EDDE54401E8F985300F3F630 /* records.json in Resources */ = {isa = PBXBuildFile; fileRef = EDDE543F1E8F985300F3F630 /* records.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +115,7 @@
 		ED69CFF81E8D7E7300A5669B /* UserRoleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRoleService.swift; sourceTree = "<group>"; };
 		ED69CFFC1E8D7EA100A5669B /* FirebaseUserRoleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUserRoleService.swift; sourceTree = "<group>"; };
 		ED69CFFE1E8D82D300A5669B /* SignalProducerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerExtensions.swift; sourceTree = "<group>"; };
+		ED91C53B1E8FAEC0008609C4 /* NSErrorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtensions.swift; sourceTree = "<group>"; };
 		EDC48CF31E8652300000A83D /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		EDC48CF61E865EB80000A83D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 		EDDE54361E8E90B800F3F630 /* FirebaseRecordService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseRecordService.swift; sourceTree = "<group>"; };
 		EDDE54381E8E92CA00F3F630 /* FirebaseMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMapper.swift; sourceTree = "<group>"; };
 		EDDE543A1E8E942600F3F630 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		EDDE543C1E8F957800F3F630 /* FirebaseMapperSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMapperSpec.swift; sourceTree = "<group>"; };
+		EDDE543F1E8F985300F3F630 /* records.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = records.json; sourceTree = "<group>"; };
 		FE52409CE8962596848E9E6E /* Pods-JoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoggerTests/Pods-JoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +254,7 @@
 		ED208A681E8113D400B6074B /* Jogger */ = {
 			isa = PBXGroup;
 			children = (
+				ED91C53A1E8FAEB6008609C4 /* Utilities */,
 				EDC48D0A1E88EF920000A83D /* DependencyInjection */,
 				EDC76ED11E85106C00F95E70 /* Resources */,
 				EDC76EBA1E850EE400F95E70 /* JoggerKit */,
@@ -265,10 +272,12 @@
 		ED208A7F1E8113D400B6074B /* JoggerTests */ = {
 			isa = PBXGroup;
 			children = (
+				EDDE543E1E8F982400F3F630 /* Resources */,
 				ED1A94601E8D9A5700957A9B /* ViewModel */,
 				EDC76ECF1E850F3900F95E70 /* ActionStatusSpec.swift */,
 				ED208A801E8113D400B6074B /* JoggerTests.swift */,
 				ED208A821E8113D400B6074B /* Info.plist */,
+				EDDE543C1E8F957800F3F630 /* FirebaseMapperSpec.swift */,
 			);
 			path = JoggerTests;
 			sourceTree = "<group>";
@@ -327,6 +336,14 @@
 				ED69CFFC1E8D7EA100A5669B /* FirebaseUserRoleService.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		ED91C53A1E8FAEB6008609C4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ED91C53B1E8FAEC0008609C4 /* NSErrorExtensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		EDC48CF21E8652240000A83D /* ErrorPresenter */ = {
@@ -501,6 +518,14 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		EDDE543E1E8F982400F3F630 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDDE543F1E8F985300F3F630 /* records.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -606,6 +631,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDDE54401E8F985300F3F630 /* records.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +742,7 @@
 				EDC76ECE1E850EE400F95E70 /* SignUpViewModel.swift in Sources */,
 				ED208AC31E81AAAA00B6074B /* SignUpViewController.swift in Sources */,
 				ED208A6A1E8113D400B6074B /* AppDelegate.swift in Sources */,
+				ED91C53C1E8FAEC0008609C4 /* NSErrorExtensions.swift in Sources */,
 				ED1A946A1E8E6E0C00957A9B /* ResourceBasedViewController.swift in Sources */,
 				EDC48D071E88EA950000A83D /* FirebaseKit.swift in Sources */,
 				EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */,
@@ -753,6 +780,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDDE543D1E8F957800F3F630 /* FirebaseMapperSpec.swift in Sources */,
 				EDC76ED01E850F3900F95E70 /* ActionStatusSpec.swift in Sources */,
 				ED1A94621E8D9A6300957A9B /* UserAuthViewModelSpec.swift in Sources */,
 				ED208A811E8113D400B6074B /* JoggerTests.swift in Sources */,

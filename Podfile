@@ -20,7 +20,8 @@ target 'Jogger' do
 
     target 'JoggerTests' do
         inherit! :search_paths
-        pod 'Firebase'
+        pod 'Firebase/Database'
+        pod 'Firebase/Auth'
         pod 'Quick'
         pod 'Nimble'
     end
