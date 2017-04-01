@@ -24,6 +24,9 @@
 		ED69CFF91E8D7E7300A5669B /* UserRoleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69CFF81E8D7E7300A5669B /* UserRoleService.swift */; };
 		ED69CFFD1E8D7EA100A5669B /* FirebaseUserRoleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69CFFC1E8D7EA100A5669B /* FirebaseUserRoleService.swift */; };
 		ED69CFFF1E8D82D300A5669B /* SignalProducerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69CFFE1E8D82D300A5669B /* SignalProducerExtensions.swift */; };
+		ED91C5551E905310008609C4 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5541E905310008609C4 /* ProfileService.swift */; };
+		ED91C5571E905329008609C4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5561E905329008609C4 /* Profile.swift */; };
+		ED91C5591E905366008609C4 /* FirebaseProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5581E905366008609C4 /* FirebaseProfileService.swift */; };
 		EDC48CF41E8652300000A83D /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF31E8652300000A83D /* ErrorPresenter.swift */; };
 		EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF61E865EB80000A83D /* RootViewController.swift */; };
 		EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */; };
@@ -92,6 +95,9 @@
 		ED69CFF81E8D7E7300A5669B /* UserRoleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRoleService.swift; sourceTree = "<group>"; };
 		ED69CFFC1E8D7EA100A5669B /* FirebaseUserRoleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUserRoleService.swift; sourceTree = "<group>"; };
 		ED69CFFE1E8D82D300A5669B /* SignalProducerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerExtensions.swift; sourceTree = "<group>"; };
+		ED91C5541E905310008609C4 /* ProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		ED91C5561E905329008609C4 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		ED91C5581E905366008609C4 /* FirebaseProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseProfileService.swift; sourceTree = "<group>"; };
 		EDC48CF31E8652300000A83D /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		EDC48CF61E865EB80000A83D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +279,32 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		ED91C5511E905307008609C4 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				ED91C5521E905307008609C4 /* Implementation */,
+				ED91C5541E905310008609C4 /* ProfileService.swift */,
+				ED91C5561E905329008609C4 /* Profile.swift */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
+		ED91C5521E905307008609C4 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				ED91C5531E905307008609C4 /* Firebase */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		ED91C5531E905307008609C4 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				ED91C5581E905366008609C4 /* FirebaseProfileService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		EDC48CF21E8652240000A83D /* ErrorPresenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +375,7 @@
 		EDC76EBB1E850EE400F95E70 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				ED91C5511E905307008609C4 /* Profiles */,
 				EDC48D021E88EA950000A83D /* Service */,
 				EDC48D001E870AA20000A83D /* Users */,
 				EDC48D011E870AA20000A83D /* Roles */,
@@ -614,15 +647,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED91C5591E905366008609C4 /* FirebaseProfileService.swift in Sources */,
 				EDC48D101E8A3D070000A83D /* UserAuthViewModel.swift in Sources */,
 				EDC48D0E1E88F33E0000A83D /* UserViewModel.swift in Sources */,
 				EDC76ECE1E850EE400F95E70 /* SignUpViewModel.swift in Sources */,
+				ED91C5571E905329008609C4 /* Profile.swift in Sources */,
 				ED208AC31E81AAAA00B6074B /* SignUpViewController.swift in Sources */,
 				ED208A6A1E8113D400B6074B /* AppDelegate.swift in Sources */,
 				EDC48D071E88EA950000A83D /* FirebaseKit.swift in Sources */,
 				EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */,
 				EDC76ECA1E850EE400F95E70 /* FirebaseAuthService.swift in Sources */,
 				ED208AC11E81AAA200B6074B /* SignInViewController.swift in Sources */,
+				ED91C5551E905310008609C4 /* ProfileService.swift in Sources */,
 				EDC76ECC1E850EE400F95E70 /* ActionStatus.swift in Sources */,
 				EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */,
 				ED1A94641E8E278400957A9B /* LoginViewController.swift in Sources */,

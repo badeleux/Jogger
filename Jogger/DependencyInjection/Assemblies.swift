@@ -18,6 +18,7 @@ class ServiceAssembly: Assembly {
         container.register(FIRDatabase.self, factory: { r in r.resolve(FirebaseKit.self)!.db! })
         container.register(AuthService.self) { r in FirebaseAuthService(auth: r.resolve(FIRAuth.self)) }
         container.register(UserRoleService.self) { r in FirebaseUserRoleService(database: r.resolve(FIRDatabase.self)!) }.inObjectScope(.container)
+        container.register(ProfileService.self) { r in FirebaseProfileService() }.inObjectScope(.container)
     }
 }
 
