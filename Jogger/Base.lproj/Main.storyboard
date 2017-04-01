@@ -116,10 +116,26 @@
             </objects>
             <point key="canvasLocation" x="929" y="-1164"/>
         </scene>
-        <!--Item-->
+        <!--Records-->
+        <scene sceneID="9Xe-JF-vrq">
+            <objects>
+                <navigationController storyboardIdentifier="RecordsNav" title="Records" id="8JF-8j-2M1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1py-IK-SxR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Yh9-Z2-Q1n" kind="relationship" relationship="rootViewController" id="eGf-lb-awH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGD-jy-ZzV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="508" y="-352"/>
+        </scene>
+        <!--Records-->
         <scene sceneID="qJx-E2-SDg">
             <objects>
-                <viewController storyboardIdentifier="RecordsVC" id="Yh9-Z2-Q1n" customClass="RecordsViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordsVC" title="Records" automaticallyAdjustsScrollViewInsets="NO" id="Yh9-Z2-Q1n" customClass="RecordsViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CbF-nW-U8S"/>
                         <viewControllerLayoutGuide type="bottom" id="YQ2-yI-o17"/>
@@ -129,7 +145,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wza-xb-NiM">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" textLabel="IMn-4J-5kT" rowHeight="80" style="IBUITableViewCellStyleDefault" id="Kbr-rS-Uq5">
@@ -164,7 +180,8 @@
                             <constraint firstAttribute="trailing" secondItem="wza-xb-NiM" secondAttribute="trailing" id="f2D-t3-peG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ywz-Qt-o4K"/>
+                    <tabBarItem key="tabBarItem" id="ywz-Qt-o4K"/>
+                    <navigationItem key="navigationItem" id="AdN-0L-oZG"/>
                     <connections>
                         <outlet property="tableView" destination="wza-xb-NiM" id="GLF-QA-fO9"/>
                     </connections>
@@ -173,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="1605.5999999999999" y="-352.17391304347831"/>
         </scene>
-        <!--Item-->
+        <!--Users-->
         <scene sceneID="tvt-ZU-GwF">
             <objects>
-                <viewController storyboardIdentifier="UsersVC" id="Qlq-jM-WH3" customClass="UsersViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UsersVC" title="Users" id="Qlq-jM-WH3" customClass="UsersViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cOe-pL-gXw"/>
                         <viewControllerLayoutGuide type="bottom" id="Pb0-1H-4sZ"/>
@@ -192,10 +209,10 @@
             </objects>
             <point key="canvasLocation" x="1566" y="386"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="HzO-mA-hvc">
             <objects>
-                <viewController storyboardIdentifier="SettingsVC" id="uPM-Mq-iel" customClass="SettingsViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsVC" title="Settings" id="uPM-Mq-iel" customClass="SettingsViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UsW-Fi-tIc"/>
                         <viewControllerLayoutGuide type="bottom" id="X3N-pJ-Omz"/>

@@ -23,6 +23,7 @@ class RecordsViewController: UIViewController, TableViewControllerProtocol, List
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.userAuthViewModel.currentUser.producer
             .skipNil()
             .map { $0.userId }
