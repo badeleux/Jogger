@@ -146,7 +146,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmb-QM-cXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="362" y="385"/>
+            <point key="canvasLocation" x="-1644" y="490"/>
         </scene>
         <!--Records-->
         <scene sceneID="qJx-E2-SDg">
@@ -373,6 +373,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="GDG-dh-Jnn" kind="show" id="Gi2-eZ-3yI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -398,7 +401,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBa-Bp-25d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1565.5999999999999" y="385.45727136431788"/>
+            <point key="canvasLocation" x="-551" y="490"/>
+        </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="DFe-rO-dd6">
+            <objects>
+                <viewController id="GDG-dh-Jnn" customClass="UserDetailViewController" customModule="Jogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fgZ-5X-H5A"/>
+                        <viewControllerLayoutGuide type="bottom" id="YeL-ZR-BpR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DZV-d2-nDT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Cm-al-w63" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="616" y="517"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Me5-Og-cTK">

@@ -25,12 +25,19 @@ class UserAuthViewModel {
     let authService: AuthService
     private let userViewModelProperty = MutableProperty<UserViewModel?>(nil)
     private let userAuthenticatedProperty = MutableProperty<Bool>(false)
-    private let userRoleProperty = MutableProperty<UserRole>(.regular)
     
     init(authService: AuthService, resolver: Resolver, rolesService: UserRoleService) {
         self.authService = authService
+        role = Property(initial: .regular, then: authService.currentUser.producer.flatMap(.latest, transform: { (user: User?) -> SignalProducer<UserRole, NoError> in
+            if let u = user {
+                return rolesService.role(forUserId: u.userId).ignoreError()
+            }
+            else {
+                return .init(value:.regular)
+            }
+        }))
         
-        rootViewState = Property(initial: .logIn, then: Signal.combineLatest(self.userAuthenticatedProperty.signal, self.userRoleProperty.signal).map { (t: (Bool, UserRole)) -> RootViewState in
+        rootViewState = Property(initial: .logIn, then: Signal.combineLatest(self.userAuthenticatedProperty.signal, role.signal).map { (t: (Bool, UserRole)) -> RootViewState in
             if !t.0 {
                 return .logIn
             }
@@ -46,16 +53,9 @@ class UserAuthViewModel {
             }
         })
         
+
         userAuthenticatedProperty <~ authService.currentUser.producer.map { $0 != nil }
         userViewModelProperty <~ authService.currentUser.producer.map { resolver.resolve(UserViewModel.self, argument: $0) }
-        userRoleProperty <~ authService.currentUser.producer.flatMap(.latest, transform: { (user: User?) -> SignalProducer<UserRole, NoError> in
-            if let u = user {
-                return rolesService.role(forUserId: u.userId).ignoreError()
-            }
-            else {
-                return .init(value:.regular)
-            }
-        })
         currentUser = Property(capturing: authService.currentUser)
         
 
@@ -65,5 +65,6 @@ class UserAuthViewModel {
     // MARK: - Outputs
     let rootViewState: Property<RootViewState>
     let currentUser: Property<User?>
+    let role: Property<UserRole>
     
 }

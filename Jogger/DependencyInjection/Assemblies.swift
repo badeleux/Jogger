@@ -45,6 +45,9 @@ class ViewModelAssembly: Assembly {
         container.register(ProfilesViewModel.self) { r in
             return ProfilesViewModel(profilesService: r.resolve(ProfileService.self)!)
         }
+        container.register(ProfileViewModel.self) { r in
+            return ProfileViewModel(profileService: r.resolve(ProfileService.self)!)
+        }
     }
 }
 
@@ -81,6 +84,10 @@ class ViewControllerAssembly: Assembly {
         }
         container.storyboardInitCompleted(UsersViewController.self) { (r, c) in
             c.viewModel = r.resolve(ProfilesViewModel.self)
+        }
+        container.storyboardInitCompleted(UserDetailViewController.self) { (r, c) in
+            c.userAuthViewModel = r.resolve(UserAuthViewModel.self)
+            c.profileViewModel = r.resolve(ProfileViewModel.self)
         }
         
     }
