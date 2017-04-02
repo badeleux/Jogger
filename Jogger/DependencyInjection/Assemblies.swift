@@ -69,7 +69,7 @@ class ViewControllerAssembly: Assembly {
         container.storyboardInitCompleted(SignInViewController.self, initCompleted: { r, c in
             c.signInViewModel = r.resolve(SignInViewModel.self)
         })
-        container.storyboardInitCompleted(SettingsViewController.self) { (r, c) in
+        container.storyboardInitCompleted(DashboardViewController.self) { (r, c) in
             c.authService = r.resolve(AuthService.self)
         }
         container.storyboardInitCompleted(RecordsViewController.self) { (r, c) in
@@ -88,6 +88,12 @@ class ViewControllerAssembly: Assembly {
         container.storyboardInitCompleted(UserDetailViewController.self) { (r, c) in
             c.userAuthViewModel = r.resolve(UserAuthViewModel.self)
             c.profileViewModel = r.resolve(ProfileViewModel.self)
+        }
+        container.storyboardInitCompleted(WeekReportViewController.self) { (r, c) in
+            let recordsViewModel = r.resolve(RecordsViewModel.self)
+            let userAuthViewModel = r.resolve(UserAuthViewModel.self)
+            userAuthViewModel?.currentUser.producer.skipNil().on(value: { recordsViewModel?.userId(uid: $0.userId) }).start()
+            c.recordsViewModel = recordsViewModel!
         }
         
     }

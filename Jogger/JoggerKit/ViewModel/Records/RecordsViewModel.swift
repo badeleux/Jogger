@@ -38,6 +38,7 @@ class RecordsViewModel: ResourceViewModelInput, ResourceViewModelOutput {
     let resourceData: Property<[Record]>
     let resourceStatus: Property<ActionStatus<NSError>>
     let datesFilterValues: Property<[Date]>
+    let stats: Property<RecordStats>
     
     
     
@@ -65,5 +66,6 @@ class RecordsViewModel: ResourceViewModelInput, ResourceViewModelOutput {
             })
         self.resourceStatus = Property(capturing: resourceStatusMutProperty)
         self.datesFilterValues = Property(initial: [], then: self.records.producer.map { $0.map { $0.date }.reversed() })
+        self.stats = Property(initial: RecordStats(records: []), then: self.resourceData.producer.map { RecordStats(records: $0) })
     }
 }

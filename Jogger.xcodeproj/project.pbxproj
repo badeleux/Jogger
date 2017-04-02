@@ -11,7 +11,7 @@
 		C87C79F24F3DBCD22D64572B /* Pods_Jogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994D38F57C048939539B027D /* Pods_Jogger.framework */; };
 		ED1A94621E8D9A6300957A9B /* UserAuthViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94611E8D9A6300957A9B /* UserAuthViewModelSpec.swift */; };
 		ED1A94641E8E278400957A9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94631E8E278400957A9B /* LoginViewController.swift */; };
-		ED1A94671E8E328500957A9B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94661E8E328500957A9B /* SettingsViewController.swift */; };
+		ED1A94671E8E328500957A9B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94661E8E328500957A9B /* DashboardViewController.swift */; };
 		ED1A946A1E8E6E0C00957A9B /* ResourceBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94691E8E6E0C00957A9B /* ResourceBasedViewController.swift */; };
 		ED1A94701E8E6F8900957A9B /* EmptyStateContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A946C1E8E6F8900957A9B /* EmptyStateContent.swift */; };
 		ED1A94711E8E6F8900957A9B /* EmptyStateErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A946D1E8E6F8900957A9B /* EmptyStateErrorView.swift */; };
@@ -49,6 +49,8 @@
 		ED91C5681E9067D3008609C4 /* MainStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5671E9067D3008609C4 /* MainStoryboardExtension.swift */; };
 		ED91C56A1E9069DB008609C4 /* UIViewController+IsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5691E9069DB008609C4 /* UIViewController+IsModal.swift */; };
 		ED91C56C1E90D9E6008609C4 /* RecordsDateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C56B1E90D9E6008609C4 /* RecordsDateFilter.swift */; };
+		ED91C56E1E911C23008609C4 /* WeekReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C56D1E911C23008609C4 /* WeekReportViewController.swift */; };
+		ED91C5721E911D73008609C4 /* RecordStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5711E911D73008609C4 /* RecordStats.swift */; };
 		EDC48CF41E8652300000A83D /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF31E8652300000A83D /* ErrorPresenter.swift */; };
 		EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF61E865EB80000A83D /* RootViewController.swift */; };
 		EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */; };
@@ -108,7 +110,7 @@
 		D891618552FD2F829166427E /* Pods_JoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1A94611E8D9A6300957A9B /* UserAuthViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthViewModelSpec.swift; sourceTree = "<group>"; };
 		ED1A94631E8E278400957A9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		ED1A94661E8E328500957A9B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ED1A94661E8E328500957A9B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		ED1A94691E8E6E0C00957A9B /* ResourceBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceBasedViewController.swift; sourceTree = "<group>"; };
 		ED1A946C1E8E6F8900957A9B /* EmptyStateContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateContent.swift; sourceTree = "<group>"; };
 		ED1A946D1E8E6F8900957A9B /* EmptyStateErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateErrorView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,8 @@
 		ED91C5671E9067D3008609C4 /* MainStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStoryboardExtension.swift; sourceTree = "<group>"; };
 		ED91C5691E9069DB008609C4 /* UIViewController+IsModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+IsModal.swift"; sourceTree = "<group>"; };
 		ED91C56B1E90D9E6008609C4 /* RecordsDateFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsDateFilter.swift; sourceTree = "<group>"; };
+		ED91C56D1E911C23008609C4 /* WeekReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekReportViewController.swift; sourceTree = "<group>"; };
+		ED91C5711E911D73008609C4 /* RecordStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordStats.swift; sourceTree = "<group>"; };
 		EDC48CF31E8652300000A83D /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		EDC48CF61E865EB80000A83D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
@@ -227,11 +231,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		ED1A94651E8E327E00957A9B /* Settings */ = {
+		ED1A94651E8E327E00957A9B /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				ED1A94661E8E328500957A9B /* SettingsViewController.swift */,
+				ED1A94661E8E328500957A9B /* DashboardViewController.swift */,
+				ED91C56D1E911C23008609C4 /* WeekReportViewController.swift */,
 			);
+			name = Dashboard;
 			path = Settings;
 			sourceTree = "<group>";
 		};
@@ -320,7 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				ED1A94681E8E6DE100957A9B /* ResourceBase */,
-				ED1A94651E8E327E00957A9B /* Settings */,
+				ED1A94651E8E327E00957A9B /* Dashboard */,
 				EDC48CF51E865EAD0000A83D /* Root */,
 				EDC48CF21E8652240000A83D /* ErrorPresenter */,
 				ED208AB81E81A05100B6074B /* Login */,
@@ -571,6 +577,7 @@
 				ED91C53F1E8FE2BA008609C4 /* RecordEditViewModel.swift */,
 				ED91C5411E8FE309008609C4 /* RecordViewModelEditable.swift */,
 				ED91C54D1E904C08008609C4 /* RecordViewModel.swift */,
+				ED91C5711E911D73008609C4 /* RecordStats.swift */,
 			);
 			path = Records;
 			sourceTree = "<group>";
@@ -818,6 +825,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED91C56E1E911C23008609C4 /* WeekReportViewController.swift in Sources */,
 				ED91C5601E9059B2008609C4 /* ProfilesViewModel.swift in Sources */,
 				EDC48D101E8A3D070000A83D /* UserAuthViewModel.swift in Sources */,
 				ED91C56A1E9069DB008609C4 /* UIViewController+IsModal.swift in Sources */,
@@ -857,6 +865,7 @@
 				EDC48D121E8A40430000A83D /* UserRole.swift in Sources */,
 				ED91C54A1E903153008609C4 /* RecordEditViewController.swift in Sources */,
 				EDDE54391E8E92CA00F3F630 /* FirebaseMapper.swift in Sources */,
+				ED91C5721E911D73008609C4 /* RecordStats.swift in Sources */,
 				ED69CFF91E8D7E7300A5669B /* UserRoleService.swift in Sources */,
 				EDC76ECB1E850EE400F95E70 /* User.swift in Sources */,
 				ED1A94781E8E7EEC00957A9B /* ResourceListViewModelInput.swift in Sources */,
@@ -868,7 +877,7 @@
 				ED91C56C1E90D9E6008609C4 /* RecordsDateFilter.swift in Sources */,
 				ED1A94721E8E6F8900957A9B /* EmptyStateLoadingView.swift in Sources */,
 				EDC76EC91E850EE400F95E70 /* AuthService.swift in Sources */,
-				ED1A94671E8E328500957A9B /* SettingsViewController.swift in Sources */,
+				ED1A94671E8E328500957A9B /* DashboardViewController.swift in Sources */,
 				EDC48D061E88EA950000A83D /* APIService.swift in Sources */,
 				EDC48CFF1E8709FB0000A83D /* UsersViewController.swift in Sources */,
 				ED1A94731E8E6F8900957A9B /* EmptyStateNoContentView.swift in Sources */,

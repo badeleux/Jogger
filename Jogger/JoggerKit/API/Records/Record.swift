@@ -38,8 +38,16 @@ struct Record: Decodable, Encodable {
                 "time" : time]
     }
     
-    func avgSpeed() -> Double {
-        return Double(self.distance) / self.time
+    func avgSpeed() -> Measurement<UnitSpeed> {
+        return Measurement(value: Double(self.distance) / self.time, unit: UnitSpeed.metersPerSecond)
+    }
+    
+    func distanceWithUnit() -> Measurement<UnitLength> {
+        return Measurement(value: Double(self.distance), unit: UnitLength.meters)
+    }
+    
+    func timeWithUnit() -> Measurement<UnitDuration> {
+        return Measurement(value: self.time, unit: UnitDuration.seconds)
     }
 
 }

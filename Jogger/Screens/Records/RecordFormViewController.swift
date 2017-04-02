@@ -72,6 +72,7 @@ class RecordFormViewController: FormViewController {
             .on(completed: { [weak self] in
                 self?.dismiss(animated: true, completion: nil)
             })
+            .showError()
             .start()
     }
 }

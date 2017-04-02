@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class DashboardViewController: UIViewController {
 
     var authService: AuthService?
     

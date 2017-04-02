@@ -94,7 +94,7 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecordsViewController.RecordCellReuseID, for: indexPath) as! MGSwipeTableCell
         if let record = self.dataSource.value?[indexPath.row] {
             cell.textLabel?.text = record.date.string()
-            cell.detailTextLabel?.text = record.distance.description
+            cell.detailTextLabel?.text = record.distanceWithUnit().description
             let delete = MGSwipeButton(title: "Delete", backgroundColor: UIColor.red, callback: { (cell: MGSwipeTableCell) -> Bool in
                 if let recordId = record.recordID {
                     self.viewModel.delete(recordID: recordId).start()

@@ -16,8 +16,8 @@ class RecordDetailViewController: FormViewController {
     override func populate(_ builder: FormBuilder) {
         if let r = record {
             builder += StaticTextFormItem().title("Date").value(r.date.string())
-            builder += StaticTextFormItem().title("Distance").value(r.distance.description)
-            builder += StaticTextFormItem().title("Time").value(r.time.description)
+            builder += StaticTextFormItem().title("Distance").value(r.distanceWithUnit().description)
+            builder += StaticTextFormItem().title("Time").value(r.timeWithUnit().description)
             builder += StaticTextFormItem().title("AVG Speed").value(r.avgSpeed().description)
         }
     }
