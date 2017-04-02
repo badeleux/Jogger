@@ -24,10 +24,13 @@ class WeekReportViewController: FormViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.recordsViewModel.refresh()
-        self.recordsViewModel.dateRange.value = self.thisWeek()
+        let thisWeek = self.thisWeek()
+        self.recordsViewModel.dateRange.value = thisWeek
+        self.dates.value = thisWeek.lowerBound.string(dateStyle: .medium, timeStyle: DateFormatter.Style.none, in: nil) + " - " + thisWeek.upperBound.string(dateStyle: .medium, timeStyle: DateFormatter.Style.none, in: nil)
     }
     
     override func populate(_ builder: FormBuilder) {
+        builder += dates
         builder += avgSpeedFormitem
         builder += avgDistanceFormItem
     }
@@ -39,6 +42,11 @@ class WeekReportViewController: FormViewController {
     
     lazy var avgDistanceFormItem: StaticTextFormItem = {
         let instance = StaticTextFormItem().title("AVG Distance")
+        return instance
+    }()
+    
+    lazy var dates: StaticTextFormItem = {
+        let instance = StaticTextFormItem().title("Dates")
         return instance
     }()
     

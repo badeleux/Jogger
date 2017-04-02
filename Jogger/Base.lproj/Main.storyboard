@@ -506,7 +506,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-SV-KCE">
-                                <rect key="frame" x="16" y="20" width="343" height="597"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
                                 <connections>
                                     <segue destination="8ge-Vj-rvY" kind="embed" id="YnP-z2-ahd"/>
                                 </connections>
@@ -517,10 +517,10 @@
                             <constraint firstItem="CSh-wT-5MZ" firstAttribute="leading" secondItem="VVb-N0-U05" secondAttribute="leadingMargin" id="3N1-mR-TgV"/>
                             <constraint firstItem="CSh-wT-5MZ" firstAttribute="top" secondItem="Hbx-SV-KCE" secondAttribute="bottom" id="6th-zX-AwB"/>
                             <constraint firstItem="X3N-pJ-Omz" firstAttribute="top" secondItem="CSh-wT-5MZ" secondAttribute="bottom" id="Fzg-d3-dsp"/>
-                            <constraint firstItem="Hbx-SV-KCE" firstAttribute="leading" secondItem="VVb-N0-U05" secondAttribute="leadingMargin" id="SdR-r7-1vU"/>
+                            <constraint firstItem="Hbx-SV-KCE" firstAttribute="leading" secondItem="VVb-N0-U05" secondAttribute="leading" id="SdR-r7-1vU"/>
                             <constraint firstItem="Hbx-SV-KCE" firstAttribute="top" secondItem="UsW-Fi-tIc" secondAttribute="bottom" id="Vep-Fy-p5M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CSh-wT-5MZ" secondAttribute="trailing" id="oga-lV-4y1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hbx-SV-KCE" secondAttribute="trailing" id="yAy-OE-2cn"/>
+                            <constraint firstAttribute="trailing" secondItem="Hbx-SV-KCE" secondAttribute="trailing" id="yAy-OE-2cn"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="3Ix-9U-IEp"/>
@@ -574,7 +574,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HS2-sz-dzw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="deY-DL-oTH">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="597"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
