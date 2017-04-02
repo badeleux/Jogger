@@ -28,13 +28,8 @@ class UserAuthViewModel {
     
     init(authService: AuthService, resolver: Resolver, rolesService: UserRoleService) {
         self.authService = authService
-        role = Property(initial: .regular, then: authService.currentUser.producer.flatMap(.latest, transform: { (user: User?) -> SignalProducer<UserRole, NoError> in
-            if let u = user {
-                return rolesService.role(forUserId: u.userId).ignoreError()
-            }
-            else {
-                return .init(value:.regular)
-            }
+        role = Property(initial: .regular, then: authService.currentUser.producer.skipNil().flatMap(.latest, transform: { (user: User) -> SignalProducer<UserRole, NoError> in
+            return rolesService.role(forUserId: user.userId).ignoreError()
         }))
         
         rootViewState = Property(initial: .logIn, then: SignalProducer.combineLatest(self.userAuthenticatedProperty.producer, role.producer).map { (t: (Bool, UserRole)) -> RootViewState in

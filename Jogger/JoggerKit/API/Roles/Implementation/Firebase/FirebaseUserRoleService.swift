@@ -53,7 +53,7 @@ class FirebaseUserRoleService: UserRoleService {
                 .child("roles")
                 .child(userId)
                 .runTransactionBlock({ (data: FIRMutableData) -> FIRTransactionResult in
-                    data.value = [role.rawValue : 1]
+                    data.value = [role.rawValue : true]
                     return FIRTransactionResult.success(withValue: data)
                 }, andCompletionBlock: { (error, success, _) in
                     if success {
