@@ -21,6 +21,7 @@ protocol AnyKeyValueContainable {
 }
 
 extension FIRDataSnapshot: AnyChildrenEnumerable {}
+extension FIRDataSnapshot: AnyKeyValueContainable {}
 
 class FirebaseMapper: Mapper {
     typealias D = AnyChildrenEnumerable
