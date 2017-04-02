@@ -17,7 +17,7 @@ class EmptyStateNoContentView: UIView, EmptyView {
         super.init(frame: frame)
         self.addSubview(mainLabel)
         mainLabel.text = NSLocalizedString("No Content", comment: "")
-        mainLabel.textColor = .white
+        mainLabel.textColor = .black
         mainLabel <- Center(0.0)
         
         self.isUserInteractionEnabled = false

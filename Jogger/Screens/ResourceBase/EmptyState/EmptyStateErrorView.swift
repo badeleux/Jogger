@@ -19,7 +19,7 @@ class EmptyStateErrorView: UIView, ErrorView {
         mainLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(mainLabel)
         mainLabel.text = "Error"
-        mainLabel.textColor = .white
+        mainLabel.textColor = .black
         mainLabel.numberOfLines = 0
         mainLabel.textAlignment = .center
         mainLabel <- Edges(0)
