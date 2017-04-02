@@ -101,7 +101,9 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.detailTextLabel?.text = record.distanceWithUnit().description
             let delete = MGSwipeButton(title: "Delete", backgroundColor: UIColor.red, callback: { (cell: MGSwipeTableCell) -> Bool in
                 if let recordId = record.recordID {
-                    self.viewModel.delete(recordID: recordId).start()
+                    self.viewModel.delete(recordID: recordId)
+                        .showError()
+                        .start()
                 }
                 return true
             })
