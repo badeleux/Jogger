@@ -37,7 +37,7 @@ class UserAuthViewModel {
             }
         }))
         
-        rootViewState = Property(initial: .logIn, then: Signal.combineLatest(self.userAuthenticatedProperty.signal, role.signal).map { (t: (Bool, UserRole)) -> RootViewState in
+        rootViewState = Property(initial: .logIn, then: SignalProducer.combineLatest(self.userAuthenticatedProperty.producer, role.producer).map { (t: (Bool, UserRole)) -> RootViewState in
             if !t.0 {
                 return .logIn
             }

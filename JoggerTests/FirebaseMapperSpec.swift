@@ -2,8 +2,14 @@ import Quick
 import Nimble
 @testable import Jogger
 
-struct SnapshotStub: AnyValueContainable {
-    let value: Any?
+struct SnapshotStub: AnyChildrenEnumerable {
+    var children: NSEnumerator
+}
+
+struct SnapshotValueStub: AnyKeyValueContainable {
+    var value: Any?
+    var key: String
+    
 }
 
 class FirebaseMapperSpec: QuickSpec {
@@ -12,9 +18,10 @@ class FirebaseMapperSpec: QuickSpec {
             context("from json file", { 
                 it("should return 2 record objects", closure: {
                     let jsonURL = Bundle(for: FirebaseMapperSpec.self).url(forResource: "records", withExtension: "json")!
-                    let json = try! JSONSerialization.jsonObject(with: try! Data.init(contentsOf: jsonURL), options: JSONSerialization.ReadingOptions.allowFragments)
+                    let arrayJSON = try! JSONSerialization.jsonObject(with: try! Data.init(contentsOf: jsonURL), options: JSONSerialization.ReadingOptions.allowFragments) as! [[String : Any]]
+                    let json = arrayJSON.map { SnapshotValueStub(value: $0, key: "id") }
                     let firebaseMapper = FirebaseMapper()
-                    let snapshot = SnapshotStub(value: json)
+                    let snapshot = SnapshotStub(children: NSArray(array: json).objectEnumerator())
                     
                     let recordResults = firebaseMapper.mapToArray(data: snapshot, toArrayWith: Record.self)
                     expect(recordResults.error).to(beNil())

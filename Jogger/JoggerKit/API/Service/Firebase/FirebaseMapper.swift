@@ -11,15 +11,19 @@ import Himotoki
 import Firebase
 import Result
 
-protocol AnyValueContainable {
-    var value: Any? { get }
+protocol AnyChildrenEnumerable {
     var children: NSEnumerator { get }
 }
 
-extension FIRDataSnapshot: AnyValueContainable {}
+protocol AnyKeyValueContainable {
+    var value: Any? { get }
+    var key: String { get }
+}
+
+extension FIRDataSnapshot: AnyChildrenEnumerable {}
 
 class FirebaseMapper: Mapper {
-    typealias D = AnyValueContainable
+    typealias D = AnyChildrenEnumerable
     func map<T : Decodable>(data: D, toObject type: T.Type) -> Result<T, NSError> {
         return .failure(NSError.unknownError())
     }
@@ -27,7 +31,7 @@ class FirebaseMapper: Mapper {
     func mapToArray<T : Decodable>(data: D, toArrayWith type: T.Type) -> Result<[T], NSError> {
         return Result(attempt: { () -> [T] in
             return try [T].decode(data.children.allObjects.map({ (a: Any) -> [String : Any] in
-                if let snapshot = a as? FIRDataSnapshot, let dict = snapshot.value as? [String : Any] {
+                if let snapshot = a as? AnyKeyValueContainable, let dict = snapshot.value as? [String : Any] {
                     var d = dict
                     d["id"] = snapshot.key
                     return d

@@ -63,6 +63,10 @@ struct UserRoleServiceStub: UserRoleService {
     func role(forUserId userId: UserId) -> SignalProducer<UserRole, NSError> {
         return .init(value: self.role!)
     }
+    
+    func setRole(role: UserRole, forUserId userId: UserId) -> SignalProducer<UserRole, NSError> {
+        return .init(value: self.role!)
+    }
 }
 
 struct UserStub: User {
