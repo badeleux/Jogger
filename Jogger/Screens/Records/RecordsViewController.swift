@@ -37,29 +37,24 @@ class RecordsViewController: UIViewController, TableViewControllerProtocol, List
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(RecordsViewController.back))
         }
         
-        self.recordDateFilter.maxValue <~ self.viewModel.datesFilterValues.map { $0.count - 1 }
-        self.recordDateFilter.fromLabel.reactive.text <~ self.recordDateFilter
-                                                                .minSelectedValue
-                                                                .signal
-                                                                .map { [weak self] value in
-                                                                    if let array = self?.viewModel.datesFilterValues.value, array.count > value {
-                                                                        return array[value].string()
-                                                                    }
-                                                                    else {
-                                                                        return "-"
-                                                                    }
-                                                                }
-        self.recordDateFilter.toLabel.reactive.text <~ self.recordDateFilter
-            .maxSelectedValue
-            .signal
-            .map { [weak self] value in
-                if let array = self?.viewModel.datesFilterValues.value, array.count > value {
-                    return array[value].string()
-                }
-                else {
-                    return "-"
-                }
+        let dateForIndex = { [weak self] (index: Int) -> Date? in
+            if let array = self?.viewModel.datesFilterValues.value, array.count > index {
+                return array[index]
+            }
+            else {
+                return nil
+            }
         }
+        self.recordDateFilter.maxValue <~ self.viewModel.datesFilterValues.map { $0.count - 1 }
+        self.viewModel.dateRange <~ Signal.combineLatest(self.recordDateFilter.minSelectedValue.signal, self.recordDateFilter.maxSelectedValue.signal)
+            .map({ (t: (Int, Int)) -> ClosedRange<Date>? in
+                if let min = dateForIndex(t.0), let max = dateForIndex(t.1) {
+                    return min...max
+                }
+                return nil
+            })
+        self.recordDateFilter.fromLabel.reactive.text <~ self.viewModel.dateRange.map { $0?.lowerBound.string() ?? " - " }
+        self.recordDateFilter.toLabel.reactive.text <~ self.viewModel.dateRange.map { $0?.upperBound.string() ?? " - " }
     }
     
     func back() {

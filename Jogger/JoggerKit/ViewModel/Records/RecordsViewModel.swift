@@ -23,6 +23,8 @@ class RecordsViewModel: ResourceViewModelInput, ResourceViewModelOutput {
         self.refreshProperty.value = ()
     }
     
+    let dateRange = MutableProperty<ClosedRange<Date>?>(nil)
+    
     func delete(recordID: RecordID) -> SignalProducer<Bool, NSError> {
         return self.userIdProperty.producer.skipNil().take(first: 1).flatMap(.latest) { (uid: UserId) -> SignalProducer<Bool, NSError> in
             return self.recordsService.delete(recordID: recordID, forUserId: uid).map { _ in true }
@@ -32,6 +34,7 @@ class RecordsViewModel: ResourceViewModelInput, ResourceViewModelOutput {
     }
     
     //OUTPUTS
+    let records: Property<[Record]>
     let resourceData: Property<[Record]>
     let resourceStatus: Property<ActionStatus<NSError>>
     let datesFilterValues: Property<[Date]>
@@ -42,13 +45,25 @@ class RecordsViewModel: ResourceViewModelInput, ResourceViewModelOutput {
     init(recordsService: RecordsService) {
         self.recordsService = recordsService
         let resourceStatusMutProperty = MutableProperty<ActionStatus<NSError>>(.none)
-        let resourceProducer = SignalProducer.combineLatest(self.refreshProperty.producer, self.userIdProperty.producer.skipNil()).flatMap(.latest, transform: { (t: ((), UserId)) -> SignalProducer<[Record], NoError> in
+        let recordsProducer = SignalProducer.combineLatest(self.refreshProperty.producer, self.userIdProperty.producer.skipNil()).flatMap(.latest, transform: { (t: ((), UserId)) -> SignalProducer<[Record], NoError> in
             return recordsService.records(forUserId: t.1)
+                .map({ (records: [Record]) -> [Record] in
+                    return records.sorted(by: { $0.0.date > $0.1.date })
+                })
                 .on(statusChanged: { resourceStatusMutProperty.value = $0 })
                 .ignoreError()
         })
-        self.resourceData = Property(initial: [], then: resourceProducer)
+        self.records = Property(initial: [], then: recordsProducer)
+        self.resourceData = Property(initial: [], then: SignalProducer.combineLatest(records.producer, self.dateRange.producer)
+            .map { t in
+                if let dateRange = t.1 {
+                    return t.0.filter { dateRange.contains($0.date) }
+                }
+                else {
+                    return t.0
+                }
+            })
         self.resourceStatus = Property(capturing: resourceStatusMutProperty)
-        self.datesFilterValues = Property(initial: [], then: self.resourceData.producer.map { $0.map { $0.date }})
+        self.datesFilterValues = Property(initial: [], then: self.records.producer.map { $0.map { $0.date }.reversed() })
     }
 }
