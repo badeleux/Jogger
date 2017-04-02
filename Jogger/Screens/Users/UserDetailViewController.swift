@@ -18,6 +18,7 @@ class UserDetailViewController: FormViewController {
         if let profile = self.profileViewModel.profileProperty.value {
             builder += StaticTextFormItem().title("UserID").value(profile.userID)
             builder += StaticTextFormItem().title("E-Mail").value(profile.email!)
+            builder += self.roleFormItem
             if userAuthViewModel.role.value == .admin {
                 let records = ButtonFormItem().title("Records")
                 records.action = {
@@ -29,26 +30,31 @@ class UserDetailViewController: FormViewController {
         }
     }
     
+    lazy var roleFormItem: SegmentedControlFormItem = {
+        let instance = SegmentedControlFormItem()
+        instance.title("Role")
+        instance.itemsArray(UserRole.roles.map { $0.localizedDescription })
+        instance.valueDidChangeBlock = { [weak self] index in
+            let role = UserRole.roles[index]
+            self?.profileViewModel.set(role: role).showError().start()
+        }
+        return instance
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.profileViewModel.roleProperty
+            .signal
+            .map { UserRole.roles.index(of: $0) }
+            .skipNil()
+            .observeValues { [weak self] index in
+                self?.roleFormItem.value = index
+            }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

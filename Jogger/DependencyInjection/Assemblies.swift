@@ -46,7 +46,7 @@ class ViewModelAssembly: Assembly {
             return ProfilesViewModel(profilesService: r.resolve(ProfileService.self)!)
         }
         container.register(ProfileViewModel.self) { r in
-            return ProfileViewModel(profileService: r.resolve(ProfileService.self)!)
+            return ProfileViewModel(profileService: r.resolve(ProfileService.self)!, rolesService: r.resolve(UserRoleService.self)!)
         }
     }
 }

@@ -45,4 +45,29 @@ class FirebaseUserRoleService: UserRoleService {
             }
         }
     }
+    
+    func setRole(role: UserRole, forUserId userId: UserId) -> SignalProducer<UserRole, NSError> {
+        return SignalProducer { o, d in
+            self.database
+                .reference()
+                .child("roles")
+                .child(userId)
+                .runTransactionBlock({ (data: FIRMutableData) -> FIRTransactionResult in
+                    data.value = [role.rawValue : 1]
+                    return FIRTransactionResult.success(withValue: data)
+                }, andCompletionBlock: { (error, success, _) in
+                    if success {
+                        o.send(value: role)
+                        o.sendCompleted()
+                    }
+                    else if let e = error as NSError? {
+                        o.send(error: e)
+                    }
+                    else {
+                        o.send(error: NSError.unknownError())
+                    }
+                })
+            
+        }
+    }
 }
