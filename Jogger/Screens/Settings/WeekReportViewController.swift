@@ -16,8 +16,8 @@ class WeekReportViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.recordsViewModel.stats.signal.observeValues { [weak self] (stats: RecordStats) in
-            self?.avgDistanceFormItem.value(stats.avgDistance.description)
-            self?.avgSpeedFormitem.value(stats.avgSpeed.description)
+            self?.avgDistanceFormItem.value(Formatter.runDistanceFormat(dist: stats.avgDistance))
+            self?.avgSpeedFormitem.value(Formatter.runSpeedFormat(speed: stats.avgSpeed))
         }
     }
     

@@ -58,6 +58,7 @@ class RecordFormViewController: FormViewController {
         instance.valueDidChangeBlock = { v in
             self.recordEditableViewModel.date.value = v
         }
+        instance.valueDidChange(Date()) 
         return instance
     }()
     

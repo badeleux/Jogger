@@ -13,12 +13,17 @@ import SwiftyFORM
 class RecordDetailViewController: FormViewController {
     var record: Record?
     
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.title = "Record Detail"
+    }
+    
     override func populate(_ builder: FormBuilder) {
         if let r = record {
             builder += StaticTextFormItem().title("Date").value(r.date.string())
             builder += StaticTextFormItem().title("Distance").value(r.distanceWithUnit().description)
             builder += StaticTextFormItem().title("Time").value(r.timeWithUnit().description)
-            builder += StaticTextFormItem().title("AVG Speed").value(r.avgSpeed().description)
+            builder += StaticTextFormItem().title("AVG Speed").value(Formatter.runSpeedFormat(speed: r.avgSpeed()))
         }
     }
     

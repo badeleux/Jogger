@@ -56,6 +56,7 @@
 		ED9FF4461E9187D800D20FFF /* RecordEditViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF4451E9187D800D20FFF /* RecordEditViewModelSpec.swift */; };
 		ED9FF4481E9187E000D20FFF /* RecordAddViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF4471E9187E000D20FFF /* RecordAddViewModelSpec.swift */; };
 		ED9FF44A1E9187FB00D20FFF /* RecordsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF4491E9187FB00D20FFF /* RecordsViewModelSpec.swift */; };
+		ED9FF44C1E91971100D20FFF /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF44B1E91971100D20FFF /* Formatters.swift */; };
 		EDC48CF41E8652300000A83D /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF31E8652300000A83D /* ErrorPresenter.swift */; };
 		EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF61E865EB80000A83D /* RootViewController.swift */; };
 		EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */; };
@@ -164,6 +165,7 @@
 		ED9FF4451E9187D800D20FFF /* RecordEditViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordEditViewModelSpec.swift; sourceTree = "<group>"; };
 		ED9FF4471E9187E000D20FFF /* RecordAddViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordAddViewModelSpec.swift; sourceTree = "<group>"; };
 		ED9FF4491E9187FB00D20FFF /* RecordsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewModelSpec.swift; sourceTree = "<group>"; };
+		ED9FF44B1E91971100D20FFF /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		EDC48CF31E8652300000A83D /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		EDC48CF61E865EB80000A83D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 			children = (
 				ED91C53B1E8FAEC0008609C4 /* NSErrorExtensions.swift */,
 				ED91C5431E8FE9D7008609C4 /* Encodable.swift */,
+				ED9FF44B1E91971100D20FFF /* Formatters.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -979,6 +982,7 @@
 				ED91C56C1E90D9E6008609C4 /* RecordsDateFilter.swift in Sources */,
 				ED1A94721E8E6F8900957A9B /* EmptyStateLoadingView.swift in Sources */,
 				EDC76EC91E850EE400F95E70 /* AuthService.swift in Sources */,
+				ED9FF44C1E91971100D20FFF /* Formatters.swift in Sources */,
 				ED1A94671E8E328500957A9B /* DashboardViewController.swift in Sources */,
 				EDC48D061E88EA950000A83D /* APIService.swift in Sources */,
 				EDC48CFF1E8709FB0000A83D /* UsersViewController.swift in Sources */,
