@@ -13,7 +13,6 @@ import Result
 class ProfilesViewModel: ResourceViewModelInput, ResourceViewModelOutput {
     let profilesService: ProfileService
     
-    private let lifetime: (Lifetime, Lifetime.Token)
 
     init(profilesService: ProfileService) {
         self.profilesService = profilesService
@@ -23,9 +22,7 @@ class ProfilesViewModel: ResourceViewModelInput, ResourceViewModelOutput {
                 .on(statusChanged: { resourceStatusMutProperty.value = $0 })
                 .ignoreError()
         })
-        let lifeTime = Lifetime.make()
-        self.resourceData = Signal { o in return resourceProducer.logEvents().observe(o, during: lifeTime.lifetime)}
-        self.lifetime = lifeTime
+        self.resourceData = Property(initial: [], then: resourceProducer)
         self.resourceStatus = Property(capturing: resourceStatusMutProperty)
     }
     
@@ -34,7 +31,7 @@ class ProfilesViewModel: ResourceViewModelInput, ResourceViewModelOutput {
         self.refreshProperty.value = ()
     }
     
-    let resourceData: Signal<[Profile], NoError>
+    let resourceData: Property<[Profile]>
     let resourceStatus: Property<ActionStatus<NSError>>
     
     

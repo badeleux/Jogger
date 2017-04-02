@@ -14,5 +14,5 @@ protocol ResourceViewModelOutput {
     associatedtype E: Swift.Error
     associatedtype D
     var resourceStatus: Property<ActionStatus<E>> { get }
-    var resourceData: Signal<D, NoError> { get }
+    var resourceData: Property<D> { get }
 }

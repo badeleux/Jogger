@@ -18,6 +18,7 @@ class RecordsViewController: UIViewController, TableViewControllerProtocol, List
     
     static let RecordCellReuseID = "RecordCell"
 
+    @IBOutlet weak var recordDateFilter: RecordsDateFilter!
     var viewModel: RecordsViewModel!
     var dataSource = MutableProperty<[Record]?>(nil)
     var userAuthViewModel: UserAuthViewModel!
@@ -35,6 +36,25 @@ class RecordsViewController: UIViewController, TableViewControllerProtocol, List
         if self.isModal() {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(RecordsViewController.back))
         }
+        
+        let dateForIndex = { [weak self] (index: Int) -> Date? in
+            if let array = self?.viewModel.datesFilterValues.value, array.count > index {
+                return array[index]
+            }
+            else {
+                return nil
+            }
+        }
+        self.recordDateFilter.maxValue <~ self.viewModel.datesFilterValues.map { $0.count - 1 }
+        self.viewModel.dateRange <~ Signal.combineLatest(self.recordDateFilter.minSelectedValue.signal, self.recordDateFilter.maxSelectedValue.signal)
+            .map({ (t: (Int, Int)) -> ClosedRange<Date>? in
+                if let min = dateForIndex(t.0), let max = dateForIndex(t.1) {
+                    return min...max
+                }
+                return nil
+            })
+        self.recordDateFilter.fromLabel.reactive.text <~ self.viewModel.dateRange.map { $0?.lowerBound.string() ?? " - " }
+        self.recordDateFilter.toLabel.reactive.text <~ self.viewModel.dateRange.map { $0?.upperBound.string() ?? " - " }
     }
     
     func back() {

@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -163,9 +164,52 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wza-xb-NiM">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="dEx-Lp-Sdc" customClass="RecordsDateFilter" customModule="Jogger" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1i2-51-BcJ" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
+                                            <rect key="frame" x="37" y="29" width="300" height="31"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="31" id="fqy-PG-Yip"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="hideLabels" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkU-9j-LYM">
+                                            <rect key="frame" x="8" y="4" width="26.5" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydO-hd-Btr">
+                                            <rect key="frame" x="340.5" y="4" width="26.5" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="ydO-hd-Btr" firstAttribute="top" secondItem="dEx-Lp-Sdc" secondAttribute="top" constant="4" id="3M8-92-N30"/>
+                                        <constraint firstAttribute="bottom" secondItem="1i2-51-BcJ" secondAttribute="bottom" constant="16" id="6jX-Qw-22S"/>
+                                        <constraint firstItem="SkU-9j-LYM" firstAttribute="top" secondItem="dEx-Lp-Sdc" secondAttribute="top" constant="4" id="ea9-XT-2Uj"/>
+                                        <constraint firstItem="1i2-51-BcJ" firstAttribute="width" secondItem="dEx-Lp-Sdc" secondAttribute="width" multiplier="0.8" id="hgX-pa-96H"/>
+                                        <constraint firstAttribute="trailing" secondItem="ydO-hd-Btr" secondAttribute="trailing" constant="8" id="mcq-QP-jVb"/>
+                                        <constraint firstItem="SkU-9j-LYM" firstAttribute="leading" secondItem="dEx-Lp-Sdc" secondAttribute="leading" constant="8" id="qFU-v6-8C2"/>
+                                        <constraint firstItem="1i2-51-BcJ" firstAttribute="centerX" secondItem="dEx-Lp-Sdc" secondAttribute="centerX" id="y1L-vx-Cv0"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="fromLabel" destination="SkU-9j-LYM" id="S1Q-mn-i59"/>
+                                        <outlet property="rangeSlider" destination="1i2-51-BcJ" id="wGp-At-HRr"/>
+                                        <outlet property="toLabel" destination="ydO-hd-Btr" id="puM-eB-SVw"/>
+                                    </connections>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecordCell" textLabel="IMn-4J-5kT" detailTextLabel="aSX-ZB-nCr" rowHeight="80" style="IBUITableViewCellStyleValue1" id="Kbr-rS-Uq5" customClass="MGSwipeTableCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="104" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kbr-rS-Uq5" id="Ry2-Eg-yBh">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
@@ -215,13 +259,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="recordDateFilter" destination="dEx-Lp-Sdc" id="U7h-ef-tcw"/>
                         <outlet property="tableView" destination="wza-xb-NiM" id="GLF-QA-fO9"/>
                         <segue destination="rlo-bA-Hrf" kind="presentation" identifier="Edit" id="5P9-Tv-q5d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIz-yJ-pSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1606" y="-377"/>
+            <point key="canvasLocation" x="1605.5999999999999" y="-377.36131934032989"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w3i-Gt-1Yq">
