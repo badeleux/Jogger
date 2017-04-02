@@ -25,7 +25,11 @@ class RecordsViewController: UIViewController, TableViewControllerProtocol, List
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.tabBarItem = UITabBarItem(title: "Records", image: UIImage(named: "list-fat-7"), tag: 0)
+        self.title = "Records"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,6 +17,13 @@ class UsersViewController: UIViewController, TableViewControllerProtocol, ListRe
     var dataSource = MutableProperty<Array<Profile>?>(nil)
     
     @IBOutlet weak var tableView: UITableView!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.tabBarItem = UITabBarItem(title: "Users", image: UIImage(named: "book-simple-7"), tag: 0)
+        self.title = "Users"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource <~ self.viewModel.resourceData
