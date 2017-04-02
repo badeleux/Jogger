@@ -31,11 +31,10 @@ class RecordsViewModel: ResourceViewModelInput, ResourceViewModelOutput {
         })
     }
     
-    private let lifetime: (Lifetime, Lifetime.Token)
-    
     //OUTPUTS
-    let resourceData: Signal<[Record], NoError>
+    let resourceData: Property<[Record]>
     let resourceStatus: Property<ActionStatus<NSError>>
+    let datesFilterValues: Property<[Date]>
     
     
     
@@ -48,9 +47,8 @@ class RecordsViewModel: ResourceViewModelInput, ResourceViewModelOutput {
                 .on(statusChanged: { resourceStatusMutProperty.value = $0 })
                 .ignoreError()
         })
-        let lifeTime = Lifetime.make()
-        self.resourceData = Signal { o in return resourceProducer.logEvents().observe(o, during: lifeTime.lifetime)}
-        self.lifetime = lifeTime
+        self.resourceData = Property(initial: [], then: resourceProducer)
         self.resourceStatus = Property(capturing: resourceStatusMutProperty)
+        self.datesFilterValues = Property(initial: [], then: self.resourceData.producer.map { $0.map { $0.date }})
     }
 }

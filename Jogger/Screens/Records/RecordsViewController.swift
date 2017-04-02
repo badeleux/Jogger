@@ -18,6 +18,7 @@ class RecordsViewController: UIViewController, TableViewControllerProtocol, List
     
     static let RecordCellReuseID = "RecordCell"
 
+    @IBOutlet weak var recordDateFilter: RecordsDateFilter!
     var viewModel: RecordsViewModel!
     var dataSource = MutableProperty<[Record]?>(nil)
     var userAuthViewModel: UserAuthViewModel!
@@ -34,6 +35,30 @@ class RecordsViewController: UIViewController, TableViewControllerProtocol, List
         
         if self.isModal() {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(RecordsViewController.back))
+        }
+        
+        self.recordDateFilter.maxValue <~ self.viewModel.datesFilterValues.map { $0.count - 1 }
+        self.recordDateFilter.fromLabel.reactive.text <~ self.recordDateFilter
+                                                                .minSelectedValue
+                                                                .signal
+                                                                .map { [weak self] value in
+                                                                    if let array = self?.viewModel.datesFilterValues.value, array.count > value {
+                                                                        return array[value].string()
+                                                                    }
+                                                                    else {
+                                                                        return "-"
+                                                                    }
+                                                                }
+        self.recordDateFilter.toLabel.reactive.text <~ self.recordDateFilter
+            .maxSelectedValue
+            .signal
+            .map { [weak self] value in
+                if let array = self?.viewModel.datesFilterValues.value, array.count > value {
+                    return array[value].string()
+                }
+                else {
+                    return "-"
+                }
         }
     }
     

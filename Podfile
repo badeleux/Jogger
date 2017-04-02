@@ -14,6 +14,7 @@ target 'Jogger' do
     pod 'SwiftDate'
     pod 'SwiftMessages'
     pod 'MGSwipeTableCell'
+    pod 'RangeSeekSlider'
 
     pod 'Firebase/Database'
     pod 'Firebase/Auth'

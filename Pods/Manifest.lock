@@ -37,6 +37,7 @@ PODS:
   - MGSwipeTableCell (1.5.6)
   - Nimble (6.0.1)
   - Quick (1.1.0)
+  - RangeSeekSlider (1.5.0)
   - ReactiveCocoa (5.0.1):
     - ReactiveSwift (~> 1.1)
   - ReactiveSwift (1.1.0):
@@ -58,6 +59,7 @@ DEPENDENCIES:
   - MGSwipeTableCell
   - Nimble
   - Quick
+  - RangeSeekSlider
   - ReactiveCocoa
   - ReactiveSwift
   - StatefulViewController (~> 3.0)
@@ -81,6 +83,7 @@ SPEC CHECKSUMS:
   MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
+  RangeSeekSlider: 130c1478507dc4c03bc5c4f974772f60ca8364eb
   ReactiveCocoa: f577006aa6c7b0b08020109ebaae3b77ada00adc
   ReactiveSwift: 2f4e4a02e5a5c87ea63f5fe667163ce2a67cbb57
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
@@ -91,6 +94,6 @@ SPEC CHECKSUMS:
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
 
-PODFILE CHECKSUM: 2ffd48be5d67c5d786f6ccbfdadd9fab10297061
+PODFILE CHECKSUM: 259a24a6c5061ca17af9e850df7c077bb54fa124
 
 COCOAPODS: 1.2.0
