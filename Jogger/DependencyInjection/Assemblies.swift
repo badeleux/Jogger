@@ -16,8 +16,9 @@ class ServiceAssembly: Assembly {
         container.register(FirebaseKit.self, factory: { _ in FirebaseKit() }).inObjectScope(.container)
         container.register(FIRAuth.self, factory: { r in r.resolve(FirebaseKit.self)!.auth! })
         container.register(FIRDatabase.self, factory: { r in r.resolve(FirebaseKit.self)!.db! })
-        container.register(AuthService.self) { r in FirebaseAuthService(auth: r.resolve(FIRAuth.self)) }
+        container.register(AuthService.self) { r in FirebaseAuthService(auth: r.resolve(FIRAuth.self), profileService: r.resolve(ProfileService.self)!) }
         container.register(UserRoleService.self) { r in FirebaseUserRoleService(database: r.resolve(FIRDatabase.self)!) }.inObjectScope(.container)
+        container.register(ProfileService.self) { r in FirebaseProfileService(database: r.resolve(FIRDatabase.self)!) }.inObjectScope(.container)
         container.register(RecordsService.self) { r in FirebaseRecordService(database: r.resolve(FIRDatabase.self)!) }.inObjectScope(.container)
     }
 }
@@ -40,6 +41,12 @@ class ViewModelAssembly: Assembly {
         }
         container.register(RecordEditViewModel.self) { r in
             return RecordEditViewModel(recordsService: r.resolve(RecordsService.self)!, userAuthViewModel: r.resolve(UserAuthViewModel.self)!)
+        }
+        container.register(ProfilesViewModel.self) { r in
+            return ProfilesViewModel(profilesService: r.resolve(ProfileService.self)!)
+        }
+        container.register(ProfileViewModel.self) { r in
+            return ProfileViewModel(profileService: r.resolve(ProfileService.self)!)
         }
     }
 }
@@ -74,6 +81,13 @@ class ViewControllerAssembly: Assembly {
         }
         container.storyboardInitCompleted(RecordEditFormViewController.self) { (r, c) in
             c.recordEditableViewModel = r.resolve(RecordEditViewModel.self)
+        }
+        container.storyboardInitCompleted(UsersViewController.self) { (r, c) in
+            c.viewModel = r.resolve(ProfilesViewModel.self)
+        }
+        container.storyboardInitCompleted(UserDetailViewController.self) { (r, c) in
+            c.userAuthViewModel = r.resolve(UserAuthViewModel.self)
+            c.profileViewModel = r.resolve(ProfileViewModel.self)
         }
         
     }

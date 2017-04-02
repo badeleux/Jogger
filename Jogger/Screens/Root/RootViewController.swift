@@ -13,12 +13,12 @@ import Swinject
 
 class RootViewController: UIViewController {
     var mainStoryboard: UIStoryboard? = nil
-    var userAuthViewModel: UserAuthViewModel? = nil
+    var userAuthViewModel: UserAuthViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.userAuthViewModel!
+        self.userAuthViewModel
             .rootViewState
             .signal
             .skipRepeats()
@@ -50,14 +50,14 @@ class RootViewController: UIViewController {
             return self.mainStoryboard!.instantiateViewController(withIdentifier: "LoginNav")
         case .regular:
             let settingsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "SettingsVC")
-            let recordsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "RecordsNav")
+            let recordsVC = self.mainStoryboard!.records(forUserId: self.userAuthViewModel.currentUser.value!.userId)
             let tabBar = UITabBarController()
             tabBar.viewControllers = [recordsVC, settingsVC]
             return tabBar
         default:
             let settingsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "SettingsVC")
-            let recordsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "RecordsNav")
-            let usersVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "UsersVC")
+            let recordsVC = self.mainStoryboard!.records(forUserId: self.userAuthViewModel.currentUser.value!.userId)
+            let usersVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "UsersNav")
             let tabBar = UITabBarController()
             tabBar.viewControllers = [recordsVC, usersVC, settingsVC]
             return tabBar

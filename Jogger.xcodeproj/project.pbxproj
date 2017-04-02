@@ -40,6 +40,14 @@
 		ED91C54A1E903153008609C4 /* RecordEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5491E903153008609C4 /* RecordEditViewController.swift */; };
 		ED91C54C1E904BEE008609C4 /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C54B1E904BEE008609C4 /* RecordDetailViewController.swift */; };
 		ED91C54E1E904C08008609C4 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C54D1E904C08008609C4 /* RecordViewModel.swift */; };
+		ED91C5551E905310008609C4 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5541E905310008609C4 /* ProfileService.swift */; };
+		ED91C5571E905329008609C4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5561E905329008609C4 /* Profile.swift */; };
+		ED91C55D1E9056C8008609C4 /* FirebaseProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C55C1E9056C8008609C4 /* FirebaseProfileService.swift */; };
+		ED91C5601E9059B2008609C4 /* ProfilesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C55F1E9059B2008609C4 /* ProfilesViewModel.swift */; };
+		ED91C5621E905E40008609C4 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5611E905E40008609C4 /* UserDetailViewController.swift */; };
+		ED91C5641E905FBF008609C4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5631E905FBF008609C4 /* ProfileViewModel.swift */; };
+		ED91C5681E9067D3008609C4 /* MainStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5671E9067D3008609C4 /* MainStoryboardExtension.swift */; };
+		ED91C56A1E9069DB008609C4 /* UIViewController+IsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91C5691E9069DB008609C4 /* UIViewController+IsModal.swift */; };
 		EDC48CF41E8652300000A83D /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF31E8652300000A83D /* ErrorPresenter.swift */; };
 		EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF61E865EB80000A83D /* RootViewController.swift */; };
 		EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */; };
@@ -132,6 +140,14 @@
 		ED91C5491E903153008609C4 /* RecordEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordEditViewController.swift; sourceTree = "<group>"; };
 		ED91C54B1E904BEE008609C4 /* RecordDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
 		ED91C54D1E904C08008609C4 /* RecordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		ED91C5541E905310008609C4 /* ProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		ED91C5561E905329008609C4 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		ED91C55C1E9056C8008609C4 /* FirebaseProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseProfileService.swift; sourceTree = "<group>"; };
+		ED91C55F1E9059B2008609C4 /* ProfilesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilesViewModel.swift; sourceTree = "<group>"; };
+		ED91C5611E905E40008609C4 /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		ED91C5631E905FBF008609C4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		ED91C5671E9067D3008609C4 /* MainStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStoryboardExtension.swift; sourceTree = "<group>"; };
+		ED91C5691E9069DB008609C4 /* UIViewController+IsModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+IsModal.swift"; sourceTree = "<group>"; };
 		EDC48CF31E8652300000A83D /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		EDC48CF61E865EB80000A83D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +324,8 @@
 				ED208AB81E81A05100B6074B /* Login */,
 				ED208AB91E81A05100B6074B /* Records */,
 				ED208ABA1E81A05100B6074B /* Users */,
+				ED91C5671E9067D3008609C4 /* MainStoryboardExtension.swift */,
+				ED91C5691E9069DB008609C4 /* UIViewController+IsModal.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -337,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				EDC48CFE1E8709FB0000A83D /* UsersViewController.swift */,
+				ED91C5611E905E40008609C4 /* UserDetailViewController.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -364,6 +383,41 @@
 				ED91C5431E8FE9D7008609C4 /* Encodable.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		ED91C5511E905307008609C4 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				ED91C55A1E9056C8008609C4 /* Implementation */,
+				ED91C5541E905310008609C4 /* ProfileService.swift */,
+				ED91C5561E905329008609C4 /* Profile.swift */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
+		ED91C55A1E9056C8008609C4 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				ED91C55B1E9056C8008609C4 /* Firebase */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		ED91C55B1E9056C8008609C4 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				ED91C55C1E9056C8008609C4 /* FirebaseProfileService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		ED91C55E1E9059AA008609C4 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				ED91C55F1E9059B2008609C4 /* ProfilesViewModel.swift */,
+				ED91C5631E905FBF008609C4 /* ProfileViewModel.swift */,
+			);
+			path = Profiles;
 			sourceTree = "<group>";
 		};
 		EDC48CF21E8652240000A83D /* ErrorPresenter */ = {
@@ -438,6 +492,7 @@
 		EDC76EBB1E850EE400F95E70 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				ED91C5511E905307008609C4 /* Profiles */,
 				EDDE542F1E8E83B300F3F630 /* Records */,
 				EDC48D021E88EA950000A83D /* Service */,
 				EDC48D001E870AA20000A83D /* Users */,
@@ -477,6 +532,7 @@
 		EDC76EC31E850EE400F95E70 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				ED91C55E1E9059AA008609C4 /* Profiles */,
 				EDDE542C1E8E832700F3F630 /* Records */,
 				ED1A94741E8E7E7500957A9B /* Resource */,
 				EDC76EC41E850EE400F95E70 /* Action */,
@@ -759,14 +815,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED91C5601E9059B2008609C4 /* ProfilesViewModel.swift in Sources */,
 				EDC48D101E8A3D070000A83D /* UserAuthViewModel.swift in Sources */,
+				ED91C56A1E9069DB008609C4 /* UIViewController+IsModal.swift in Sources */,
 				ED91C5441E8FE9D7008609C4 /* Encodable.swift in Sources */,
 				ED1A94711E8E6F8900957A9B /* EmptyStateErrorView.swift in Sources */,
 				ED91C53E1E8FE2B2008609C4 /* RecordAddViewModel.swift in Sources */,
 				EDDE54331E8E8FED00F3F630 /* RecordService.swift in Sources */,
 				EDC48D0E1E88F33E0000A83D /* UserViewModel.swift in Sources */,
 				EDC76ECE1E850EE400F95E70 /* SignUpViewModel.swift in Sources */,
+				ED91C5571E905329008609C4 /* Profile.swift in Sources */,
 				ED208AC31E81AAAA00B6074B /* SignUpViewController.swift in Sources */,
+				ED91C5641E905FBF008609C4 /* ProfileViewModel.swift in Sources */,
 				ED208A6A1E8113D400B6074B /* AppDelegate.swift in Sources */,
 				ED91C53C1E8FAEC0008609C4 /* NSErrorExtensions.swift in Sources */,
 				ED1A946A1E8E6E0C00957A9B /* ResourceBasedViewController.swift in Sources */,
@@ -774,6 +834,9 @@
 				EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */,
 				EDC76ECA1E850EE400F95E70 /* FirebaseAuthService.swift in Sources */,
 				ED208AC11E81AAA200B6074B /* SignInViewController.swift in Sources */,
+				ED91C5621E905E40008609C4 /* UserDetailViewController.swift in Sources */,
+				ED91C5681E9067D3008609C4 /* MainStoryboardExtension.swift in Sources */,
+				ED91C5551E905310008609C4 /* ProfileService.swift in Sources */,
 				ED91C5461E8FEED3008609C4 /* RecordFormViewController.swift in Sources */,
 				EDDE543B1E8E942600F3F630 /* Mapper.swift in Sources */,
 				EDDE54371E8E90B800F3F630 /* FirebaseRecordService.swift in Sources */,
@@ -798,6 +861,7 @@
 				ED1A94701E8E6F8900957A9B /* EmptyStateContent.swift in Sources */,
 				EDC48D0C1E88EFA20000A83D /* Assemblies.swift in Sources */,
 				ED69CFFD1E8D7EA100A5669B /* FirebaseUserRoleService.swift in Sources */,
+				ED91C55D1E9056C8008609C4 /* FirebaseProfileService.swift in Sources */,
 				ED1A94721E8E6F8900957A9B /* EmptyStateLoadingView.swift in Sources */,
 				EDC76EC91E850EE400F95E70 /* AuthService.swift in Sources */,
 				ED1A94671E8E328500957A9B /* SettingsViewController.swift in Sources */,
