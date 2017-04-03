@@ -26,6 +26,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udm-yM-twk">
                                 <rect key="frame" x="160" y="269" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="SignUp"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <segue destination="sbm-Vp-hCk" kind="show" id="8WT-Sc-XqP"/>
@@ -34,6 +35,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmw-tv-h2l">
                                 <rect key="frame" x="164" y="393" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="SignIn"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <segue destination="2Al-se-EY2" kind="show" id="Rca-Qy-ks6"/>
@@ -431,11 +433,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K5o-Mi-6ZQ" id="2CG-VJ-xAt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tSg-rG-fIx">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="47.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="47"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -521,6 +523,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSh-wT-5MZ">
                                 <rect key="frame" x="16" y="617" width="343" height="50"/>
+                                <accessibility key="accessibilityConfiguration" identifier="SignOut"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="kq0-YI-jwk"/>
                                 </constraints>

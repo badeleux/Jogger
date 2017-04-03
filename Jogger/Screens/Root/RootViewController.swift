@@ -34,13 +34,21 @@ class RootViewController: UIViewController {
     func setUp(forState state: RootViewState) {
         let newController = self.viewController(forState: state)
         if let vc = currentVC, vc != newController {
-            self.transition(from: vc, to: newController, duration: 0.0, options: .allowUserInteraction, animations: nil, completion: nil)
+            vc.willMove(toParentViewController: nil)
+            self.addChildViewController(newController)
+            newController.view.frame = vc.view.frame
+            self.transition(from: vc, to: newController, duration: 0.0, options: .allowUserInteraction, animations: nil, completion: { _ in
+                vc.removeFromParentViewController()
+                newController.didMove(toParentViewController: self)
+            })
+            currentVC = newController
         }
         else {
             self.addChildViewController(newController)
             self.view.addSubview(newController.view)
             newController.view <- Edges(0)
             newController.didMove(toParentViewController: self)
+            currentVC = newController
         }
     }
     

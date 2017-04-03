@@ -27,6 +27,14 @@ target 'Jogger' do
         pod 'Quick'
         pod 'Nimble'
     end
+    
+    target 'JoggerE2ETests' do
+        project 'Jogger'
+        
+        inherit! :search_paths # Required for not double-linking libraries in the app and test targets.
+        pod 'EarlGrey'
+        pod 'Fakery'
+    end
 end
 
 post_install do |installer|

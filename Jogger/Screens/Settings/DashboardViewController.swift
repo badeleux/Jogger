@@ -16,6 +16,7 @@ class DashboardViewController: UIViewController {
         super.init(coder: aDecoder)
         self.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "circle-user-7"), tag: 0)
         self.tabBarItem.title = "Profile"
+        self.tabBarItem.accessibilityIdentifier = "Profile"
     }
     
     override func viewDidLoad() {

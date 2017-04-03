@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CEB2217396471E28B2542B2 /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DEB26A682B5246035B531 /* EarlGrey.swift */; };
+		2D35025D91285D2A435B9E7F /* EarlGrey.framework in EarlGrey Copy Files */ = {isa = PBXBuildFile; fileRef = 399D5A4CC4C81EA9BD4E7074 /* EarlGrey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		41287555D2E219D08E7D1C24 /* Pods_JoggerE2ETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E2E4BE9AC801E4AD5F86DF /* Pods_JoggerE2ETests.framework */; };
 		52CBBFE70B69EC47579FF9EB /* Pods_JoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D891618552FD2F829166427E /* Pods_JoggerTests.framework */; };
+		AA6A2433F818D85F60B9FF0D /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399D5A4CC4C81EA9BD4E7074 /* EarlGrey.framework */; };
 		C87C79F24F3DBCD22D64572B /* Pods_Jogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994D38F57C048939539B027D /* Pods_Jogger.framework */; };
 		ED1A94621E8D9A6300957A9B /* UserAuthViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94611E8D9A6300957A9B /* UserAuthViewModelSpec.swift */; };
 		ED1A94641E8E278400957A9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A94631E8E278400957A9B /* LoginViewController.swift */; };
@@ -58,6 +62,7 @@
 		ED9FF44A1E9187FB00D20FFF /* RecordsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF4491E9187FB00D20FFF /* RecordsViewModelSpec.swift */; };
 		ED9FF44C1E91971100D20FFF /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF44B1E91971100D20FFF /* Formatters.swift */; };
 		ED9FF4501E92328C00D20FFF /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF44F1E92328C00D20FFF /* RecordTableViewCell.swift */; };
+		ED9FF4601E924C5700D20FFF /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF45F1E924C5700D20FFF /* AuthTests.swift */; };
 		EDC48CF41E8652300000A83D /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF31E8652300000A83D /* ErrorPresenter.swift */; };
 		EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF61E865EB80000A83D /* RootViewController.swift */; };
 		EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */; };
@@ -94,9 +99,27 @@
 			remoteGlobalIDString = ED208A651E8113D400B6074B;
 			remoteInfo = Jogger;
 		};
+		ED9FF45A1E9249D100D20FFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED208A5E1E8113D400B6074B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED208A651E8113D400B6074B;
+			remoteInfo = Jogger;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		73C78651C6D7F4A787D91FCC /* EarlGrey Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(TEST_HOST)/../";
+			dstSubfolderSpec = 0;
+			files = (
+				2D35025D91285D2A435B9E7F /* EarlGrey.framework in EarlGrey Copy Files */,
+			);
+			name = "EarlGrey Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED208AAA1E811A6C00B6074B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,9 +133,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		399D5A4CC4C81EA9BD4E7074 /* EarlGrey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EarlGrey.framework; path = "${SRCROOT}/Pods/EarlGrey/EarlGrey/EarlGrey.framework"; sourceTree = SRCROOT; };
 		406562C4FB3ABA25366E85A0 /* Pods-JoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JoggerTests/Pods-JoggerTests.release.xcconfig"; sourceTree = "<group>"; };
+		432DEB26A682B5246035B531 /* EarlGrey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
+		82E84BBFEB437015F097810F /* Pods-JoggerE2ETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggerE2ETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JoggerE2ETests/Pods-JoggerE2ETests.release.xcconfig"; sourceTree = "<group>"; };
 		994D38F57C048939539B027D /* Pods_Jogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC318CE8D1EA2B4D018D10E8 /* Pods-Jogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jogger/Pods-Jogger.debug.xcconfig"; sourceTree = "<group>"; };
+		B0F27D6BF346FEFCC5AF9DCC /* Pods-JoggerE2ETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggerE2ETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoggerE2ETests/Pods-JoggerE2ETests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC6F3A9C96C7F90377C4C033 /* Pods-Jogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jogger/Pods-Jogger.release.xcconfig"; sourceTree = "<group>"; };
 		D891618552FD2F829166427E /* Pods_JoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1A94611E8D9A6300957A9B /* UserAuthViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthViewModelSpec.swift; sourceTree = "<group>"; };
@@ -168,6 +195,9 @@
 		ED9FF4491E9187FB00D20FFF /* RecordsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewModelSpec.swift; sourceTree = "<group>"; };
 		ED9FF44B1E91971100D20FFF /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		ED9FF44F1E92328C00D20FFF /* RecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		ED9FF4551E9249D000D20FFF /* JoggerE2ETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoggerE2ETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9FF4591E9249D100D20FFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED9FF45F1E924C5700D20FFF /* AuthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
 		EDC48CF31E8652300000A83D /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		EDC48CF61E865EB80000A83D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +224,7 @@
 		EDDE543A1E8E942600F3F630 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		EDDE543C1E8F957800F3F630 /* FirebaseMapperSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMapperSpec.swift; sourceTree = "<group>"; };
 		EDDE543F1E8F985300F3F630 /* records.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = records.json; sourceTree = "<group>"; };
+		F6E2E4BE9AC801E4AD5F86DF /* Pods_JoggerE2ETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JoggerE2ETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE52409CE8962596848E9E6E /* Pods-JoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoggerTests/Pods-JoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +245,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED9FF4521E9249D000D20FFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6A2433F818D85F60B9FF0D /* EarlGrey.framework in Frameworks */,
+				41287555D2E219D08E7D1C24 /* Pods_JoggerE2ETests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -222,6 +262,7 @@
 			children = (
 				994D38F57C048939539B027D /* Pods_Jogger.framework */,
 				D891618552FD2F829166427E /* Pods_JoggerTests.framework */,
+				F6E2E4BE9AC801E4AD5F86DF /* Pods_JoggerE2ETests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -233,6 +274,8 @@
 				BC6F3A9C96C7F90377C4C033 /* Pods-Jogger.release.xcconfig */,
 				FE52409CE8962596848E9E6E /* Pods-JoggerTests.debug.xcconfig */,
 				406562C4FB3ABA25366E85A0 /* Pods-JoggerTests.release.xcconfig */,
+				B0F27D6BF346FEFCC5AF9DCC /* Pods-JoggerE2ETests.debug.xcconfig */,
+				82E84BBFEB437015F097810F /* Pods-JoggerE2ETests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -294,6 +337,7 @@
 				ED208AB31E817E7300B6074B /* Podfile */,
 				ED208A681E8113D400B6074B /* Jogger */,
 				ED208A7F1E8113D400B6074B /* JoggerTests */,
+				ED9FF4561E9249D100D20FFF /* JoggerE2ETests */,
 				ED208A671E8113D400B6074B /* Products */,
 				BF9B1D06AA33B60C6E9D3D96 /* Pods */,
 				7F5E5F4C9D15F503703E806D /* Frameworks */,
@@ -305,6 +349,8 @@
 			children = (
 				ED208A661E8113D400B6074B /* Jogger.app */,
 				ED208A7C1E8113D400B6074B /* JoggerTests.xctest */,
+				ED9FF4551E9249D000D20FFF /* JoggerE2ETests.xctest */,
+				399D5A4CC4C81EA9BD4E7074 /* EarlGrey.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -539,6 +585,16 @@
 			path = Records;
 			sourceTree = "<group>";
 		};
+		ED9FF4561E9249D100D20FFF /* JoggerE2ETests */ = {
+			isa = PBXGroup;
+			children = (
+				ED9FF4591E9249D100D20FFF /* Info.plist */,
+				432DEB26A682B5246035B531 /* EarlGrey.swift */,
+				ED9FF45F1E924C5700D20FFF /* AuthTests.swift */,
+			);
+			path = JoggerE2ETests;
+			sourceTree = "<group>";
+		};
 		EDC48CF21E8652240000A83D /* ErrorPresenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,6 +826,28 @@
 			productReference = ED208A7C1E8113D400B6074B /* JoggerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		ED9FF4541E9249D000D20FFF /* JoggerE2ETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED9FF45E1E9249D100D20FFF /* Build configuration list for PBXNativeTarget "JoggerE2ETests" */;
+			buildPhases = (
+				B4716027FC04C4A47D8A4231 /* [CP] Check Pods Manifest.lock */,
+				ED9FF4511E9249D000D20FFF /* Sources */,
+				ED9FF4521E9249D000D20FFF /* Frameworks */,
+				ED9FF4531E9249D000D20FFF /* Resources */,
+				73C78651C6D7F4A787D91FCC /* EarlGrey Copy Files */,
+				49CC2DF770AC890C8087AF9F /* [CP] Embed Pods Frameworks */,
+				C60F36D0A3A375525179CF4E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED9FF45B1E9249D100D20FFF /* PBXTargetDependency */,
+			);
+			name = JoggerE2ETests;
+			productName = JoggerE2ETests;
+			productReference = ED9FF4551E9249D000D20FFF /* JoggerE2ETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -786,6 +864,12 @@
 						ProvisioningStyle = Automatic;
 					};
 					ED208A7B1E8113D400B6074B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = EWQZR3J8HN;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED208A651E8113D400B6074B;
+					};
+					ED9FF4541E9249D000D20FFF = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EWQZR3J8HN;
 						ProvisioningStyle = Automatic;
@@ -808,6 +892,7 @@
 			targets = (
 				ED208A651E8113D400B6074B /* Jogger */,
 				ED208A7B1E8113D400B6074B /* JoggerTests */,
+				ED9FF4541E9249D000D20FFF /* JoggerE2ETests */,
 			);
 		};
 /* End PBXProject section */
@@ -831,6 +916,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDDE54401E8F985300F3F630 /* records.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED9FF4531E9249D000D20FFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +957,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JoggerTests/Pods-JoggerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49CC2DF770AC890C8087AF9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JoggerE2ETests/Pods-JoggerE2ETests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		567440506A6CDE1571E05CC5 /* [CP] Check Pods Manifest.lock */ = {
@@ -925,6 +1032,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jogger/Pods-Jogger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4716027FC04C4A47D8A4231 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C60F36D0A3A375525179CF4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JoggerE2ETests/Pods-JoggerE2ETests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1012,6 +1149,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED9FF4511E9249D000D20FFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9FF4601E924C5700D20FFF /* AuthTests.swift in Sources */,
+				0CEB2217396471E28B2542B2 /* EarlGrey.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1019,6 +1165,11 @@
 			isa = PBXTargetDependency;
 			target = ED208A651E8113D400B6074B /* Jogger */;
 			targetProxy = ED208A7D1E8113D400B6074B /* PBXContainerItemProxy */;
+		};
+		ED9FF45B1E9249D100D20FFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED208A651E8113D400B6074B /* Jogger */;
+			targetProxy = ED9FF45A1E9249D100D20FFF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1365,6 +1516,38 @@
 			};
 			name = Release;
 		};
+		ED9FF45C1E9249D100D20FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0F27D6BF346FEFCC5AF9DCC /* Pods-JoggerE2ETests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				INFOPLIST_FILE = JoggerE2ETests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.JoggerE2ETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jogger.app/Jogger";
+			};
+			name = Debug;
+		};
+		ED9FF45D1E9249D100D20FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82E84BBFEB437015F097810F /* Pods-JoggerE2ETests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				INFOPLIST_FILE = JoggerE2ETests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.JoggerE2ETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jogger.app/Jogger";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1391,6 +1574,15 @@
 			buildConfigurations = (
 				ED208A891E8113D400B6074B /* Debug */,
 				ED208A8A1E8113D400B6074B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED9FF45E1E9249D100D20FFF /* Build configuration list for PBXNativeTarget "JoggerE2ETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED9FF45C1E9249D100D20FFF /* Debug */,
+				ED9FF45D1E9249D100D20FFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

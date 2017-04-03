@@ -17,6 +17,8 @@ class SignInViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let signUpCell = self.dataSource?.tableView(self.tableView, cellForRowAt: IndexPath(row: 2, section: 0))
+        signUpCell?.accessibilityIdentifier = "SignInAction"
     }
 
     override func didReceiveMemoryWarning() {

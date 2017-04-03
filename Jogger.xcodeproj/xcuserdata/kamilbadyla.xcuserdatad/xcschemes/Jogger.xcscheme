@@ -26,7 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "NO">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +35,16 @@
                BlueprintIdentifier = "ED208A7B1E8113D400B6074B"
                BuildableName = "JoggerTests.xctest"
                BlueprintName = "JoggerTests"
+               ReferencedContainer = "container:Jogger.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ED9FF4541E9249D000D20FFF"
+               BuildableName = "JoggerE2ETests.xctest"
+               BlueprintName = "JoggerE2ETests"
                ReferencedContainer = "container:Jogger.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -50,6 +60,18 @@
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = 'OS_ACTIVITY_MODE'
+            value = 'false'
+            isEnabled = 'YES'>
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = 'DYLD_INSERT_LIBRARIES'
+            value = '@executable_path/EarlGrey.framework/EarlGrey'
+            isEnabled = 'YES'>
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -72,11 +94,6 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "false"
-            isEnabled = "YES">
-         </EnvironmentVariable>
       </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
