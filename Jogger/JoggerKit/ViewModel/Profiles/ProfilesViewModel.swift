@@ -12,7 +12,6 @@ import Result
 
 class ProfilesViewModel: ResourceViewModelInput, ResourceViewModelOutput {
     let profilesService: ProfileService
-    
 
     init(profilesService: ProfileService) {
         self.profilesService = profilesService

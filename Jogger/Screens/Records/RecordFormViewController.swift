@@ -67,9 +67,9 @@ class RecordFormViewController: FormViewController {
     }
     
     
-    @IBAction func save(_ sender: Any) {
+    func save(forUserId userId: UserId) {
         self.recordEditableViewModel
-            .save()
+            .save(forUserId: userId)
             .on(completed: { [weak self] in
                 self?.dismiss(animated: true, completion: nil)
             })

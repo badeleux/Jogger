@@ -16,23 +16,14 @@ class RecordEditViewModel: RecordViewModelEditable {
     let date = MutableProperty<Date?>(nil)
     
     private let recordsService: RecordsService
-    private let userAuthViewModel: UserAuthViewModel
-    init(recordsService: RecordsService, userAuthViewModel: UserAuthViewModel) {
+    init(recordsService: RecordsService) {
         self.recordsService = recordsService
-        self.userAuthViewModel = userAuthViewModel
     }
     
-    func save() -> SignalProducer<Bool, NSError> {
+    func save(forUserId userId: UserId) -> SignalProducer<Bool, NSError> {
         let result = self.createRecord()
         if let record = result.value {
-            return self.userAuthViewModel.currentUser.producer.take(first: 1).flatMap(.latest, transform: { (u: User?) -> SignalProducer<Bool, NSError> in
-                if let user = u {
-                    return self.recordsService.update(record: record, forUserId: user.userId).map { _ in true }
-                }
-                else {
-                    return SignalProducer.init(error: NSError.unauthenticated)
-                }
-            })
+            return self.recordsService.update(record: record, forUserId: userId).map { _ in true }
         }
         else {
             return SignalProducer.init(error: result.error!)

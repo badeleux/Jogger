@@ -12,9 +12,12 @@ import UIKit
 class RecordEditViewController: UIViewController {
     var recordForm: RecordFormViewController?
     var record: Record?
+    var userId: UserId?
     
     @IBAction func save(_ sender: Any) {
-        self.recordForm?.save(sender)
+        if let uid = userId {
+            self.recordForm?.save(forUserId: uid)
+        }
     }
     
     @IBAction func cancel(_ sender: Any) {

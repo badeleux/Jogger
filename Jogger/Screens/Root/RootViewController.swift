@@ -58,13 +58,13 @@ class RootViewController: UIViewController {
             return self.mainStoryboard!.instantiateViewController(withIdentifier: "LoginNav")
         case .regular:
             let settingsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "SettingsVC")
-            let recordsVC = self.mainStoryboard!.records(forUserId: self.userAuthViewModel.currentUser.value!.userId)
+            let recordsVC = self.mainStoryboard!.records(forUserId: self.userAuthViewModel.currentUser.value!.userId, name: self.userAuthViewModel.currentUser.value!.email!)
             let tabBar = UITabBarController()
             tabBar.viewControllers = [recordsVC, settingsVC]
             return tabBar
         default:
             let settingsVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "SettingsVC")
-            let recordsVC = self.mainStoryboard!.records(forUserId: self.userAuthViewModel.currentUser.value!.userId)
+            let recordsVC = self.mainStoryboard!.records(forUserId: self.userAuthViewModel.currentUser.value!.userId, name: self.userAuthViewModel.currentUser.value!.email!)
             let usersVC = self.mainStoryboard!.instantiateViewController(withIdentifier: "UsersNav")
             let tabBar = UITabBarController()
             tabBar.viewControllers = [recordsVC, usersVC, settingsVC]

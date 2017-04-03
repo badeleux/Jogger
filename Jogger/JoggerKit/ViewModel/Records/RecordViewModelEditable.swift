@@ -16,7 +16,7 @@ protocol RecordViewModelEditable {
     var time: MutableProperty<String?> { get }
     var distance: MutableProperty<String?> { get }
     var date: MutableProperty<Date?> { get }
-    func save() -> SignalProducer<Bool, NSError>
+    func save(forUserId userId: UserId) -> SignalProducer<Bool, NSError>
     
 }
 

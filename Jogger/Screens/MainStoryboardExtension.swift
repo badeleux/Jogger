@@ -15,11 +15,12 @@ enum ViewControllerID: String {
 }
 
 extension UIStoryboard {
-    func records(forUserId userId: UserId) -> UINavigationController {
+    func records(forUserId userId: UserId, name: String) -> UINavigationController {
         
         if let navController = self.instantiateViewController(withIdentifier: ViewControllerID.recordNav.rawValue) as? UINavigationController,
             let records = navController.viewControllers.first as? RecordsViewController {
             records.viewModel.userId(uid: userId)
+            records.title = name
             return navController
         }
         return UINavigationController()

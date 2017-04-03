@@ -77,9 +77,14 @@ class RecordsViewController: UIViewController, TableViewControllerProtocol, List
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let navController = segue.destination as? UINavigationController,
-            let recordEdit = navController.viewControllers.first as? RecordEditViewController,
-            let record = sender as? Record {
-            recordEdit.record = record
+            let recordEdit = navController.viewControllers.first as? RecordEditViewController {
+            
+            recordEdit.userId = self.viewModel.userIdProperty.value
+            
+            if let record = sender as? Record {
+                recordEdit.record = record
+            }
+            
         }
         else if let detailVC = segue.destination as? RecordDetailViewController,
             let selectedIP = self.tableView.indexPathForSelectedRow,
