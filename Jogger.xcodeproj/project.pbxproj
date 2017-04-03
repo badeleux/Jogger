@@ -57,6 +57,7 @@
 		ED9FF4481E9187E000D20FFF /* RecordAddViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF4471E9187E000D20FFF /* RecordAddViewModelSpec.swift */; };
 		ED9FF44A1E9187FB00D20FFF /* RecordsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF4491E9187FB00D20FFF /* RecordsViewModelSpec.swift */; };
 		ED9FF44C1E91971100D20FFF /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF44B1E91971100D20FFF /* Formatters.swift */; };
+		ED9FF4501E92328C00D20FFF /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9FF44F1E92328C00D20FFF /* RecordTableViewCell.swift */; };
 		EDC48CF41E8652300000A83D /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF31E8652300000A83D /* ErrorPresenter.swift */; };
 		EDC48CF71E865EB80000A83D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CF61E865EB80000A83D /* RootViewController.swift */; };
 		EDC48CFD1E8709F00000A83D /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */; };
@@ -166,6 +167,7 @@
 		ED9FF4471E9187E000D20FFF /* RecordAddViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordAddViewModelSpec.swift; sourceTree = "<group>"; };
 		ED9FF4491E9187FB00D20FFF /* RecordsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewModelSpec.swift; sourceTree = "<group>"; };
 		ED9FF44B1E91971100D20FFF /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		ED9FF44F1E92328C00D20FFF /* RecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		EDC48CF31E8652300000A83D /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		EDC48CF61E865EB80000A83D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		EDC48CFC1E8709F00000A83D /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				ED91C5491E903153008609C4 /* RecordEditViewController.swift */,
 				ED91C54B1E904BEE008609C4 /* RecordDetailViewController.swift */,
 				ED91C56B1E90D9E6008609C4 /* RecordsDateFilter.swift */,
+				ED9FF44F1E92328C00D20FFF /* RecordTableViewCell.swift */,
 			);
 			path = Records;
 			sourceTree = "<group>";
@@ -977,6 +980,7 @@
 				ED1A94781E8E7EEC00957A9B /* ResourceListViewModelInput.swift in Sources */,
 				ED1A94701E8E6F8900957A9B /* EmptyStateContent.swift in Sources */,
 				EDC48D0C1E88EFA20000A83D /* Assemblies.swift in Sources */,
+				ED9FF4501E92328C00D20FFF /* RecordTableViewCell.swift in Sources */,
 				ED69CFFD1E8D7EA100A5669B /* FirebaseUserRoleService.swift in Sources */,
 				ED91C55D1E9056C8008609C4 /* FirebaseProfileService.swift in Sources */,
 				ED91C56C1E90D9E6008609C4 /* RecordsDateFilter.swift in Sources */,

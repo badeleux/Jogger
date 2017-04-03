@@ -162,7 +162,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wza-xb-NiM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wza-xb-NiM">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="dEx-Lp-Sdc" customClass="RecordsDateFilter" customModule="Jogger" customModuleProvider="target">
@@ -209,30 +209,45 @@
                                     </connections>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecordCell" textLabel="IMn-4J-5kT" detailTextLabel="aSX-ZB-nCr" rowHeight="80" style="IBUITableViewCellStyleValue1" id="Kbr-rS-Uq5" customClass="MGSwipeTableCell">
-                                        <rect key="frame" x="0.0" y="104" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecordCell" rowHeight="63" id="Kbr-rS-Uq5" customClass="RecordTableViewCell" customModule="Jogger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="104" width="375" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kbr-rS-Uq5" id="Ry2-Eg-yBh">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IMn-4J-5kT">
-                                                    <rect key="frame" x="15" y="30" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqP-Uc-4bI">
+                                                    <rect key="frame" x="8" y="21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aSX-ZB-nCr">
-                                                    <rect key="frame" x="296" y="30" width="44" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTp-df-KiK">
+                                                    <rect key="frame" x="292" y="8" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvV-hc-Uog">
+                                                    <rect key="frame" x="292" y="33.5" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KTp-df-KiK" firstAttribute="trailing" secondItem="Ry2-Eg-yBh" secondAttribute="trailingMargin" id="Cfp-ms-Twv"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="RvV-hc-Uog" secondAttribute="bottom" id="QlH-qn-wcI"/>
+                                                <constraint firstItem="RvV-hc-Uog" firstAttribute="trailing" secondItem="Ry2-Eg-yBh" secondAttribute="trailingMargin" id="j5Y-dJ-kyI"/>
+                                                <constraint firstItem="DqP-Uc-4bI" firstAttribute="leading" secondItem="Ry2-Eg-yBh" secondAttribute="leadingMargin" id="qEI-r2-mCZ"/>
+                                                <constraint firstItem="DqP-Uc-4bI" firstAttribute="centerY" secondItem="Ry2-Eg-yBh" secondAttribute="centerY" id="tFm-1Q-d6w"/>
+                                                <constraint firstItem="KTp-df-KiK" firstAttribute="top" secondItem="Ry2-Eg-yBh" secondAttribute="topMargin" id="tto-gU-zNo"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateLabel" destination="DqP-Uc-4bI" id="4yS-n8-tqX"/>
+                                            <outlet property="distanceLabel" destination="KTp-df-KiK" id="6wq-wb-1O7"/>
+                                            <outlet property="durationLabel" destination="RvV-hc-Uog" id="fjp-JW-3DX"/>
                                             <segue destination="IEP-Ju-5Nz" kind="push" identifier="Detail" id="P4y-O2-9xO"/>
                                         </connections>
                                     </tableViewCell>

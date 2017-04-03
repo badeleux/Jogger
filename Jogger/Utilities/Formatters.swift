@@ -16,4 +16,8 @@ class Formatter {
     static func runDistanceFormat(dist: Measurement<UnitLength>) -> String {
         return MeasurementFormatter().string(from: dist)
     }
+    
+    static func runDurationFormat(dist: Measurement<UnitDuration>) -> String {
+        return MeasurementFormatter().string(from: dist)
+    }
 }

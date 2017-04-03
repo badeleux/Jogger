@@ -95,10 +95,11 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RecordsViewController.RecordCellReuseID, for: indexPath) as! MGSwipeTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: RecordsViewController.RecordCellReuseID, for: indexPath) as! RecordTableViewCell
         if let record = self.dataSource.value?[indexPath.row] {
-            cell.textLabel?.text = record.date.string()
-            cell.detailTextLabel?.text = record.distanceWithUnit().description
+            cell.dateLabel?.text = record.date.string()
+            cell.distanceLabel?.text = Formatter.runDistanceFormat(dist: record.distanceWithUnit())
+            cell.durationLabel?.text = Formatter.runDurationFormat(dist: record.timeWithUnit())
             let delete = MGSwipeButton(title: "Delete", backgroundColor: UIColor.red, callback: { (cell: MGSwipeTableCell) -> Bool in
                 if let recordId = record.recordID {
                     self.viewModel.delete(recordID: recordId)
