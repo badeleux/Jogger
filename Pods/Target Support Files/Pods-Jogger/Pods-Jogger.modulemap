@@ -1,0 +1,6 @@
+framework module Pods_Jogger {
+  umbrella header "Pods-Jogger-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -38,16 +38,6 @@
                ReferencedContainer = "container:Jogger.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED208A971E811A6C00B6074B"
-               BuildableName = "JoggerKitTests.xctest"
-               BlueprintName = "JoggerKitTests"
-               ReferencedContainer = "container:Jogger.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -81,6 +71,13 @@
             ReferencedContainer = "container:Jogger.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "false"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
