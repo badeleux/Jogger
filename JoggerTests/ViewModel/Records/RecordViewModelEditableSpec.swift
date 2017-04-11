@@ -8,7 +8,7 @@ struct EditRecordViewModelStub: RecordViewModelEditable {
     let distance = MutableProperty<String?>(nil)
     let time = MutableProperty<String?>(nil)
     let date = MutableProperty<Date?>(nil)
-    func save() -> SignalProducer<Bool, NSError> {
+    func save(forUserId userId: UserId) -> SignalProducer<Bool, NSError> {
         return .empty
     }
 }
